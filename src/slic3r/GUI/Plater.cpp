@@ -842,6 +842,25 @@ Sidebar::Sidebar(Plater *parent)
             return;
 
         int filament_count = p->combos_filament.size() + 1;
+
+        //TODO：ylg 我们将要限定材料的添加数量
+        const size_t extruder_cnt = dynamic_cast<ConfigOptionFloats*>(wxGetApp().preset_bundle->printers.get_edited_preset().config.option("nozzle_diameter"))->values.size();
+        const auto ams_extruders_count = dynamic_cast<ConfigOptionInts*>(wxGetApp().preset_bundle->printers.get_edited_preset().config.option("ams_extruders_count"))->values;
+        const auto single_extruder_multi_material = (
+            wxGetApp().preset_bundle->printers.get_edited_preset().config.opt_bool("single_extruder_multi_material"));
+        size_t ams_num = 0;
+        if (single_extruder_multi_material)//TODO:ylg 勾选了单挤出机多材料才需要计算ams的设定
+            for (size_t idx = 0; idx < ams_extruders_count.size(); idx++) {
+                ams_num += ams_extruders_count.at(idx) -1;//这里的减一是因为得把自身的值减掉 
+            }
+        //const size_t filament_cnt = p->combos_filament.size() > extruder_cnt ? extruder_cnt : p->combos_filament.size();
+        if (filament_count > (extruder_cnt + ams_num)) {
+            const wxString msg_text = _(L("The number of nozzles has exceeded the maximum number supported by the current printer!"));
+            MessageDialog dialog(this, msg_text, _(L("Nozzle count")), wxICON_WARNING | wxYES_NO);
+            dialog.ShowModal();
+            return;
+        }
+
         wxColour new_col = Plater::get_next_color_for_filament();
         std::string new_color = new_col.GetAsString(wxC2S_HTML_SYNTAX).ToStdString();
         wxGetApp().preset_bundle->set_num_filaments(filament_count, new_color);
@@ -1215,7 +1234,7 @@ void Sidebar::update_presets(Preset::Type preset_type)
     case Preset::TYPE_FILAMENT:
     {
         // BBS
-#if 0
+#if 1
         const size_t extruder_cnt = print_tech != ptFFF ? 1 :
                                 dynamic_cast<ConfigOptionFloats*>(preset_bundle.printers.get_edited_preset().config.option("nozzle_diameter"))->values.size();
         const size_t filament_cnt = p->combos_filament.size() > extruder_cnt ? extruder_cnt : p->combos_filament.size();
@@ -1480,6 +1499,8 @@ void Sidebar::jump_to_option(size_t selected)
 //    wxGetApp().mainframe->select_tab();
 }
 
+
+
 // BBS. Move logic from Plater::on_extruders_change() to Sidebar::on_filaments_change().
 void Sidebar::on_filaments_change(size_t num_filaments)
 {
@@ -1508,6 +1529,7 @@ void Sidebar::on_filaments_change(size_t num_filaments)
     }
 
     // remove unused choices if any
+    //删除未使用的选项(如果有的话)
     remove_unused_filament_combos(num_filaments);
 
     auto sizer = p->m_panel_filament_title->GetSizer();
@@ -12028,11 +12050,43 @@ bool Plater::search_string_getter(int idx, const char** label, const char** tool
 
     return false;
 }
+void Plater::on_extruders_change(size_t num_extruders)
+{
+    auto& choices = sidebar().combos_filament();
 
+    if (num_extruders == choices.size())
+        return;
+
+    //dynamic_cast<TabFilament*>(wxGetApp().get_tab(Preset::TYPE_FILAMENT))->update_extruder_combobox();
+
+    wxWindowUpdateLocker noUpdates_scrolled_panel(&sidebar()/*.scrolled_panel()*/);
+
+    size_t i = choices.size();
+    while ( i < num_extruders )
+    {
+        PlaterPresetComboBox* choice/*{ nullptr }*/;
+        sidebar().init_filament_combo(&choice, i);
+        int last_selection = choices.back()->GetSelection();
+        choices.push_back(choice);
+
+        // initialize selection
+        choice->update();
+        choice->SetSelection(last_selection);
+        ++i;
+    }
+
+    // remove unused choices if any
+    //删除未使用的选项(如果有的话)
+    sidebar().remove_unused_filament_combos(num_extruders);
+
+    sidebar().Layout();
+    sidebar().scrolled_panel()->Refresh();
+}
 // BBS.
 void Plater::on_filaments_change(size_t num_filaments)
 {
     // only update elements in plater
+    //只更新播放器中的元素
     update_filament_colors_in_full_config();
     sidebar().on_filaments_change(num_filaments);
     sidebar().obj_list()->update_objects_list_filament_column(num_filaments);
@@ -12245,6 +12299,7 @@ void Plater::on_activate()
 }
 
 // Get vector of extruder colors considering filament color, if extruder color is undefined.
+//如果挤出机颜色未定义，则得到考虑长丝颜色的挤出机颜色向量。
 std::vector<std::string> Plater::get_extruder_colors_from_plater_config(const GCodeProcessorResult* const result) const
 {
     if (wxGetApp().is_gcode_viewer() && result != nullptr)

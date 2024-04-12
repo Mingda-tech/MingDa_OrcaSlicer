@@ -405,8 +405,9 @@ private:
 
         void init(wxFont init_font)
         {
-            // title
-            title = wxGetApp().is_editor() ? SLIC3R_APP_FULL_NAME : GCODEVIEWER_APP_NAME;
+            // title //TODO：YLG 这个地方改名字改软件过场动画显示的名字
+            //title = wxGetApp().is_editor() ? SLIC3R_APP_FULL_NAME : GCODEVIEWER_APP_NAME;
+            title = wxGetApp().is_editor() ? "MingDa OrcaSlicer" : GCODEVIEWER_APP_NAME;
 
             // dynamically get the version to display
             version = _L("V") + " " + GUI_App::format_display_version();
@@ -1819,10 +1820,11 @@ void GUI_App::init_webview_runtime()
 void GUI_App::init_app_config()
 {
 	// Profiles for the alpha are stored into the PrusaSlicer-alpha directory to not mix with the current release.
-    SetAppName(SLIC3R_APP_KEY);
-//	SetAppName(SLIC3R_APP_KEY "-alpha");
+//    SetAppName(SLIC3R_APP_KEY);
+    //TODO:YLG 软件名称也就是配置文件使用的名称
+	SetAppName("MINGDA-Slicer");
 //  SetAppName(SLIC3R_APP_KEY "-beta");
-//	SetAppDisplayName(SLIC3R_APP_NAME);
+	//SetAppDisplayName(SLIC3R_APP_NAME);
 
 	// Set the Slic3r data directory at the Slic3r XS module.
 	// Unix: ~/ .Slic3r

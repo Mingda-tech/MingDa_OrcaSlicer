@@ -40,6 +40,7 @@ void CoolingBuffer::reset(const Vec3d &position)
     m_current_pos[4] = float(m_config.travel_speed.value);
     m_fan_speed = -1;
     m_additional_fan_speed = -1;
+    m_single_nozzle_with_multiple_fans = -1;
     m_current_fan_speed = -1;
 }
 
@@ -706,16 +707,20 @@ float CoolingBuffer::calculate_layer_slowdown(std::vector<PerExtruderAdjustments
 // Apply slow down over G-code lines stored in per_extruder_adjustments, enable fan if needed.
 // Returns the adjusted G-code.
 std::string CoolingBuffer::apply_layer_cooldown(
-    // Source G-code for the current layer.
+    // Source G-code for the current layer. 源代码为当前层的g代码。
     const std::string                      &gcode,
     // ID of the current layer, used to disable fan for the first n layers.
+    // // 当前层ID，用于关闭前n层的风扇。
     size_t                                  layer_id, 
     // Total time of this layer after slow down, used to control the fan.
+    //这层总时间经过减速后，用来控制风机。
     float                                   layer_time,
     // Per extruder list of G-code lines and their cool down attributes.
+    //每个挤出机的g代码行列表及其冷却属性。
     std::vector<PerExtruderAdjustments>    &per_extruder_adjustments)
 {
     // First sort the adjustment lines by of multiple extruders by their position in the source G-code.
+    //首先按多个挤出机在源代码中的位置对调整线进行排序。
     std::vector<const CoolingLine*> lines;
     {
         size_t n_lines = 0;
@@ -786,6 +791,23 @@ std::string CoolingBuffer::apply_layer_cooldown(
             supp_interface_fan_control= false;
             supp_interface_fan_speed   = 0;
         }
+        //TODO:ylg 单喷头多风扇
+        int   close_fan_the_first_x_layers_1 = m_config.close_fan_the_first_x_layers_1.get_at(m_current_extruder);
+        int   full_fan_speed_layer_1         = m_config.full_fan_speed_layer_1.get_at(m_current_extruder);
+        float fan_min_speed_1                = m_config.fan_min_speed_1.get_at(m_current_extruder);
+        if (close_fan_the_first_x_layers_1 <= 0 && full_fan_speed_layer_1 > 0) {
+            close_fan_the_first_x_layers_1 = 1;
+        }
+        if (int(layer_id) >= close_fan_the_first_x_layers_1) {
+            if (int(layer_id) >= close_fan_the_first_x_layers_1 && int(layer_id) + 1 < full_fan_speed_layer_1) {
+                float factor = float(int(layer_id + 1) - close_fan_the_first_x_layers_1) /
+                               float(full_fan_speed_layer_1 - close_fan_the_first_x_layers_1);
+                fan_min_speed_1    = std::clamp(int(float(fan_min_speed_1) * factor + 0.5f), 0, 255);
+            }
+        }else{
+            fan_min_speed_1 = 0;
+
+        }
         if (fan_speed_new != m_fan_speed) {
             m_fan_speed = fan_speed_new;
             m_current_fan_speed = fan_speed_new;
@@ -797,6 +819,12 @@ std::string CoolingBuffer::apply_layer_cooldown(
             m_additional_fan_speed = additional_fan_speed_new;
             if (immediately_apply && m_config.auxiliary_fan.value)
                 new_gcode += GCodeWriter::set_additional_fan(m_additional_fan_speed);
+        }
+                //BBS
+        if (fan_min_speed_1 != m_single_nozzle_with_multiple_fans) {
+            m_single_nozzle_with_multiple_fans = fan_min_speed_1;
+            if (immediately_apply && m_config.single_nozzle_with_multiple_fans.value)
+                new_gcode += GCodeWriter::set_single_nozzle_with_multiple_fan(m_single_nozzle_with_multiple_fans);
         }
     };
 
@@ -854,6 +882,8 @@ std::string CoolingBuffer::apply_layer_cooldown(
             }
             if (m_additional_fan_speed != -1 && m_config.auxiliary_fan.value)
                 new_gcode += GCodeWriter::set_additional_fan(m_additional_fan_speed);
+            if (m_single_nozzle_with_multiple_fans != -1 && m_config.single_nozzle_with_multiple_fans.value)
+                new_gcode += GCodeWriter::set_single_nozzle_with_multiple_fan(m_single_nozzle_with_multiple_fans);
         }
         else if (line->type & CoolingLine::TYPE_EXTRUDE_END) {
             // Just remove this comment.

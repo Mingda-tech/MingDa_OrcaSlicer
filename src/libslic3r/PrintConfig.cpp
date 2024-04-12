@@ -1313,6 +1313,16 @@ void PrintConfigDef::init_fff_params()
     def->mode = comSimple;
     def->set_default_value(new ConfigOptionInts { 1 });
 
+    def = this->add("close_fan_the_first_x_layers_1", coInts);
+    def->label = L("No cooling for the first 1");
+    def->tooltip = L("Close all cooling fan for the first certain layers. Cooling fan of the first layer used to be closed "
+                     "to get better build plate adhesion");
+    def->sidetext = L("layers");
+    def->min = 0;
+    def->max = 1000;
+    def->mode = comSimple;
+    def->set_default_value(new ConfigOptionInts { 1 });
+
     def = this->add("bridge_no_support", coBool);
     def->label = L("Don't support bridges");
     def->category = L("Support");
@@ -2318,6 +2328,17 @@ def = this->add("filament_loading_speed", coFloats);
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionInts { 0 });
     
+    def = this->add("full_fan_speed_layer_1", coInts);
+    def->label = L("Full fan speed at layer 1");
+    def->tooltip = L("Fan speed will be ramped up linearly from zero at layer \"close_fan_the_first_x_layers\" "
+                  "to maximum at layer \"full_fan_speed_layer_1\". "
+                  "\"full_fan_speed_layer_1\" will be ignored if lower than \"close_fan_the_first_x_layers\", in which case "
+                  "the fan will be running at maximum allowed speed at layer \"close_fan_the_first_x_layers\" + 1.");
+    def->min = 0;
+    def->max = 1000;
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionInts { 0 });
+
     def = this->add("support_material_interface_fan_speed", coInts);
     def->label = L("Support interface fan speed");
     def->tooltip = L("This fan speed is enforced during all support interfaces, to be able to weaken their bonding with a high fan speed."
@@ -2474,6 +2495,17 @@ def = this->add("filament_loading_speed", coFloats);
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionBool(false));
 
+    // def = this->add("auxiliary_ams", coBool);
+    // def->label = L("ams auxiliary");
+    // def->tooltip = L("Whether the device is connected to the ams device");
+    // def->mode = comAdvanced;
+    // def->set_default_value(new ConfigOptionBool(false));
+
+    def = this->add("single_nozzle_with_multiple_fans", coBool);
+    def->label = L("Single nozzle with multiple fans");
+    def->tooltip = L("Single nozzle with multiple fans");
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionBool(false));
 
     def = this->add("fan_speedup_time", coFloat);
 	// Label is set in Tab.cpp in the Line object.
@@ -3015,6 +3047,15 @@ def = this->add("filament_loading_speed", coFloats);
     def->mode = comSimple;
     def->set_default_value(new ConfigOptionFloats { 20 });
 
+    def = this->add("fan_min_speed_1", coFloats);
+    def->label = L("Fan speed 1");
+    def->tooltip = L("Minimum speed for part cooling fan");
+    def->sidetext = L("%");
+    def->min = 0;
+    def->max = 100;
+    def->mode = comSimple;
+    def->set_default_value(new ConfigOptionFloats { 20 });
+
     def = this->add("additional_cooling_fan_speed", coInts);
     def->label = L("Fan speed");
     def->tooltip = L("Speed of auxiliary part cooling fan. Auxiliary fan will run at this speed during printing except the first several layers "
@@ -3042,6 +3083,14 @@ def = this->add("filament_loading_speed", coFloats);
     def->min = 0;
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionFloats { 10. });
+
+    def = this->add("ams_extruders_count", coInts);
+    def->label = L("AMS Number of extruders");
+    def->tooltip = L("AMS Number of extruders.");
+    def->mode = comAdvanced;
+    def->min = 1;
+    def->max = 64;
+    def->set_default_value(new ConfigOptionInts { 1 });
 
     def = this->add("nozzle_diameter", coFloats);
     def->label = L("Nozzle diameter");
@@ -3873,8 +3922,9 @@ def = this->add("filament_loading_speed", coFloats);
     def->label = L("Single Extruder Multi Material");
     def->tooltip = L("Use single nozzle to print multi filament");
     def->mode = comAdvanced;
-    def->readonly = true;
-    def->set_default_value(new ConfigOptionBool(true));
+    //TODO:ylg 我们的打印机不需要强制设置单挤出机多材料
+    //def->readonly = true;
+    def->set_default_value(new ConfigOptionBool(false));
 
     def = this->add("manual_filament_change", coBool);
     def->label = L("Manual Filament Change");
@@ -4972,7 +5022,7 @@ void PrintConfigDef::init_extruder_option_keys()
         "nozzle_diameter", "min_layer_height", "max_layer_height", "extruder_offset",
         "retraction_length", "z_hop", "z_hop_types", "retract_lift_above", "retract_lift_below", "retract_lift_enforce", "retraction_speed", "deretraction_speed",
         "retract_before_wipe", "retract_restart_extra", "retraction_minimum_travel", "wipe", "wipe_distance",
-        "retract_when_changing_layer", "retract_length_toolchange", "retract_restart_extra_toolchange", "extruder_colour",
+        "retract_when_changing_layer", "retract_length_toolchange", "retract_restart_extra_toolchange", "extruder_colour","ams_extruders_count",
         "default_filament_profile"
     };
 
@@ -5743,9 +5793,11 @@ void PrintConfigDef::handle_legacy(t_config_option_key &opt_key, std::string &va
         } else {
             opt_key = "wall_sequence";
         }
-    } else if(opt_key == "single_extruder_multi_material") {
-        value = "1";
-    }
+    } 
+    //TODO:YLG 我们不需要强制设置单挤出机多材料设置，让他根据配置文件自动识别
+    // else if(opt_key == "single_extruder_multi_material") {
+    //     value = "0";
+    // }
     else if(opt_key == "ensure_vertical_shell_thickness") {
         if(value == "1") {
             value = "ensure_all";
