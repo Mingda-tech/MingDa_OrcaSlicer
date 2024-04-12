@@ -573,7 +573,8 @@ function GotoNetPluginPage()
 	let bRet=ResponseFilamentResult();
 	
 	if(bRet)
-		window.location.href="../5/index.html";
+		FinishGuide(); //TODO:ylg
+		//window.location.href="../5/index.html";
 }
 
 function FinishGuide()
