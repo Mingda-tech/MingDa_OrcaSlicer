@@ -10,7 +10,10 @@
     "compatible_printers": [
 		"MingDa S1 (0.6 nozzle)",
         "MingDa S2 (0.6 nozzle)",
-        "MingDa S3 (0.6 nozzle)"
+        "MingDa S3 (0.6 nozzle)",
+        "MingDa 400D 0.6 nozzle (Dual)",
+        "MingDa 600D 0.6 nozzle (Dual)",
+        "MingDa 1000D 0.6 nozzle (Dual)"
 	],
     "gap_infill_speed": "50",
     "infill_wall_overlap": "15%",

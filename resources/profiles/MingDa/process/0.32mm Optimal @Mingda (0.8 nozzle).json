@@ -11,7 +11,10 @@
     "compatible_printers": [
           "MingDa S1 (0.8 nozzle)",
           "MingDa S2 (0.8 nozzle)",
-          "MingDa S3 (0.8 nozzle)"
+          "MingDa S3 (0.8 nozzle)",
+          "MingDa 400D 0.8 nozzle (Dual)",
+          "MingDa 600D 0.8 nozzle (Dual)",
+          "MingDa 1000D 0.8 nozzle (Dual)"
     ],
     "version": "2.0.0.0"
   }
