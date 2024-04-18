@@ -43,7 +43,7 @@
 		"3000"
     ],
 	"machine_max_acceleration_extruding": [
-		"1000",
+		"5000",
 		"300"
 	],
 	"machine_max_acceleration_retracting": [
