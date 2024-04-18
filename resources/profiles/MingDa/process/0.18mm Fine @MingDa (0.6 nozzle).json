@@ -1,0 +1,22 @@
+{
+    "type": "process",
+	"setting_id": "GP010",
+    "from": "system",
+	"instantiation": "true",
+    "inherits": "0.24mm Optimal @MingDa (0.6 nozzle)",
+    "is_custom_defined": "0",
+    "layer_height": "0.18",
+    "compatible_printers": [
+		"MingDa S1 (0.6 nozzle)",
+        "MingDa S2 (0.6 nozzle)",
+        "MingDa S3 (0.6 nozzle)",
+        "MingDa 400D 0.6 nozzle (Dual)",
+        "MingDa 600D 0.6 nozzle (Dual)",
+        "MingDa 1000D 0.6 nozzle (Dual)"
+	],
+    "name": "0.18mm Fine @MingDa (0.6 nozzle)",
+    "print_settings_id": "0.18mm Fine @MingDa (0.6 nozzle)",
+    "support_bottom_z_distance": "0.18",
+    "support_top_z_distance": "0.18",
+    "version": "2.0.0.0"
+}

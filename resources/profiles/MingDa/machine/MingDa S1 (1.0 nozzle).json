@@ -1,0 +1,103 @@
+{
+    "type": "machine",
+    "setting_id": "MD003",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "MingDa S1 (0.4 nozzle)",
+    "printer_model": "MingDa S1",
+    "default_print_profile": "0.50mm Shandard @Mingda  (1.0 nozzle)",
+    "is_custom_defined": "0",
+    "default_filament_profile": [
+        "MingDa PLA"
+    ],
+    "machine_max_acceleration_e": [
+        "5000",
+        "10000"
+    ],
+    "machine_max_acceleration_extruding": [
+        "12000",
+        "15000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "5000",
+        "15000"
+    ],
+    "machine_max_acceleration_x": [
+        "12000",
+        "15000"
+    ],
+    "machine_max_acceleration_y": [
+        "12000",
+        "15000"
+    ],
+    "machine_max_acceleration_z": [
+        "1500",
+        "100"
+    ],
+    "machine_max_jerk_e": [
+        "3",
+        "5"
+    ],
+    "machine_max_jerk_x": [
+        "9",
+        "8"
+    ],
+    "machine_max_jerk_y": [
+        "9",
+        "8"
+    ],
+    "machine_max_jerk_z": [
+        "3",
+        "0.4"
+    ],
+    "machine_max_speed_e": [
+        "30",
+        "60"
+    ],
+    "machine_max_speed_x": [
+        "500",
+        "500"
+    ],
+    "machine_max_speed_y": [
+        "500",
+        "500"
+    ],
+    "machine_max_speed_z": [
+        "30",
+        "15"
+    ],
+    "max_layer_height": [
+        "0.9"
+    ],
+    "min_layer_height": [
+        "0.25"
+    ],
+    "name": "MingDa S1 (1.0 nozzle)",
+    "nozzle_diameter": [
+        "1.0"
+    ],
+    "printer_variant": "1.0",
+    "printer_settings_id": "MingDa S1 (1.0 nozzle)",
+    "retraction_speed": [
+        "30"
+    ],
+    "retract_before_wipe": [
+        "70%"
+    ],
+    "retract_length_toolchange": [
+        "2"
+    ],
+    "retraction_length": [
+        "0.8"
+    ],
+    "version": "2.0.0.0",
+    "z_hop": [
+        "0.4"
+    ],
+    "wipe_distance": [
+        "2"
+    ],
+    "z_hop_types": [
+        "Normal Lift"
+    ]
+}

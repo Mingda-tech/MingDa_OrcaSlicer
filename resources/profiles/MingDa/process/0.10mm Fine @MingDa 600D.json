@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "MD600DP10",
-	"name": "0.10mm Fine @MingDa 600D",
+	"name": "0.10mm Fine @MingDa 600D(0.4 nozzle)",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -51,6 +51,7 @@
 	"tree_support_branch_angle": "40",
 	"tree_support_wall_count": "0",
 	"top_shell_layers": "5",
+   	"enable_prime_tower": "1",
 	"wipe_tower_no_sparse_layers": "0",
 	"prime_tower_width": "40",
 	"xy_hole_compensation": "0",
@@ -58,9 +59,7 @@
 	"compatible_printers": [
 		"MingDa 600D 0.4 nozzle (Dual)",
 		"MingDa 600D 0.4 nozzle (Left)",
-		"MingDa 600D 0.4 nozzle (Right)",
-		"MingDa 600D 0.6 nozzle (Dual)",
-		"MingDa 600D 0.8 nozzle (Dual)"
+		"MingDa 600D 0.4 nozzle (Right)"
 	],
     "bottom_shell_layers": "3",
     "bridge_speed": "50",
@@ -69,7 +68,6 @@
     "detect_thin_wall": "0",
     "elefant_foot_compensation": "0.15",
     "enable_arc_fitting": "1",
-    "enable_prime_tower": "1",
     "gap_infill_speed": "200",
     "infill_wall_overlap": "15%",
     "initial_layer_acceleration": "500",

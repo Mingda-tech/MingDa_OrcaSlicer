@@ -2,7 +2,7 @@
     "type": "machine_model",
     "name": "MingDa S2",
     "model_id": "MingDa S2",
-    "nozzle_diameter": "0.4",
+    "nozzle_diameter": "0.4;0.6;0.8;1.0",
     "machine_tech": "FFF",
     "family": "MingDa",
     "bed_model": "320x320_buildplate_model.stl",

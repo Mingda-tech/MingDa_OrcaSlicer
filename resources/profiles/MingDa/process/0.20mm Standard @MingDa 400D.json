@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "MD400DP20",
-	"name": "0.20mm Standard @MingDa 400D",
+	"name": "0.20mm Standard @MingDa 400D(0.4 nozzle)",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -58,9 +58,7 @@
 	"compatible_printers": [
 		"MingDa 400D 0.4 nozzle (Dual)",
 		"MingDa 400D 0.4 nozzle (Left)",
-		"MingDa 400D 0.4 nozzle (Right)",
-		"MingDa 400D 0.6 nozzle (Dual)",
-		"MingDa 400D 0.8 nozzle (Dual)"
+		"MingDa 400D 0.4 nozzle (Right)"
 	],
 	"bottom_shell_layers": "3",
     "bridge_flow": "1",
