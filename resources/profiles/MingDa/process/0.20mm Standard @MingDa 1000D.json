@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "MD1000DP20",
-	"name": "0.20mm Standard @MingDa 1000D",
+	"name": "0.20mm Standard @MingDa 1000D(0.4 nozzle)",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -56,9 +56,7 @@
 	"compatible_printers": [
 		"MingDa 1000D 0.4 nozzle (Dual)",
 		"MingDa 1000D 0.4 nozzle (Left)",
-		"MingDa 1000D 0.4 nozzle (Right)",
-		"MingDa 1000D 0.6 nozzle (Dual)",
-		"MingDa 1000D 0.8 nozzle (Dual)"
+		"MingDa 1000D 0.4 nozzle (Right)"
 	],
 	"bottom_shell_layers": "3",
     "bridge_flow": "1",
