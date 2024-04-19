@@ -14,6 +14,7 @@
     "gap_infill_speed": "50",
     "infill_wall_overlap": "15%",
     "inherits": "fdm_process_common",
+    "filename_format": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode",
     "initial_layer_infill_speed": "55",
     "initial_layer_line_width": "0.82",
     "initial_layer_print_height": "0.4",
