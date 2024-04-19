@@ -9,12 +9,19 @@
     "name": "0.32mm Optimal @Mingda (0.8 nozzle)",
     "print_settings_id": "0.32mm Optimal @Mingda (0.8 nozzle)",
     "compatible_printers": [
-          "MingDa S1 (0.8 nozzle)",
-          "MingDa S2 (0.8 nozzle)",
-          "MingDa S3 (0.8 nozzle)",
-          "MingDa 400D 0.8 nozzle (Dual)",
-          "MingDa 600D 0.8 nozzle (Dual)",
-          "MingDa 1000D 0.8 nozzle (Dual)"
+      "MingDa S1 (0.8 nozzle)",
+      "MingDa S2 (0.8 nozzle)",
+      "MingDa S3 (0.8 nozzle)",	
+      "MingDa 400D 0.8 nozzle (Dual)",
+      "MingDa 400D 0.8 nozzle (Left)",
+      "MingDa 400D 0.8 nozzle (Right)",				
+      "MingDa 600D 0.8 nozzle (Dual)",
+      "MingDa 600D 0.8 nozzle (Left)",
+      "MingDa 600D 0.8 nozzle (Right)",			
+      "MingDa 1000D 0.8 nozzle (Dual)",
+      "MingDa 1000D 0.8 nozzle (Left)",
+      "MingDa 1000D 0.8 nozzle (Right)"
+   
     ],
     "version": "2.0.0.0"
   }
