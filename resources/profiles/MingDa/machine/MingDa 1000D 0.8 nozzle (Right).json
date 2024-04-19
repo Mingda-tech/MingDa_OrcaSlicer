@@ -1,0 +1,23 @@
+{
+	"type": "machine",
+	"setting_id": "MD1000D3",
+	"name": "MingDa 1000D 0.8 nozzle (Right)",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "MingDa 1000D 0.8 nozzle (Dual)",
+	"is_custom_defined": "0",
+	"printer_variant": "0.8",
+	"default_print_profile": "0.40mm Standard @Mingda (0.8 nozzle)",
+	"printer_model": "MingDa 1000D",
+	"default_filament_profile": [
+	  "MingDa PLA"
+	],
+	"nozzle_diameter": [
+		"0.6",
+		"0.6"
+	  ],
+	"machine_start_gcode": "START_PRINT EXTRUDER1=[first_layer_temperature] BED=[first_layer_bed_temperature]\nM106 P1 S255",
+    "machine_end_gcode": "END_PRINT",
+	"version": "2.0.0.0"
+  }
+  
