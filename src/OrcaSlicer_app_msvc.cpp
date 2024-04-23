@@ -283,11 +283,11 @@ int wmain(int argc, wchar_t **argv)
 
     wchar_t path_to_slic3r[MAX_PATH + 1] = { 0 };
     wcscpy(path_to_slic3r, path_to_exe);
-    wcscat(path_to_slic3r, L"OrcaSlicer.dll");
+    wcscat(path_to_slic3r, L"mingda-slicer.dll");
 //	printf("Loading Slic3r library: %S\n", path_to_slic3r);
     HINSTANCE hInstance_Slic3r = LoadLibraryExW(path_to_slic3r, nullptr, 0);
     if (hInstance_Slic3r == nullptr) {
-        printf("OrcaSlicer.dll was not loaded, error=%d\n", GetLastError());
+        printf("mingda-slicer.dll was not loaded, error=%d\n", GetLastError());
         return -1;
     }
 
