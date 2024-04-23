@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=OrcaSlicer
+Name=mingda-slicer
 GenericName=3D Printing Software
-Icon=OrcaSlicer
+Icon=mingda-slicer
 Exec=mingda-slicer %U
 Terminal=false
 Type=Application
