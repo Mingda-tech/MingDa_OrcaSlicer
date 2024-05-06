@@ -39,6 +39,7 @@
     "seam_position": "nearest",
     "skirt_distance": "2",
     "skirt_height": "2",
+    "exclude_object":"1",
     "minimum_sparse_infill_area": "0",
     "internal_solid_infill_line_width": "0.4",
     "internal_solid_infill_speed": "60",
