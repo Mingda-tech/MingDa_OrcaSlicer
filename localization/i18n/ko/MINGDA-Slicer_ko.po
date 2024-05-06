@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orca Slicer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 18:13+0800\n"
+"POT-Creation-Date: 2024-05-06 10:14+0800\n"
 "PO-Revision-Date: 2024-04-18 21:09+0800\n"
 "Last-Translator: Hotsolidinfill <138652683+Hotsolidinfill@users.noreply."
 "github.com>, crwusiz <crwusiz@naver.com>\n"
@@ -4025,7 +4025,7 @@ msgstr "용량:"
 msgid "Size:"
 msgstr "크기:"
 
-#, boost-format
+#, c-format, boost-format
 msgid ""
 "Conflicts of gcode paths have been found at layer %d, z = %.2lf mm. Please "
 "separate the conflicted objects farther (%s <-> %s)."

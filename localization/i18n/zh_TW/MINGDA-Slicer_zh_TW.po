@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orca Slicer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 18:13+0800\n"
+"POT-Creation-Date: 2024-05-06 10:14+0800\n"
 "PO-Revision-Date: 2023-11-06 14:37+0800\n"
 "Last-Translator: ablegods <ablegods@gmail.com>\n"
 "Language-Team: \n"
@@ -4088,7 +4088,7 @@ msgstr "體積："
 msgid "Size:"
 msgstr "尺寸："
 
-#, fuzzy, boost-format
+#, fuzzy, c-format, boost-format
 msgid ""
 "Conflicts of gcode paths have been found at layer %d, z = %.2lf mm. Please "
 "separate the conflicted objects farther (%s <-> %s)."
@@ -7072,8 +7072,8 @@ msgstr ""
 msgid ""
 "When recording timelapse without toolhead, it is recommended to add a "
 "\"Timelapse Wipe Tower\" \n"
-"by right-click the empty position of build plate and choose \"Add "
-"Primitive\"->\"Timelapse Wipe Tower\"."
+"by right-click the empty position of build plate and choose \"Add Primitive"
+"\"->\"Timelapse Wipe Tower\"."
 msgstr ""
 "在錄製無工具頭縮時錄影影片時，建議增加“縮時錄影擦拭塔”\n"
 "右鍵單擊列印板的空白位置，選擇“新增標準模型”->“縮時錄影擦拭塔”。"
@@ -10321,10 +10321,10 @@ msgstr "滿速風扇在"
 
 msgid ""
 "Fan speed will be ramped up linearly from zero at layer "
-"\"close_fan_the_first_x_layers\" to maximum at layer "
-"\"full_fan_speed_layer\". \"full_fan_speed_layer\" will be ignored if lower "
-"than \"close_fan_the_first_x_layers\", in which case the fan will be running "
-"at maximum allowed speed at layer \"close_fan_the_first_x_layers\" + 1."
+"\"close_fan_the_first_x_layers\" to maximum at layer \"full_fan_speed_layer"
+"\". \"full_fan_speed_layer\" will be ignored if lower than "
+"\"close_fan_the_first_x_layers\", in which case the fan will be running at "
+"maximum allowed speed at layer \"close_fan_the_first_x_layers\" + 1."
 msgstr ""
 "風扇速度將從“禁用第一層”的零線性上升到“全風扇速度層”的最大。如果低於“禁用風扇"
 "第一層”，則“全風扇速度第一層”將被忽略，在這種情況下，風扇將在“禁用風扇第一"
@@ -13859,8 +13859,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"We would rename the presets as \"Vendor Type Serial @printer you "
-"selected\". \n"
+"We would rename the presets as \"Vendor Type Serial @printer you selected"
+"\". \n"
 "To add preset for more printers, Please go to printer selection"
 msgstr ""
 
@@ -14751,7 +14751,6 @@ msgstr ""
 #~ msgid "Filling bed "
 #~ msgstr "填充自動朝向"
 
-#, boost-format
 #~ msgid "%1% infill pattern doesn't support 100%% density."
 #~ msgstr "%1% 填充圖案不支援 100%% 密度。"
 
@@ -14775,7 +14774,7 @@ msgstr ""
 #~ msgid "If enabled, g-code window will be displayed."
 #~ msgstr "如果啟用，將顯示 G-Code 視窗。"
 
-#, fuzzy, c-format
+#, fuzzy
 #~ msgid "Density of internal sparse infill, 100% means solid throughout"
 #~ msgstr "內部稀疏填充密度，100%% 表示整體實心"
 
@@ -14785,7 +14784,6 @@ msgstr ""
 #~ msgid "This setting specify the count of walls around tree support"
 #~ msgstr "樹狀支撐外牆層數"
 
-#, c-format, boost-format
 #~ msgid " doesn't work at 100%% density "
 #~ msgstr " 填充圖案不支援 100%% 密度"
 
@@ -14829,7 +14827,6 @@ msgstr ""
 #~ "timelapse videos."
 #~ msgstr "按物件列印時，龍門結構的設備不會產生縮時攝影影片"
 
-#, c-format, boost-format
 #~ msgid "%s is not supported by AMS."
 #~ msgstr "AMS 不支援 %s 。"
 
@@ -15032,7 +15029,7 @@ msgstr ""
 #~ "設定除錯日誌等級。0：fatal， 1：error， 2：warning， 3：info， 4：debug， "
 #~ "5：trace\n"
 
-#, fuzzy, boost-format
+#, fuzzy
 #~ msgid "The selected preset: %1% is not found."
 #~ msgstr "未找到選定的預設值：%1%。"
 
@@ -15082,7 +15079,6 @@ msgstr ""
 #~ msgid "Show online staff-picked models on the home page"
 #~ msgstr "在首頁上顯示工作人員推薦的線上模型"
 
-#, c-format
 #~ msgid ""
 #~ "Force cooling fan to be specific speed when overhang degree of printed "
 #~ "part exceeds this value. Expressed as percentage which indicides how much "
@@ -15153,7 +15149,6 @@ msgstr ""
 #~ msgid "Push new filament into the extruder"
 #~ msgstr "將新的線材推入擠出機"
 
-#, c-format, boost-format
 #~ msgid ""
 #~ "Bed temperature of other layer is lower than bed temperature of initial "
 #~ "layer for more than %d degree centigrade.\n"
