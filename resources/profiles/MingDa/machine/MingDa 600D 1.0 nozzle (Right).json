@@ -13,7 +13,6 @@
 	  "MingDa PLA"
 	],
 	"nozzle_diameter": [
-		"0.6",
 		"0.6"
 	  ],
 	"machine_start_gcode": "START_PRINT EXTRUDER1=[first_layer_temperature] BED=[first_layer_bed_temperature]\nM106 P1 S255",
