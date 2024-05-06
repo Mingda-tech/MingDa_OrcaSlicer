@@ -1432,7 +1432,7 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
 
     if (opt_key == "single_extruder_multi_material" || opt_key == "extruders_count" )
         update_wiping_button_visibility();
-
+    
     if (opt_key == "enable_prime_tower") {
         auto timelapse_type = m_config->option<ConfigOptionEnum<TimelapseType>>("timelapse_type");
         bool timelapse_enabled = timelapse_type->value == TimelapseType::tlSmooth;
@@ -1619,9 +1619,10 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
         wxGetApp().plater()->on_filaments_change(extruders_count);
         wxGetApp().get_tab(Preset::TYPE_PRINT)->update();
         wxGetApp().preset_bundle->export_selections(*wxGetApp().app_config);
-        //DynamicPrintConfig new_conf = *m_config;
-        //new_conf.set_key_value("extruders_count", new ConfigOptionInt(extruders_count));
-        //load_config(new_conf);
+        wxGetApp().plater()->on_extruders_change(boost::any_cast<size_t>(value));
+        //TODO:ylg 挤出机数量更新
+        m_active_page->set_value("extruders_count", int(extruders_count));
+
     }
 
 #endif
@@ -3571,7 +3572,7 @@ void TabPrinter::build_fff()
             def.tooltip = L("Number of extruders of the printer.");
             def.min = 1;
             def.max = 256;
-            def.readonly = true;//TOD:ylg 喷头数量暂时是只读的
+            //def.readonly = true;//TOD:ylg 喷头数量 改为可变，切根据事实数量更新
             def.mode = comAdvanced;
         Option option1(def, "extruders_count");
         optgroup->append_single_option_line(option1);
