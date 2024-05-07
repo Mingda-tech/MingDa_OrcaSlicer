@@ -1432,7 +1432,7 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
 
     if (opt_key == "single_extruder_multi_material" || opt_key == "extruders_count" )
         update_wiping_button_visibility();
-    
+
     if (opt_key == "enable_prime_tower") {
         auto timelapse_type = m_config->option<ConfigOptionEnum<TimelapseType>>("timelapse_type");
         bool timelapse_enabled = timelapse_type->value == TimelapseType::tlSmooth;
@@ -1619,6 +1619,7 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
         wxGetApp().plater()->on_filaments_change(extruders_count);
         wxGetApp().get_tab(Preset::TYPE_PRINT)->update();
         wxGetApp().preset_bundle->export_selections(*wxGetApp().app_config);
+
         wxGetApp().plater()->on_extruders_change(boost::any_cast<size_t>(value));
         //TODO:ylg 挤出机数量更新
         m_active_page->set_value("extruders_count", int(extruders_count));
