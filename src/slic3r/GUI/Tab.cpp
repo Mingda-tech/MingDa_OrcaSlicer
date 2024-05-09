@@ -1611,17 +1611,12 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
     // BBS
 #if 1
     if (opt_key == "extruders_count") {
-        //update_dirty();
-        wxColour    new_col   = Plater::get_next_color_for_filament();
-        std::string new_color = new_col.GetAsString(wxC2S_HTML_SYNTAX).ToStdString();
         int         extruders_count = boost::any_cast<size_t>(value);
-        wxGetApp().preset_bundle->set_num_filaments(extruders_count, new_color);
         wxGetApp().plater()->on_filaments_change(extruders_count);
-        wxGetApp().get_tab(Preset::TYPE_PRINT)->update();
-        wxGetApp().preset_bundle->export_selections(*wxGetApp().app_config);
-        //DynamicPrintConfig new_conf = *m_config;
-        //new_conf.set_key_value("extruders_count", new ConfigOptionInt(extruders_count));
-        //load_config(new_conf);
+        //TODO:ylg 挤出机数量更新
+        if (m_active_page)
+            m_active_page->set_value("extruders_count", int(extruders_count));
+
     }
 
 #endif
@@ -3571,11 +3566,11 @@ void TabPrinter::build_fff()
             def.tooltip = L("Number of extruders of the printer.");
             def.min = 1;
             def.max = 256;
-            def.readonly = true;//TOD:ylg 喷头数量暂时是只读的
+            //def.readonly = true;//TOD:ylg 喷头数量 改为可变，切根据事实数量更新
             def.mode = comAdvanced;
         Option option1(def, "extruders_count");
         optgroup->append_single_option_line(option1);
-        
+        //optgroup->append_single_option_line("extruders_count");
        // optgroup->append_single_option_line("extruders_count");
 
         optgroup->m_on_change = [this, optgroup_wk = ConfigOptionsGroupWkp(optgroup)](t_config_option_key opt_key, boost::any value) {
@@ -4327,7 +4322,10 @@ void TabPrinter::reload_config()
 
     // "extruders_count" doesn't update from the update_config(),
     // so update it implicitly
+    //TODO:ylg extruders_count 的隐式更新
     if (m_active_page && m_active_page->title() == "General")
+        m_active_page->set_value("extruders_count", int(m_extruders_count));
+    if (m_active_page && m_active_page->title() == "Basic information")
         m_active_page->set_value("extruders_count", int(m_extruders_count));
 }
 
@@ -4337,7 +4335,11 @@ void TabPrinter::activate_selected_page(std::function<void()> throw_if_canceled)
 
     // "extruders_count" doesn't update from the update_config(),
     // so update it implicitly
+    //TODO:ylg extruders_count 的隐式更新
     if (m_active_page && m_active_page->title() == "General")
+        m_active_page->set_value("extruders_count", int(m_extruders_count));
+
+    if (m_active_page && m_active_page->title() == "Basic information")
         m_active_page->set_value("extruders_count", int(m_extruders_count));
 }
 

@@ -260,7 +260,7 @@ DPIFrame(NULL, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, BORDERLESS_FRAME_
     default:
     case GUI_App::EAppMode::Editor:
         m_taskbar_icon = std::make_unique<OrcaSlicerTaskBarIcon>(wxTBI_DOCK);
-        m_taskbar_icon->SetIcon(wxIcon(Slic3r::var("OrcaSlicer-mac_256px.ico"), wxBITMAP_TYPE_ICO), "OrcaSlicer");
+        m_taskbar_icon->SetIcon(wxIcon(Slic3r::var("mingda-slicer-mac_256px.ico"), wxBITMAP_TYPE_ICO), "mingda-slicer");
         break;
     case GUI_App::EAppMode::GCodeViewer:
         break;
@@ -2813,7 +2813,7 @@ void MainFrame::init_menubar_as_editor()
             std::string url = "https://github.com/SoftFever/OrcaSlicer/wiki/Calibration";
             if (const std::string country_code = wxGetApp().app_config->get_country_code(); country_code == "CN") {
                 // Use gitee mirror for China users
-                url = "https://gitee.com/n0isyfox/mingda-slicer-docs/wikis/%E6%A0%A1%E5%87%86/%E6%89%93%E5%8D%B0%E5%8F%82%E6%95%B0%E6%A0%A1%E5%87%86";
+                url = "https://gitee.com/n0isyfox/orca-slicer-docs/wikis/%E6%A0%A1%E5%87%86/%E6%89%93%E5%8D%B0%E5%8F%82%E6%95%B0%E6%A0%A1%E5%87%86";
             }
             wxLaunchDefaultBrowser(url, wxBROWSER_NEW_WINDOW);
         }, "", nullptr,
