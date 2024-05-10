@@ -1822,7 +1822,7 @@ void GUI_App::init_app_config()
 	// Profiles for the alpha are stored into the PrusaSlicer-alpha directory to not mix with the current release.
 //    SetAppName(SLIC3R_APP_KEY);
     //TODO:YLG 软件名称也就是配置文件使用的名称
-	SetAppName("MINGDA-Slicer");
+	SetAppName(SLIC3R_APP_NAME);
 //  SetAppName(SLIC3R_APP_KEY "-beta");
 	//SetAppDisplayName(SLIC3R_APP_NAME);
 
@@ -1835,6 +1835,8 @@ void GUI_App::init_app_config()
         boost::filesystem::path data_dir_path;
         #ifndef __linux__
             std::string data_dir = wxStandardPaths::Get().GetUserDataDir().ToUTF8().data();
+            data_dir += "\\";
+            data_dir += format_display_version();
             //BBS create folder if not exists
             data_dir_path = boost::filesystem::path(data_dir);
             set_data_dir(data_dir);
