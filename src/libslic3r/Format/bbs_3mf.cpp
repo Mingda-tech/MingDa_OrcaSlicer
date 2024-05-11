@@ -8099,7 +8099,7 @@ private:
                     boost::filesystem::remove(t.path + "/.3mf", ec);
                     // We Saved with SplitModel now, so we can safe delete these sub models.
                     boost::filesystem::remove_all(t.path + "/3D/Objects");
-                    boost::filesystem::create_directory(t.path + "/3D/Objects");
+                    boost::filesystem::create_directories(t.path + "/3D/Objects");
                 }
                 catch (...) {}
             }

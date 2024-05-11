@@ -1076,7 +1076,7 @@ void PresetCollection::load_presets(
     //BBS do not parse folder if not exists
     m_dir_path = dir.string();
     if (!fs::exists(dir)) {
-        fs::create_directory(dir);
+        fs::create_directories(dir);
         return;
     }
 
@@ -1503,7 +1503,7 @@ void PresetCollection::update_user_presets_directory(const std::string& dir_path
     boost::filesystem::path dir = boost::filesystem::absolute(boost::filesystem::path(dir_path) / type).make_preferred();
 
     if (!fs::exists(dir))
-        fs::create_directory(dir);
+        fs::create_directories(dir);
 
     m_dir_path = dir.string();
 }
@@ -1514,7 +1514,7 @@ void PresetCollection::save_user_presets(const std::string& dir_path, const std:
     boost::filesystem::path dir = boost::filesystem::absolute(boost::filesystem::path(dir_path) / type).make_preferred();
 
     if (!fs::exists(dir))
-        fs::create_directory(dir);
+        fs::create_directories(dir);
 
     m_dir_path = dir.string();
 

@@ -65,11 +65,11 @@ void generate_custom_presets(PresetBundle* preset_bundle, AppConfig& app_config)
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
     if (!fs::exists(user_folder))
-        fs::create_directory(user_folder);
+        fs::create_directories(user_folder);
 
     fs::path folder(dir_user_presets);
     if (!fs::exists(folder))
-        fs::create_directory(folder);
+        fs::create_directories(folder);
     std::vector<std::string> need_to_delete_list; // store setting ids of preset
 
     preset_bundle->prints.save_user_presets(dir_user_presets, PRESET_PRINT_NAME, need_to_delete_list);
@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
     auto user_dir = fs::path(Slic3r::data_dir()) / PRESET_USER_DIR;
     user_dir.make_preferred();
     if (!fs::exists(user_dir))
-        fs::create_directory(user_dir);
+        fs::create_directories(user_dir);
 
     set_logging_level(log_level);
     auto preset_bundle = new PresetBundle();

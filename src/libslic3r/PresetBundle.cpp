@@ -180,7 +180,7 @@ void PresetBundle::setup_directories()
 		boost::filesystem::path subdir = path;
         subdir.make_preferred();
         if (! boost::filesystem::is_directory(subdir) &&
-            ! boost::filesystem::create_directory(subdir)) {
+            ! boost::filesystem::create_directories(subdir)) {
             if (boost::filesystem::is_directory(subdir)) {
                 BOOST_LOG_TRIVIAL(warning) << boost::format("creating directory %1% failed, maybe created by other instance, go on!")%subdir.string();
             }
@@ -197,7 +197,7 @@ static void copy_dir(const boost::filesystem::path& from_dir, const boost::files
         return;
     // i assume to_dir.parent surely exists
     if (!boost::filesystem::is_directory(to_dir))
-        boost::filesystem::create_directory(to_dir);
+        boost::filesystem::create_directories(to_dir);
     for (auto& dir_entry : boost::filesystem::directory_iterator(from_dir)) {
         if (!boost::filesystem::is_directory(dir_entry.path())) {
             std::string em;
@@ -555,11 +555,11 @@ PresetsConfigSubstitutions PresetBundle::load_user_presets(std::string user, For
     std::string errors_cummulative;
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
-    if (!fs::exists(user_folder)) fs::create_directory(user_folder);
+    if (!fs::exists(user_folder)) fs::create_directories(user_folder);
 
     std::string dir_user_presets = data_dir() + "/" + PRESET_USER_DIR + "/" + user;
     fs::path    folder(user_folder / user);
-    if (!fs::exists(folder)) fs::create_directory(folder);
+    if (!fs::exists(folder)) fs::create_directories(folder);
 
     // BBS do not load sla_print
     // BBS: change directoties by design
@@ -689,18 +689,18 @@ PresetsConfigSubstitutions PresetBundle::import_presets(std::vector<std::string>
             boost::system::error_code ec;
             // create user folder
             fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
-            if (!fs::exists(user_folder)) fs::create_directory(user_folder, ec);
+            if (!fs::exists(user_folder)) fs::create_directories(user_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
             // create default folder
             fs::path default_folder(user_folder / DEFAULT_USER_FOLDER_NAME);
-            if (!fs::exists(default_folder)) fs::create_directory(default_folder, ec);
+            if (!fs::exists(default_folder)) fs::create_directories(default_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
             //create temp folder
             //std::string user_default_temp_dir = data_dir() + "/" + PRESET_USER_DIR + "/" + DEFAULT_USER_FOLDER_NAME + "/" + "temp";
             fs::path temp_folder(default_folder / "temp");
             std::string user_default_temp_dir = temp_folder.make_preferred().string();
             if (fs::exists(temp_folder)) fs::remove_all(temp_folder);
-            fs::create_directory(temp_folder, ec);
+            fs::create_directories(temp_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
 
             file = boost::filesystem::path(file).make_preferred().string();
@@ -872,11 +872,11 @@ void PresetBundle::save_user_presets(AppConfig& config, std::vector<std::string>
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
     if (!fs::exists(user_folder))
-        fs::create_directory(user_folder);
+        fs::create_directories(user_folder);
 
     fs::path folder(dir_user_presets);
     if (!fs::exists(folder))
-        fs::create_directory(folder);
+        fs::create_directories(folder);
 
     this->prints.save_user_presets(dir_user_presets, PRESET_PRINT_NAME, need_to_delete_list);
     this->filaments.save_user_presets(dir_user_presets, PRESET_FILAMENT_NAME, need_to_delete_list);
@@ -894,11 +894,11 @@ void PresetBundle::update_user_presets_directory(const std::string preset_folder
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
     if (!fs::exists(user_folder))
-        fs::create_directory(user_folder);
+        fs::create_directories(user_folder);
 
     fs::path folder(dir_user_presets);
     if (!fs::exists(folder))
-        fs::create_directory(folder);
+        fs::create_directories(folder);
 
     this->prints.update_user_presets_directory(dir_user_presets, PRESET_PRINT_NAME);
     this->filaments.update_user_presets_directory(dir_user_presets, PRESET_FILAMENT_NAME);

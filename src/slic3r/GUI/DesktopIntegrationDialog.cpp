@@ -146,7 +146,7 @@ void create_dir(const boost::filesystem::path& path)
         return;
     BOOST_LOG_TRIVIAL(debug)<< "creating " << path.string();
     boost::system::error_code ec;
-    boost::filesystem::create_directory(path, ec);
+    boost::filesystem::create_directories(path, ec);
     if (ec)
         BOOST_LOG_TRIVIAL(error)<< "create directory failed: " << ec.message();
 }

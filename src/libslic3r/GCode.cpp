@@ -1548,7 +1548,7 @@ void GCode::do_export(Print* print, const char* path, GCodeProcessorResult* resu
     fs::path file_path(path);
     fs::path folder = file_path.parent_path();
     if (!fs::exists(folder)) {
-        fs::create_directory(folder);
+        fs::create_directories(folder);
         BOOST_LOG_TRIVIAL(error) << "[WARNING]: the parent path " + folder.string() +" is not there, create it!" << std::endl;
     }
 
@@ -1560,7 +1560,7 @@ void GCode::do_export(Print* print, const char* path, GCodeProcessorResult* resu
     if (! file.is_open()) {
         BOOST_LOG_TRIVIAL(error) << std::string("G-code export to ") + path + " failed.\nCannot open the file for writing.\n" << std::endl;
         if (!fs::exists(folder)) {
-            //fs::create_directory(folder);
+            //fs::create_directories(folder);
             BOOST_LOG_TRIVIAL(error) << "the parent path " + folder.string() +" is not there!!!" << std::endl;
         }
         throw Slic3r::RuntimeError(std::string("G-code export to ") + path + " failed.\nCannot open the file for writing.\n");
