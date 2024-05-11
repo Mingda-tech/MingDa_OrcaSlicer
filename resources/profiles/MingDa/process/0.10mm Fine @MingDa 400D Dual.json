@@ -1,0 +1,17 @@
+{
+	"type": "process",
+	"setting_id": "MD400DP11",
+	"name": "0.10mm Fine @MingDa 400D Dual(0.4 nozzle)",
+	"from": "system",
+	"inherits": "0.10mm Fine @MingDa 400D(0.4 nozzle)",
+	"instantiation": "true",
+	"is_custom_defined": "0",
+	"print_settings_id": "0.10mm Fine @MingDa 400D Dual(0.4 nozzle)",
+    "version": "2.0.0.0",
+	"compatible_printers": [
+		"MingDa 400D 0.4 nozzle (Dual)"
+	],
+	"enable_prime_tower": "1"
+
+	
+}

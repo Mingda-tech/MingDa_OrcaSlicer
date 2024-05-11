@@ -1,0 +1,17 @@
+{
+    "bridge_speed": "25",
+    "default_acceleration": "5000",
+    "default_jerk": "9",
+    "exclude_object": "1",
+    "from": "User",
+    "compatible_printers": [
+        "MingDa 400D 1.0 nozzle (Dual)",		
+        "MingDa 600D 1.0 nozzle (Dual)",	
+        "MingDa 1000D 1.0 nozzle (Dual)"
+	],
+    "enable_prime_tower": "1",
+    "inherits": "0.50mm Shandard @Mingda  (1.0 nozzle)",
+    "name": "0.50mm Shandard @Mingda  (1.0 nozzle) Dual",
+    "print_settings_id": "0.50mm Shandard @Mingda  (1.0 nozzle) Dual"
+
+}

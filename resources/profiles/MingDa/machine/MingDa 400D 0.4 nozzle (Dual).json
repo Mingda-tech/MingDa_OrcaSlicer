@@ -104,7 +104,7 @@
 		"0",
 		"0"
 	],
-    "purge_in_prime_tower": "0",	
+    "purge_in_prime_tower": "1",	
 	"single_extruder_multi_material": "0",
 	"ams_extruders_count": ["1","1"],
 	"change_filament_gcode": "M106 P1 S255 ;change filament gcode",
@@ -115,8 +115,7 @@
 	"toolchange_gcode": "; layer [layer_num] tool change",
 	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
 	"scan_first_layer": "0",
-
-
+    "enable_prime_tower": "1",
     "auxiliary_fan": "1",
     "before_layer_change_gcode": "",
     "extruder_clearance_height_to_lid": "400",
@@ -150,14 +149,14 @@
     ],
     "retraction_length": [
         "0.8",
-        "0.5"
+        "0.8"
     ],
     "retraction_minimum_travel": [
         "1",
         "0.6"
     ],
     "retraction_speed": [
-        "30",
+        "40",
         "40"
     ],
     "wipe": [
@@ -167,6 +166,6 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ]
 }

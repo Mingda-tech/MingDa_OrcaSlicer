@@ -11,7 +11,7 @@
         "extra_loading_move": "0",
         "parking_pos_retraction": "0",
 	"printer_model": "MingDa 600D",
-	"default_print_profile": "0.20mm Standard @MingDa 600D",
+	"default_print_profile": "0.20mm Standard @MingDa 600D(0.4 nozzle) Dual",
 	"nozzle_diameter": [
 		"0.4",
 		"0.4"
@@ -122,7 +122,7 @@
 	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
 	"scan_first_layer": "0",
 
-
+    "enable_prime_tower": "1",
     "auxiliary_fan": "1",
     "before_layer_change_gcode": "",
     "extruder_clearance_height_to_lid": "600",
@@ -156,14 +156,14 @@
     ],
     "retraction_length": [
         "0.8",
-        "0.5"
+        "0.8"
     ],
     "retraction_minimum_travel": [
         "1",
         "0.6"
     ],
     "retraction_speed": [
-        "30",
+        "40",
         "40"
     ],
     "wipe": [
@@ -173,6 +173,6 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ]
 }

@@ -49,12 +49,11 @@
 	"tree_support_wall_count": "0",
 	"detect_thin_wall": "1",
 	"top_shell_layers": "5",
-	"enable_prime_tower": "1",
+	"enable_prime_tower": "0",
 	"wipe_tower_no_sparse_layers": "0",
 	"xy_hole_compensation": "0",
 	"xy_contour_compensation": "0",
 	"compatible_printers": [
-		"MingDa 1000D 0.4 nozzle (Dual)",
 		"MingDa 1000D 0.4 nozzle (Left)",
 		"MingDa 1000D 0.4 nozzle (Right)"
 	],

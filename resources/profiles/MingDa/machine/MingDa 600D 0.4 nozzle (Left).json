@@ -6,7 +6,7 @@
 	"instantiation": "true",
 	"inherits": "fdm_klipper_common",
 	"printer_model": "MingDa 600D",
-	"default_print_profile": "0.20mm Standard @MingDa 600D",
+	"default_print_profile": "0.20mm Standard @MingDa 600D(0.4 nozzle)",
 	"nozzle_diameter": [
 		"0.4"
 	],
@@ -165,7 +165,7 @@
     ],
     "retraction_length": [
         "1",
-        "0.5"
+        "1"
     ],
     "retraction_minimum_travel": [
         "1",
@@ -175,7 +175,7 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ],
     "z_hop_types": [
         "Normal Lift"
