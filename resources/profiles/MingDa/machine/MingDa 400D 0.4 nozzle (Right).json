@@ -6,7 +6,7 @@
 	"instantiation": "true",
 	"inherits": "fdm_klipper_common",
 	"printer_model": "MingDa 400D",
-	"default_print_profile": "0.20mm Standard @MingDa 400D",
+	"default_print_profile": "0.10mm Fine @MingDa 400D(0.4 nozzle)",
 	"nozzle_diameter": [
 		"0.4"
 	],
@@ -31,8 +31,8 @@
 		"3000"
     ],
 	"machine_max_acceleration_extruding": [
-		"5000",
-		"300"
+		"3000",
+		"3000"
 	],
 	"machine_max_acceleration_travel": [
 		"15000",
@@ -100,6 +100,7 @@
 		"1"
     ],
 	"single_extruder_multi_material": "1",
+	"enable_prime_tower": "0",
 	"ams_extruders_count": ["1","1"],
 	"change_filament_gcode": "",
 	"machine_pause_gcode": "; pause print\n",
@@ -125,14 +126,14 @@
     "machine_end_gcode": "END_PRINT",
     "machine_max_acceleration_retracting": [
         "5000",
-        "1500"
+        "5000"
     ],
     "machine_max_acceleration_x": [
-        "10000",
+        "5000",
         "5000"
     ],
     "machine_max_acceleration_y": [
-        "10000",
+        "5000",
         "5000"
     ],
     "machine_max_jerk_e": [
@@ -159,7 +160,7 @@
     ],
     "retraction_length": [
         "1",
-        "0.5"
+        "1"
     ],
     "retraction_minimum_travel": [
         "1",
@@ -169,7 +170,7 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ],
     "z_hop_types": [
         "Normal Lift"

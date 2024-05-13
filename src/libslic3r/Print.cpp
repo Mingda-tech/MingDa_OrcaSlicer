@@ -3703,7 +3703,7 @@ int Print::export_cached_data(const std::string& directory, bool with_space)
         fs::remove_all(directory_path);
     }
     try {
-        if (!fs::create_directory(directory_path)) {
+        if (!fs::create_directories(directory_path)) {
             BOOST_LOG_TRIVIAL(error) << boost::format("create directory %1% failed")%directory;
             return CLI_EXPORT_CACHE_DIRECTORY_CREATE_FAILED;
         }

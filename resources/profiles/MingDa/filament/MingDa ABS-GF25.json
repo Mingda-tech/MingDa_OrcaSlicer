@@ -252,17 +252,17 @@
         "MingDa ABS-GF25"
     ],
     "hot_plate_temp": [
-        "90"
+        "100"
     ],
     "hot_plate_temp_initial_layer": [
-        "90"
+        "100"
     ],
     "is_custom_defined": "0",
     "nozzle_temperature": [
-        "270"
+        "260"
     ],
     "nozzle_temperature_initial_layer": [
-        "260"
+        "270"
     ],
     "nozzle_temperature_range_high": [
         "280"

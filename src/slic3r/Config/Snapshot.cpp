@@ -373,7 +373,7 @@ static void copy_config_dir_single_level(const boost::filesystem::path &path_src
 //BBS: remove snapshots function currently
 #if 0
     if (! boost::filesystem::is_directory(path_dst) && 
-        ! boost::filesystem::create_directory(path_dst))
+        ! boost::filesystem::create_directories(path_dst))
         throw Slic3r::RuntimeError(std::string("OrcaSlicer was unable to create a directory at ") + path_dst.string());
 
     for (auto &dir_entry : boost::filesystem::directory_iterator(path_src))
@@ -446,7 +446,7 @@ const Snapshot&	SnapshotDB::take_snapshot(const AppConfig &app_config, Snapshot:
 	boost::filesystem::path snapshot_dir = snapshot_db_dir / snapshot.id;
 
     try {
-	    boost::filesystem::create_directory(snapshot_dir);
+	    boost::filesystem::create_directories(snapshot_dir);
 
         // Backup the presets.
         for (const char *subdir : snapshot_subdirs)
@@ -549,7 +549,7 @@ boost::filesystem::path SnapshotDB::create_db_dir()
 		boost::filesystem::path subdir = path;
         subdir.make_preferred();
         if (! boost::filesystem::is_directory(subdir) && 
-            ! boost::filesystem::create_directory(subdir))
+            ! boost::filesystem::create_directories(subdir))
             throw Slic3r::RuntimeError(std::string("Slic3r was unable to create a directory at ") + subdir.string());
     }
     return snapshots_dir;

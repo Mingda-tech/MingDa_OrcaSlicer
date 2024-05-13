@@ -480,7 +480,7 @@ void AuFile::on_set_cover()
     fs::path dir_path(dir.ToStdWstring());
 
     if (!fs::exists(dir_path)) {
-        fs::create_directory(dir_path); 
+        fs::create_directories(dir_path); 
     }
 
     bool result = true;
@@ -993,7 +993,7 @@ void AuxiliaryPanel::create_folder(wxString name)
             BOOST_LOG_TRIVIAL(error) << "Failed  removing the auxiliary directory " << m_root_dir.c_str();
         }
     }
-    fs::create_directory(bfs_path);
+    fs::create_directories(bfs_path);
 }
 
 std::string AuxiliaryPanel::replaceSpace(std::string s, std::string ts, std::string ns)

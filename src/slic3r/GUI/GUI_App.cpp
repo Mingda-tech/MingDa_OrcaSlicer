@@ -1332,11 +1332,11 @@ int GUI_App::install_plugin(std::string name, std::string package_name, InstallP
     auto backup_folder = plugin_folder/"backup";
     if (!boost::filesystem::exists(plugin_folder)) {
         BOOST_LOG_TRIVIAL(info) << "[install_plugin] will create directory "<<plugin_folder.string();
-        boost::filesystem::create_directory(plugin_folder);
+        boost::filesystem::create_directories(plugin_folder);
     }
     if (!boost::filesystem::exists(backup_folder)) {
         BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << boost::format(", will create directory %1%")%backup_folder.string();
-        boost::filesystem::create_directory(backup_folder);
+        boost::filesystem::create_directories(backup_folder);
     }
 
     if (m_networking_cancel_update) {
@@ -1822,7 +1822,7 @@ void GUI_App::init_app_config()
 	// Profiles for the alpha are stored into the PrusaSlicer-alpha directory to not mix with the current release.
 //    SetAppName(SLIC3R_APP_KEY);
     //TODO:YLG 软件名称也就是配置文件使用的名称
-	SetAppName("MINGDA-Slicer");
+	SetAppName(SLIC3R_APP_NAME);
 //  SetAppName(SLIC3R_APP_KEY "-beta");
 	//SetAppDisplayName(SLIC3R_APP_NAME);
 
@@ -1835,6 +1835,8 @@ void GUI_App::init_app_config()
         boost::filesystem::path data_dir_path;
         #ifndef __linux__
             std::string data_dir = wxStandardPaths::Get().GetUserDataDir().ToUTF8().data();
+            data_dir += "\\";
+            data_dir += format_display_version();
             //BBS create folder if not exists
             data_dir_path = boost::filesystem::path(data_dir);
             set_data_dir(data_dir);
@@ -1848,7 +1850,7 @@ void GUI_App::init_app_config()
             data_dir_path = boost::filesystem::path(data_dir());
         #endif
         if (!boost::filesystem::exists(data_dir_path)){
-            boost::filesystem::create_directory(data_dir_path);
+            boost::filesystem::create_directories(data_dir_path);
         }
 
         // Change current dirtory of application
@@ -1988,7 +1990,7 @@ std::string GUI_App::get_local_models_path()
     local_path = models_folder.string();
 
     if (!fs::exists(models_folder)) {
-        if (!fs::create_directory(models_folder)) {
+        if (!fs::create_directories(models_folder)) {
             local_path = "";
         }
         BOOST_LOG_TRIVIAL(info) << "create models folder:" << models_folder.string();
@@ -2583,7 +2585,7 @@ void GUI_App::copy_network_if_available()
     BOOST_LOG_TRIVIAL(info) << __FUNCTION__<< ": checking network_library " << network_library << ", player_library " << player_library;
     if (!boost::filesystem::exists(plugin_folder)) {
         BOOST_LOG_TRIVIAL(info)<< __FUNCTION__ << ": create directory "<<plugin_folder.string();
-        boost::filesystem::create_directory(plugin_folder);
+        boost::filesystem::create_directories(plugin_folder);
     }
     std::string error_message;
     if (boost::filesystem::exists(network_library)) {

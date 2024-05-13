@@ -286,7 +286,7 @@ void set_data_dir(const std::string &dir)
 {
     g_data_dir = dir;
     if (!g_data_dir.empty() && !boost::filesystem::exists(g_data_dir)) {
-       boost::filesystem::create_directory(g_data_dir);
+       boost::filesystem::create_directories(g_data_dir);
     }
 }
 
@@ -335,7 +335,7 @@ void set_log_path_and_level(const std::string& file, unsigned int level)
 	//BBS log file at C:\\Users\\[yourname]\\AppData\\Roaming\\OrcaSlicer\\log\\[log_filename].log
 	auto log_folder = boost::filesystem::path(g_data_dir) / "log";
 	if (!boost::filesystem::exists(log_folder)) {
-		boost::filesystem::create_directory(log_folder);
+		boost::filesystem::create_directories(log_folder);
 	}
 	auto full_path = (log_folder / file).make_preferred();
 

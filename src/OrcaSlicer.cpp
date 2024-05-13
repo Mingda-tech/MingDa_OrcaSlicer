@@ -5552,7 +5552,7 @@ std::string CLI::output_filepath(const ModelObject &object, unsigned int index, 
 
     boost::filesystem::path subdir_path(subdir);
     if (!boost::filesystem::exists(subdir_path))
-        boost::filesystem::create_directory(subdir_path);
+        boost::filesystem::create_directories(subdir_path);
     return output_path;
 }
 

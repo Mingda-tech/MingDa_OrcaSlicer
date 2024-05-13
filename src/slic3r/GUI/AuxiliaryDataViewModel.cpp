@@ -36,7 +36,7 @@ void AuxiliaryModel::Init(wxString aux_path)
     }
 
     fs::path top_dir_path(m_root_dir.ToStdWstring());
-    fs::create_directory(top_dir_path);
+    fs::create_directories(top_dir_path);
 
     for (auto folder : s_default_folders)
         CreateFolder(folder);
@@ -82,14 +82,14 @@ void AuxiliaryModel::Reload(wxString aux_path)
 
     // Check new path. If not exist, create a new one.
     if (!fs::exists(new_aux_path)) {
-        fs::create_directory(new_aux_path);
+        fs::create_directories(new_aux_path);
         // Create default folders if they are not loaded
         wxDataViewItemArray default_items;
         for (auto folder : s_default_folders) {
             wxString folder_path = aux_path + "\\" + folder;
             if (fs::exists(folder_path.ToStdWstring())) continue;
 
-            fs::create_directory(folder_path.ToStdWstring());
+            fs::create_directories(folder_path.ToStdWstring());
             AuxiliaryModelNode *node = new AuxiliaryModelNode(m_root,
                                                               folder_path,
                                                               true);
@@ -134,7 +134,7 @@ void AuxiliaryModel::Reload(wxString aux_path)
         if (fs::exists(folder_path.ToStdWstring()))
             continue;
 
-        fs::create_directory(folder_path.ToStdWstring());
+        fs::create_directories(folder_path.ToStdWstring());
         AuxiliaryModelNode* node = new AuxiliaryModelNode(m_root, folder_path, true);
         default_items.Add(wxDataViewItem(node));
     }
@@ -298,7 +298,7 @@ wxDataViewItem AuxiliaryModel::CreateFolder(wxString name)
             BOOST_LOG_TRIVIAL(error) << "Failed  removing the auxiliary directory " << m_root_dir.c_str();
         }
     }
-    fs::create_directory(bfs_path);
+    fs::create_directories(bfs_path);
 
     // Create model node
     AuxiliaryModelNode* folder = new AuxiliaryModelNode(m_root, bfs_path.generic_wstring(), true);

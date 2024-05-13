@@ -265,13 +265,13 @@
         "1"
     ],
     "filament_end_gcode": [
-        "; filament end gcode \nM104 S165"
+        "; filament end gcode \nM104 S140"
     ],
     "filament_flow_ratio": [
         "0.9875"
     ],
     "filament_max_volumetric_speed": [
-        "8"
+        "15"
     ],
     "filament_settings_id": [
         "MingDa PETG"
@@ -290,7 +290,7 @@
         "230"
     ],
     "nozzle_temperature_initial_layer": [
-        "230"
+        "240"
     ],
     "overhang_fan_speed": [
         "50"

@@ -331,14 +331,14 @@ std::map<std::string, std::vector<json>> ProjectPanel::Reload(wxString aux_path)
 
     // Check new path. If not exist, create a new one.
     if (!fs::exists(new_aux_path)) {
-        fs::create_directory(new_aux_path);
+        fs::create_directories(new_aux_path);
     }
 
     // Create default folders if they are not loaded
     for (auto folder : s_default_folders) {
         wxString folder_path = aux_path + "/" + folder;
         if (fs::exists(folder_path.ToStdWstring())) continue;
-        fs::create_directory(folder_path.ToStdWstring());
+        fs::create_directories(folder_path.ToStdWstring());
     }
 
     // Load from new path

@@ -6,7 +6,7 @@
 	"instantiation": "true",
 	"inherits": "fdm_klipper_common",
 	"printer_model": "MingDa 600D",
-	"default_print_profile": "0.20mm Standard @MingDa 600D",
+	"default_print_profile": "0.20mm Standard @MingDa 600D(0.4 nozzle)",
 	"nozzle_diameter": [
 		"0.4"
 	],
@@ -37,8 +37,8 @@
 		"3000"
     ],
 	"machine_max_acceleration_extruding": [
-		"5000",
-		"300"
+		"10000",
+		"10000"
 	],
 	"machine_max_acceleration_travel": [
 		"15000",
@@ -134,12 +134,12 @@
         "1500"
     ],
     "machine_max_acceleration_x": [
-        "5000",
-        "5000"
+        "10000",
+        "10000"
     ],
     "machine_max_acceleration_y": [
-        "5000",
-        "5000"
+        "10000",
+        "10000"
     ],
     "machine_max_jerk_e": [
         "3.5",
@@ -165,7 +165,7 @@
     ],
     "retraction_length": [
         "1",
-        "0.5"
+        "1"
     ],
     "retraction_minimum_travel": [
         "1",
@@ -175,7 +175,7 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ],
     "z_hop_types": [
         "Normal Lift"

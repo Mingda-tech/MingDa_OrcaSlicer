@@ -11,7 +11,7 @@
         "extra_loading_move": "0",
         "parking_pos_retraction": "0",
 	"printer_model": "MingDa 1000D",
-	"default_print_profile": "0.20mm Standard @MingDa 1000D",
+	"default_print_profile": "0.20mm Standard @MingDa 1000D(0.4 nozzle) Dual",
 	"nozzle_diameter": [
 		"0.4",
 		"0.4"
@@ -43,28 +43,28 @@
 		"3000"
     ],
 	"machine_max_acceleration_extruding": [
-		"5000",
-		"300"
+		"10000",
+		"10000"
 	],
 	"machine_max_acceleration_retracting": [
-		"3000",
-		"1500"
+		"5000",
+		"5000"
 	],
 	"machine_max_acceleration_travel": [
 		"15000",
 		"5000"
 	],
 	"machine_max_acceleration_x": [
-		"5000",
-		"5000"
+		"10000",
+		"10000"
 	],
 	"machine_max_acceleration_y": [
-		"5000",
-		"5000"
+		"10000",
+		"10000"
 	],
 	"machine_max_acceleration_z": [
-		"100",
-		"100"
+		"1000",
+		"1000"
 	],
 	"machine_max_speed_e": [
 		"120",
@@ -116,11 +116,13 @@
 	"change_filament_gcode": "M106 P1 S255 ;change filament gcode",
 	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
+		"MingDa PLA",
 		"MingDa PLA"
 	],
 	"toolchange_gcode": "; layer [layer_num] tool change",
 	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
 	"scan_first_layer": "0",
+	"enable_prime_tower": "1",
     "auxiliary_fan": "1",
     "before_layer_change_gcode": "",
     "extruder_clearance_height_to_lid": "1000",
@@ -154,14 +156,14 @@
     ],
     "retraction_length": [
         "0.8",
-        "0.5"
+        "0.8"
     ],
     "retraction_minimum_travel": [
         "1",
         "0.6"
     ],
     "retraction_speed": [
-        "30",
+        "40",
         "40"
     ],
     "wipe": [
@@ -171,6 +173,6 @@
         "2"
     ],
     "z_hop": [
-        "0.4"
+        "0"
     ]
 }

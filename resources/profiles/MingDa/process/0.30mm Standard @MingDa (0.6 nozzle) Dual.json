@@ -1,0 +1,18 @@
+{
+    "type": "process",
+	"setting_id": "GP009",
+    "from": "system",
+	"instantiation": "true",
+    "inherits": "0.30mm Standard @MingDa (0.6 nozzle)",
+    "is_custom_defined": "0",
+    "layer_height": "0.3",
+    "compatible_printers": [
+        "MingDa 400D 0.6 nozzle (Dual)",
+        "MingDa 600D 0.6 nozzle (Dual)",
+        "MingDa 1000D 0.6 nozzle (Dual)"
+	],
+    "enable_prime_tower": "1",
+    "name": "0.30mm Standard @MingDa (0.6 nozzle) Dual",
+    "print_settings_id": "0.30mm Standard @MingDa (0.6 nozzle) Dual",
+    "version": "2.0.0.0"
+}

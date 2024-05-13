@@ -585,7 +585,7 @@ bool GuideFrame::IsFirstUse()
 {
     if (!boost::filesystem::is_directory(from_dir)) return -1;
     // i assume to_dir.parent surely exists
-    if (!boost::filesystem::is_directory(to_dir)) boost::filesystem::create_directory(to_dir);
+    if (!boost::filesystem::is_directory(to_dir)) boost::filesystem::create_directories(to_dir);
     for (auto &dir_entry : boost::filesystem::directory_iterator(from_dir)) {
         if (!boost::filesystem::is_directory(dir_entry.path())) {
             std::string    em;

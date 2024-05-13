@@ -12,17 +12,15 @@
       "MingDa S1 (0.8 nozzle)",
       "MingDa S2 (0.8 nozzle)",
       "MingDa S3 (0.8 nozzle)",	
-      "MingDa 400D 0.8 nozzle (Dual)",
       "MingDa 400D 0.8 nozzle (Left)",
       "MingDa 400D 0.8 nozzle (Right)",				
-      "MingDa 600D 0.8 nozzle (Dual)",
       "MingDa 600D 0.8 nozzle (Left)",
       "MingDa 600D 0.8 nozzle (Right)",			
-      "MingDa 1000D 0.8 nozzle (Dual)",
       "MingDa 1000D 0.8 nozzle (Left)",
       "MingDa 1000D 0.8 nozzle (Right)"
 
 ],
+  "enable_prime_tower": "0",
     "version": "2.0.0.0"
   }
   
