@@ -11,7 +11,7 @@
         "extra_loading_move": "0",
         "parking_pos_retraction": "0",
 	"printer_model": "MingDa 400D",
-	"default_print_profile": "0.20mm Standard @MingDa 400D",
+	"default_print_profile": "0.10mm Fine @MingDa 400D Dual(0.4 nozzle)",
 	"nozzle_diameter": [
 		"0.4",
 		"0.4"
@@ -37,28 +37,28 @@
 		"3000"
     ],
 	"machine_max_acceleration_extruding": [
-		"5000",
-		"300"
+		"3000",
+		"3000"
 	],
 	"machine_max_acceleration_retracting": [
-		"3000",
-		"1500"
+		"5000",
+		"5000"
 	],
 	"machine_max_acceleration_travel": [
 		"15000",
 		"5000"
 	],
 	"machine_max_acceleration_x": [
-		"10000",
-		"10000"
+		"5000",
+		"5000"
 	],
 	"machine_max_acceleration_y": [
-		"10000",
-		"10000"
+		"5000",
+		"5000"
 	],
 	"machine_max_acceleration_z": [
-		"100",
-		"100"
+		"1000",
+		"1000"
 	],
 	"machine_max_speed_e": [
 		"120",
@@ -110,6 +110,7 @@
 	"change_filament_gcode": "M106 P1 S255 ;change filament gcode",
 	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
+		"MingDa PLA",
 		"MingDa PLA"
 	],
 	"toolchange_gcode": "; layer [layer_num] tool change",

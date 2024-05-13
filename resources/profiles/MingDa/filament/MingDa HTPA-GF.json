@@ -10,7 +10,7 @@
       "HTPA"
     ],
     "filament_max_volumetric_speed": [
-      "8"
+      "15"
     ],
     "fan_max_speed": [
       "30"
@@ -28,7 +28,7 @@
       "5"
     ],
     "full_fan_speed_layer": [
-      "2"
+      "0"
     ],
     "filament_vendor": [
         "MingDa3D"
@@ -83,17 +83,23 @@
   ],
   "is_custom_defined": "0",
   "nozzle_temperature": [
-      "280"
+      "300"
   ],
   "nozzle_temperature_initial_layer": [
       "300"
   ],
   "nozzle_temperature_range_high": [
-      "340"
+      "320"
   ],
   "nozzle_temperature_range_low": [
-      "280"
+      "260"
   ],
+  "hot_plate_temp": [
+    "75"
+],
+"hot_plate_temp_initial_layer": [
+    "75"
+],
   "pressure_advance": [
       "0.04"
   ],

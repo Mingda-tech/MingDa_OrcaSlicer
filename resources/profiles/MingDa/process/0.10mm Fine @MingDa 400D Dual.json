@@ -11,6 +11,8 @@
 	"compatible_printers": [
 		"MingDa 400D 0.4 nozzle (Dual)"
 	],
+	"support_filament": "2",
+	"support_interface_filament": "2",
 	"enable_prime_tower": "1"
 
 	

@@ -98,7 +98,7 @@
         "; filament end gcode \nM104 S200"
     ],
     "filament_max_volumetric_speed": [
-        "8"
+        "15"
     ],
     "filament_settings_id": [
         "MingDa S-Multi"
@@ -107,17 +107,17 @@
         "; filament start gcode\nM109 S[nozzle_temperature]"
     ],
     "hot_plate_temp": [
-        "70"
+        "75"
     ],
     "hot_plate_temp_initial_layer": [
-        "70"
+        "75"
     ],
     "is_custom_defined": "0",
     "nozzle_temperature": [
-        "280"
+        "285"
     ],
     "nozzle_temperature_initial_layer": [
-        "280"
+        "285"
     ],
     "nozzle_temperature_range_high": [
         "300"

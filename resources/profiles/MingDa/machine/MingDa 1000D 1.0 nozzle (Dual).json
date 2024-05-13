@@ -21,12 +21,12 @@
 		"0x0"
 	  ],
 	"machine_max_acceleration_x": [
-	  "5000",
-	  "5000"
+	  "10000",
+	  "10000"
 	],
 	"machine_max_acceleration_y": [
-	  "5000",
-	  "5000"
+	  "10000",
+	  "10000"
 	],
 	"machine_max_jerk_e": [
 	  "3",

@@ -5,9 +5,11 @@
 	"from": "system",
 	"inherits": "0.20mm Standard @MingDa 600D(0.4 nozzle)",
 	"instantiation": "true",
-	
+	"print_settings_id": "0.20mm Standard @MingDa 600D(0.4 nozzle) Dual",
 	"compatible_printers": [
 		"MingDa 600D 0.4 nozzle (Dual)"
 	],
+	"support_filament": "2",
+	"support_interface_filament": "2",
 	"enable_prime_tower": "1"
 }

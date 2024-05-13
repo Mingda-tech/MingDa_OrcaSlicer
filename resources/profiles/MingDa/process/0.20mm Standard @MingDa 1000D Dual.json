@@ -2,11 +2,14 @@
 	"type": "process",
 	"setting_id": "MD1000DP20",
 	"name": "0.20mm Standard @MingDa 1000D(0.4 nozzle) Dual",
+    "print_settings_id": "0.20mm Standard @MingDa 1000D(0.4 nozzle) Dual",
 	"from": "system",
 	"inherits": "0.20mm Standard @MingDa 1000D(0.4 nozzle)",
 	"instantiation": "true",
 	"compatible_printers": [
 		"MingDa 1000D 0.4 nozzle (Dual)"
 	],
+    "support_filament": "2",
+	"support_interface_filament": "2",
     "enable_prime_tower": "1"
 }
