@@ -3,8 +3,11 @@
     "default_acceleration": "5000",
     "default_jerk": "9",
     "enable_prime_tower": "0",
+    "type": "process",
+	"setting_id": "GP009",
     "exclude_object": "1",
-    "from": "User",
+    "from": "system",
+    "instantiation": "true",
     "compatible_printers": [
 		"MingDa S1 (1.0 nozzle)",
         "MingDa S2 (1.0 nozzle)",
