@@ -1,7 +1,7 @@
 {
     "type": "process",
     "setting_id": "Magicianx220",
-    "name": "0.15mm Standard @Magician X2 (0.4 nozzle)",
+    "name": "0.15mm Optimal @Magician X2 (0.4 nozzle)",
     "from": "system",
     "inherits": "fdm_process_MingDa_common",
     "instantiation": "true",
@@ -230,7 +230,7 @@
     "overhang_4_4_speed": "10",
     "small_perimeter_threshold": "0",
     "sparse_infill_speed": "180",
-    "support_line_width": "0.38",
+    "support_line_width": "0.42",
     "top_shell_layers": "4",
     "top_shell_thickness": "0.8",
     "top_surface_acceleration": "2500",

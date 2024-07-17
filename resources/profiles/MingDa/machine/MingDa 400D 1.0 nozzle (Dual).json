@@ -6,7 +6,7 @@
 	"instantiation": "true",
 	"inherits": "MingDa 400D 0.4 nozzle (Dual)",
 	"is_custom_defined": "0",
-	"default_print_profile": "0.50mm Shandard @Mingda  (1.0 nozzle) Dual",
+	"default_print_profile": "0.50mm Shandard @Mingda (1.0 nozzle) Dual",
 	"printer_model": "MingDa 400D",
 	"default_filament_profile": [
 	  "MingDa PLA"

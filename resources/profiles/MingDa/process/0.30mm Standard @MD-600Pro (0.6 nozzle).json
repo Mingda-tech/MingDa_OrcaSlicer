@@ -1,0 +1,16 @@
+{
+    "type": "process",
+	"setting_id": "GP009",
+    "from": "system",
+	"instantiation": "true",
+    "inherits": "0.24mm Optimal @MD-600Pro (0.6 nozzle)",
+    "is_custom_defined": "0",
+    "layer_height": "0.3",
+    "compatible_printers": [
+		"MD-600Pro (0.6 nozzle)"
+	],
+    "enable_prime_tower": "0",
+    "name": "0.30mm Standard @MD-600Pro (0.6 nozzle)",
+    "print_settings_id": "0.30mm Standard @MD-600Pro (0.6 nozzle)",
+    "version": "2.0.0.0"
+}

@@ -26,6 +26,9 @@
     ],
     "compatible_printers": [
         "Magician X2 (0.4 nozzle)",
+        "Magician X2 (0.6 nozzle)",
+        "Magician X2 (0.8 nozzle)",
+        "Magician X2 (1.0 nozzle)",
         "MingDa S2 (0.4 nozzle)",
         "MingDa S2 (0.6 nozzle)",
         "MingDa S2 (0.8 nozzle)",
@@ -73,6 +76,26 @@
         "MingDa 1000D 0.8 nozzle (Right)",		
         "MingDa 1000D 1.0 nozzle (Dual)",
         "MingDa 1000D 1.0 nozzle (Left)",
+        "MD-400D Marlin 0.4 nozzle (Dual)",
+        "MD-400D Marlin 0.4 nozzle (Left)",
+        "MD-400D Marlin 0.4 nozzle (Right)",
+        "MD-400D Marlin 0.6 nozzle (Dual)",
+        "MD-400D Marlin 0.6 nozzle (Left)",
+        "MD-400D Marlin 0.6 nozzle (Right)",		
+        "MD-400D Marlin 0.8 nozzle (Dual)",
+        "MD-400D Marlin 0.8 nozzle (Left)",
+        "MD-400D Marlin 0.8 nozzle (Right)",		
+        "MD-400D Marlin 1.0 nozzle (Dual)",
+        "MD-400D Marlin 1.0 nozzle (Left)",
+        "MD-400D Marlin 1.0 nozzle (Right)", 
+          "MD-600Pro (0.4 nozzle)",
+          "MD-600Pro (0.6 nozzle)",
+          "MD-600Pro (0.8 nozzle)",
+          "MD-600Pro (1.0 nozzle)",
+          "MD-1000Pro (0.4 nozzle)",
+          "MD-1000Pro (0.6 nozzle)",
+          "MD-1000Pro (0.8 nozzle)",
+          "MD-1000Pro (1.0 nozzle)",        
         "MingDa 1000D 1.0 nozzle (Right)"		
     ],
     "compatible_printers_condition": "",
@@ -268,7 +291,7 @@
         "; filament end gcode \nM104 S140"
     ],
     "filament_flow_ratio": [
-        "0.9875"
+        "0.94"
     ],
     "filament_max_volumetric_speed": [
         "15"
@@ -280,7 +303,7 @@
         "; filament start gcode\nM109 S[nozzle_temperature]"
     ],
     "hot_plate_temp": [
-        "70"
+        "80"
     ],
     "hot_plate_temp_initial_layer": [
         "70"

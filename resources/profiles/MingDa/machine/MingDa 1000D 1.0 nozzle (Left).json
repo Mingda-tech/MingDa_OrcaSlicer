@@ -7,7 +7,7 @@
 	"inherits": "MingDa 1000D 1.0 nozzle (Dual)",
 	"is_custom_defined": "0",
 	"printer_variant": "1.0",
-	"default_print_profile": "0.50mm Shandard @Mingda  (1.0 nozzle)",
+	"default_print_profile": "0.50mm Shandard @Mingda (1.0 nozzle)",
 	"printer_model": "MingDa 1000D",
 	"default_filament_profile": [
 	  "MingDa PLA"

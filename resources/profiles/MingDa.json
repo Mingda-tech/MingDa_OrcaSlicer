@@ -29,6 +29,18 @@
             "sub_path": "machine/MingDa 1000D.json"
         },
 		{
+            "name": "MD-400D Marlin",
+            "sub_path": "machine/MD-400D Marlin.json"
+		},
+        {
+            "name": "MD-600Pro",
+            "sub_path": "machine/MD-600Pro.json"
+        },
+		{
+            "name": "MD-1000Pro",
+            "sub_path": "machine/MD-1000Pro.json"
+		},
+		{
             "name": "Magician X2",
             "sub_path": "machine/Magician X2.json"
 		}   
@@ -77,6 +89,246 @@
         {
             "name": "0.24mm Draft @Magician X2 (0.4 nozzle)",
             "sub_path": "process/0.24mm Draft @Magician X2 (0.4 nozzle).json"
+        },
+        {
+            "name": "0.18mm Fine @Magician X2 (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @Magician X2 (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Optimal @Magician X2 (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @Magician X2 (0.6 nozzle).json"
+        },
+        {
+            "name": "0.30mm Standard @Magician X2 (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @Magician X2 (0.6 nozzle).json"
+        },
+        {
+            "name": "0.36mm Draft @Magician X2 (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @Magician X2 (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Fine @Magician X2 (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @Magician X2 (0.8 nozzle).json"
+        },
+        {
+            "name": "0.32mm Optimal @Magician X2 (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @Magician X2 (0.8 nozzle).json"
+        },
+        {
+            "name": "0.40mm Standard @Magician X2 (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @Magician X2 (0.8 nozzle).json"
+        },
+        {
+            "name": "0.48mm Draft @Magician X2 (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @Magician X2 (0.8 nozzle).json"
+        },
+        {
+            "name": "0.30mm Fine @Magician X2 (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @Magician X2 (1.0 nozzle).json"
+        },
+        {
+            "name": "0.50mm Optimal @Magician X2 (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @Magician X2 (1.0 nozzle).json"
+        },
+        {
+            "name": "0.60mm Standard @Magician X2 (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @Magician X2 (1.0 nozzle).json"
+        },
+        {
+            "name": "0.80mm Extra Draft @Magician X2 (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @Magician X2 (1.0 nozzle).json"
+        },        
+        {
+            "name": "0.12mm Fine @MD-400D Marlin (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MD-400D Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.15mm Optimal @MD-400D Marlin (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MD-400D Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.20mm Standard @MD-400D Marlin (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MD-400D Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.24mm Draft @MD-400D Marlin (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MD-400D Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.18mm Fine @MD-400D Marlin (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MD-400D Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Optimal @MD-400D Marlin (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MD-400D Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.30mm Standard @MD-400D Marlin (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MD-400D Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.36mm Draft @MD-400D Marlin (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MD-400D Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Fine @MD-400D Marlin (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MD-400D Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.32mm Optimal @MD-400D Marlin (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MD-400D Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.40mm Standard @MD-400D Marlin (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MD-400D Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.48mm Draft @MD-400D Marlin (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MD-400D Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.30mm Fine @MD-400D Marlin (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MD-400D Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.50mm Optimal @MD-400D Marlin (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MD-400D Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.60mm Standard @MD-400D Marlin (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MD-400D Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.80mm Extra Draft @MD-400D Marlin (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MD-400D Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.12mm Fine @MD-600Pro (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MD-600Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.15mm Optimal @MD-600Pro (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MD-600Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.20mm Standard @MD-600Pro (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MD-600Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.24mm Draft @MD-600Pro (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MD-600Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.18mm Fine @MD-600Pro (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MD-600Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Optimal @MD-600Pro (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MD-600Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.30mm Standard @MD-600Pro (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MD-600Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.36mm Draft @MD-600Pro (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MD-600Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Fine @MD-600Pro (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MD-600Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.32mm Optimal @MD-600Pro (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MD-600Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.40mm Standard @MD-600Pro (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MD-600Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.48mm Draft @MD-600Pro (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MD-600Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.30mm Fine @MD-600Pro (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MD-600Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.50mm Optimal @MD-600Pro (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MD-600Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.60mm Standard @MD-600Pro (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MD-600Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.80mm Extra Draft @MD-600Pro (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MD-600Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.12mm Fine @MD-1000Pro (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MD-1000Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.15mm Optimal @MD-1000Pro (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MD-1000Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.20mm Standard @MD-1000Pro (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MD-1000Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.24mm Draft @MD-1000Pro (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MD-1000Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "0.18mm Fine @MD-1000Pro (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MD-1000Pro (0.6 nozzle).json"
+        },       
+        {
+            "name": "0.24mm Optimal @MD-1000Pro (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MD-1000Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.30mm Standard @MD-1000Pro (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MD-1000Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.36mm Draft @MD-1000Pro (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MD-1000Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Fine @MD-1000Pro (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MD-1000Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.32mm Optimal @MD-1000Pro (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MD-1000Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MD-1000Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.48mm Draft @MD-1000Pro (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MD-1000Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "0.30mm Fine @MD-1000Pro (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MD-1000Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.50mm Optimal @MD-1000Pro (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MD-1000Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.60mm Standard @MD-1000Pro (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MD-1000Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "0.80mm Extra Draft @MD-1000Pro (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MD-1000Pro (1.0 nozzle).json"
         },
 		{
             "name": "0.12mm Fine @MingDa S1 (0.4 nozzle)",
@@ -195,24 +447,24 @@
             "sub_path": "process/0.48mm Draft @Mingda (0.8 nozzle).json"
         },
         {
-            "name": "0.30mm Fine @Mingda  (1.0 nozzle)",
-            "sub_path": "process/0.30mm Fine @Mingda  (1.0 nozzle).json"
+            "name": "0.30mm Fine @Mingda (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @Mingda (1.0 nozzle).json"
         },
         {
-            "name": "0.50mm Shandard @Mingda  (1.0 nozzle)",
-            "sub_path": "process/0.50mm Shandard @Mingda  (1.0 nozzle).json"
+            "name": "0.50mm Optimal @Mingda (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @Mingda (1.0 nozzle).json"
         },
         {
-            "name": "0.50mm Shandard @Mingda  (1.0 nozzle) Dual",
-            "sub_path": "process/0.50mm Shandard @Mingda  (1.0 nozzle) Dual.json"
+            "name": "0.50mm Optimal @Mingda (1.0 nozzle) Dual",
+            "sub_path": "process/0.50mm Optimal @Mingda (1.0 nozzle) Dual.json"
         },
         {
-            "name": "0.60mm Standard @Mingda  (1.0 nozzle)",
-            "sub_path": "process/0.60mm Standard @Mingda  (1.0 nozzle).json"
+            "name": "0.60mm Standard @Mingda (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @Mingda (1.0 nozzle).json"
         },
         {
-            "name": "0.80mm Extra Draft @Mingda  (1.0 nozzle)",
-            "sub_path": "process/0.80mm Extra Draft @Mingda  (1.0 nozzle).json"
+            "name": "0.80mm Extra Draft @Mingda (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @Mingda (1.0 nozzle).json"
         }
     ],
     "filament_list": [
@@ -374,13 +626,105 @@
             "name": "fdm_klipper_common",
             "sub_path": "machine/fdm_klipper_common.json"
         },
+        {
+            "name": "Magician X2 (0.4 nozzle)",
+            "sub_path": "machine/Magician X2 (0.4 nozzle).json"
+        },
+        {
+            "name": "Magician X2 (0.6 nozzle)",
+            "sub_path": "machine/Magician X2 (0.6 nozzle).json"
+        },
+        {
+            "name": "Magician X2 (0.8 nozzle)",
+            "sub_path": "machine/Magician X2 (0.8 nozzle).json"
+        },
+        {
+            "name": "Magician X2 (1.0 nozzle)",
+            "sub_path": "machine/Magician X2 (1.0 nozzle).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.4 nozzle (dual)",
+            "sub_path": "machine/MD-400D Marlin 0.4 nozzle (dual).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.6 nozzle (dual)",
+            "sub_path": "machine/MD-400D Marlin 0.6 nozzle (dual).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.8 nozzle (dual)",
+            "sub_path": "machine/MD-400D Marlin 0.8 nozzle (dual).json"
+        },
+        {
+            "name": "MD-400D Marlin 1.0 nozzle (dual)",
+            "sub_path": "machine/MD-400D Marlin 1.0 nozzle (dual).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.4 nozzle (Left)",
+            "sub_path": "machine/MD-400D Marlin 0.4 nozzle (Left).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.6 nozzle (Left)",
+            "sub_path": "machine/MD-400D Marlin 0.6 nozzle (Left).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.8 nozzle (Left)",
+            "sub_path": "machine/MD-400D Marlin 0.8 nozzle (Left).json"
+        },
+        {
+            "name": "MD-400D Marlin 1.0 nozzle (Left)",
+            "sub_path": "machine/MD-400D Marlin 1.0 nozzle (Left).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.4 nozzle (right)",
+            "sub_path": "machine/MD-400D Marlin 0.4 nozzle (right).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.6 nozzle (right)",
+            "sub_path": "machine/MD-400D Marlin 0.6 nozzle (right).json"
+        },
+        {
+            "name": "MD-400D Marlin 0.8 nozzle (right)",
+            "sub_path": "machine/MD-400D Marlin 0.8 nozzle (right).json"
+        },
+        {
+            "name": "MD-400D Marlin 1.0 nozzle (right)",
+            "sub_path": "machine/MD-400D Marlin 1.0 nozzle (right).json"
+        },
+        {
+            "name": "MD-600Pro (0.4 nozzle)",
+            "sub_path": "machine/MD-600Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "MD-600Pro (0.6 nozzle)",
+            "sub_path": "machine/MD-600Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "MD-600Pro (0.8 nozzle)",
+            "sub_path": "machine/MD-600Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "MD-600Pro (1.0 nozzle)",
+            "sub_path": "machine/MD-600Pro (1.0 nozzle).json"
+        },
+        {
+            "name": "MD-1000Pro (0.4 nozzle)",
+            "sub_path": "machine/MD-1000Pro (0.4 nozzle).json"
+        },
+        {
+            "name": "MD-1000Pro (0.6 nozzle)",
+            "sub_path": "machine/MD-1000Pro (0.6 nozzle).json"
+        },
+        {
+            "name": "MD-1000Pro (0.8 nozzle)",
+            "sub_path": "machine/MD-1000Pro (0.8 nozzle).json"
+        },
+        {
+            "name": "MD-1000Pro (1.0 nozzle)",
+            "sub_path": "machine/MD-1000Pro (1.0 nozzle).json"
+        },
 		{
             "name": "MingDa S2 (0.4 nozzle)",
             "sub_path": "machine/MingDa S2 (0.4 nozzle).json"
-        },
-		{
-            "name": "Magician X2 (0.4 nozzle)",
-            "sub_path": "machine/Magician X2 (0.4 nozzle).json"
         },
         {
             "name": "MingDa S2 (0.6 nozzle)",
