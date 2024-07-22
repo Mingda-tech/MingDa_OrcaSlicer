@@ -1606,7 +1606,8 @@ void PresetBundle::update_selections(AppConfig &config)
     // Load it even if the current printer technology is SLA.
     // The possibly excessive filament names will be later removed with this->update_multi_material_filament_presets()
     // once the FFF technology gets selected.
-    this->filament_presets = { filaments.get_selected_preset_name() };
+    //TODO:ylg 默认只有一个材料，我们改为默认2个，这里还需要改成读取配置文件材料颜色才对。暂时先这样了
+    this->filament_presets = {filaments.get_selected_preset_name()};
     for (unsigned int i = 1; i < 1000; ++ i) {
         char name[64];
         sprintf(name, "filament_%02u", i);
@@ -1617,6 +1618,7 @@ void PresetBundle::update_selections(AppConfig &config)
     }
     std::vector<std::string> filament_colors;
     auto f_colors = config.get_printer_setting(initial_printer_profile_name, "filament_colors");
+
     if (!f_colors.empty()) {
         boost::algorithm::split(filament_colors, f_colors, boost::algorithm::is_any_of(","));
     }

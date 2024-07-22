@@ -3890,6 +3890,7 @@ void TabPrinter::extruders_count_changed(size_t extruders_count)
      */
     build_unregular_pages();
 
+    //TODO:ylg 我妈需要每次都刷新有多少个喷头就有多少个材料（逻辑漏洞他们及想要分离材料和喷头但是工作没有完全做完所以有时需要强制刷新）
     if (is_count_changed) {
         on_value_change("extruders_count", extruders_count);
         // BBS
@@ -4272,6 +4273,7 @@ void TabPrinter::on_preset_loaded()
     // update the extruders count field
     auto   *nozzle_diameter = dynamic_cast<const ConfigOptionFloats*>(m_config->option("nozzle_diameter"));
     size_t extruders_count = nozzle_diameter->values.size();
+    m_extruders_count =1;
     // update the GUI field according to the number of nozzle diameters supplied
     extruders_count_changed(extruders_count);
 #endif
@@ -4946,9 +4948,12 @@ bool Tab::select_preset(std::string preset_name, bool delete_current /*=false*/,
           wxColour    new_col   = Plater::get_next_color_for_filament();
           std::string new_color = new_col.GetAsString(wxC2S_HTML_SYNTAX).ToStdString();
           auto*       nozzle_diameter = dynamic_cast<const ConfigOptionFloats*>(m_config->option("nozzle_diameter"));
+          auto*       filament_colour = dynamic_cast<const ConfigOptionStrings*>(m_config->option("extruder_colour"));
           size_t      extruders_count = nozzle_diameter->values.size();
           m_preset_bundle->set_num_filaments(extruders_count, new_color);
+          
           m_preset_bundle->update_selections(*wxGetApp().app_config);
+          wxGetApp().plater()->on_filaments_change(extruders_count);
           wxGetApp().plater()->sidebar().on_filaments_change(extruders_count);
         }
         load_current_preset();
