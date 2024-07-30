@@ -12146,11 +12146,16 @@ void Plater::on_config_change(const DynamicPrintConfig &config)
         if (opt_key == "filament_colour") {
             update_scheduled = true; // update should be scheduled (for update 3DScene) #2738
 
+            ///!TODO:ylg 这里更新一下喷头材料的数量
+            DynamicPrintConfig&  project_config = wxGetApp().preset_bundle->project_config;
+            ConfigOptionStrings* color_opt      = project_config.option<ConfigOptionStrings>("filament_colour");
+            auto                 values         = p->config->option<ConfigOptionStrings>("filament_colour")->values;
             if (update_filament_colors_in_full_config()) {
                 p->sidebar->obj_list()->update_filament_colors();
                 dynamic_filament_list.update();
                 continue;
             }
+            //this->on_filaments_change(full_config.option<ConfigOptionStrings>("filament_colour")->values.size());
         }
         if (opt_key == "material_colour") {
             update_scheduled = true; // update should be scheduled (for update 3DScene)

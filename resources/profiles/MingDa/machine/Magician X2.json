@@ -2,11 +2,11 @@
     "type": "machine_model",
     "name": "Magician X2",
     "model_id": "MgMagicianX2",
-    "nozzle_diameter": "0.4",
+    "nozzle_diameter": "0.4;0.6;0.8;1.0",
     "machine_tech": "FFF",
-    "family": "MingDa",
+    "family": "MINGDA",
     "bed_model": "230x230_buildplate_model.stl",
-    "bed_texture": "mingda_logo.png",
+    "bed_texture": "MINGDA_logo.png",
     "hotend_model": "",
-    "default_materials": "MingDa PLA;MingDa PETG;MingDa PLA Silk;MingDa TPU-95A;MingDa TPU-75D;"
+    "default_materials": "MINGDA PLA;MINGDA PETG;MINGDA PLA Silk;MINGDA TPU-95A;MINGDA TPU-95A-HF;MINGDA TPU-75D;"
 }

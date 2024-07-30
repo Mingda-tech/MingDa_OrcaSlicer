@@ -31,7 +31,7 @@
     "cooling_tube_length": "5",
     "cooling_tube_retraction": "91.5",
     "default_filament_profile": [
-        "MingDa PLA"
+        "MINGDA PLA"
     ],
     "deretraction_speed": [
         "40"
@@ -70,7 +70,6 @@
     "nozzle_hrc": "0",
     "nozzle_volume": "0",
     "parking_pos_retraction": "92",
-    "print_host": "192.168.0.1",
     "print_host_webui": "",
     "printer_notes": "",
     "printer_structure": "undefine",
@@ -108,12 +107,8 @@
     "retract_when_changing_layer": [
         "1"
     ],
-    "retraction_speed": [
-        "40"
-    ],
     "scan_first_layer": "0",
     "silent_mode": "0",
-    "single_extruder_multi_material": "1",
     "support_air_filtration": "1",
     "support_chamber_temp_control": "1",
     "template_custom_gcode": "",
@@ -139,7 +134,6 @@
         "Normal Lift"
     ],
     "z_offset": "0",
-      "auxiliary_fan": "0",
   "single_nozzle_with_multiple_fans":"0",
     "extruder_clearance_height_to_lid": "34",
     "extruder_clearance_height_to_rod": "47",
@@ -205,8 +199,15 @@
         "0.36"
     ],
     "retraction_length": [
-        "1.2"
+        "1.5",
+        "1"
     ],
+    "retraction_speed": [
+        "60",
+        "40"
+    ],
+    "auxiliary_fan": "0",
+    "single_extruder_multi_material": "0",
     "retraction_minimum_travel": [
         "2"
     ]

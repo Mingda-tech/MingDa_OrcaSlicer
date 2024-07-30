@@ -56,7 +56,7 @@ static constexpr double EPSILON = 1e-4;
 // 0..4294mm with 1nm resolution
 // int32_t fits an interval of (-2147.48mm, +2147.48mm)
 // with int64_t we don't have to worry anymore about the size of the int.
-static constexpr double SCALING_FACTOR = 0.000001;
+static constexpr double SCALING_FACTOR = 0.00001; //TODO:ylg 原来的取值0.000001
 // for creating circles (for brim_ear)
 #define POLY_SIDES 24
 static constexpr double PI = 3.141592653589793238;

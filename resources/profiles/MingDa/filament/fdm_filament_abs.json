@@ -77,6 +77,6 @@
         "250"
     ],
     "filament_start_gcode": [
-        "; filament start gcode\n"
+        "; Filament gcode\nM109 S[nozzle_temperature]"
     ]
 }

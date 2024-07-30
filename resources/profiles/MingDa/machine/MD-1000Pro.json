@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "MD-1000Pro",
+    "model_id": "MINGDA-1000D",
+    "nozzle_diameter": "0.4;0.6;0.8;1.0",
+    "machine_tech": "FFF",
+    "family": "MINGDA",
+    "bed_model": "MINGDA_1000D_buildplate_model.stl",
+    "bed_texture": "MINGDA_1000Pro_buildplate_texture.png",
+    "hotend_model": "",
+	"default_materials": "MINGDA PETG-CF;MINGDA PETG-HF;MINGDA PETG;MINGDA PLA;MINGDA PLA-CF;MINGDA PLA-HF;MINGDA PA12-CF;MINGDA TPU-;MINGDA TPU-95A-;MINGDA TPU-95A-HF;MINGDA TPU-75D;MINGDA ABS+;MINGDA ABS-HF;MINGDA ABS-CF20;MINGDA ABS-GF25;MINGDA PET-CF;MINGDA PET-GF;MINGDA S-HtPA;MINGDA S-Multi;MINGDA PET-GF;MINGDA PET-CF;MINGDA PET-GF25;MINGDA PET-CF25;"
+}

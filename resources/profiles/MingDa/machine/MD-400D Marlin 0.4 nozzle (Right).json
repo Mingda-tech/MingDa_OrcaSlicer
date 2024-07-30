@@ -1,0 +1,177 @@
+{
+	"type": "machine",
+	"setting_id": "MD400D1",
+	"name": "MD-400D Marlin 0.4 nozzle (Right)",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "fdm_machine_common",
+	"printer_model": "MD-400D Marlin",
+	"default_print_profile": "0.20mm Standard @MD-400D Marlin (0.4 nozzle)",
+	"gcode_flavor": "marlin2",
+	"nozzle_diameter": [
+		"0.4"
+	],
+    "extruder_colour": [
+        "#FCE94F",
+		"#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0",
+		"0x0"
+    ],
+	"printable_area": [
+		"0x0",
+		"400x0",
+		"400x400",
+		"0x400"
+	],
+	"printable_height": "400",
+	"nozzle_type": "hardened_steel",
+    "machine_max_acceleration_e": [
+        "3000",
+		"3000"
+    ],
+	"machine_max_acceleration_extruding": [
+		"3000",
+		"3000"
+	],
+	"machine_max_acceleration_travel": [
+		"15000",
+		"5000"
+	],
+	"machine_max_acceleration_z": [
+		"1000",
+		"1000"
+	],
+	"machine_max_speed_e": [
+		"120",
+		"120"
+	],
+	"machine_max_speed_x": [
+		"500",
+		"200"
+	],
+	"machine_max_speed_y": [
+		"500",
+		"200"
+	],
+	"machine_max_speed_z": [
+		"12",
+		"12"
+	],
+	"max_layer_height": [
+		"0.4",
+		"0.4"
+	],
+	"min_layer_height": [
+		"0.1",
+		"0.1"
+	],
+	"printer_settings_id": "MINGDA",
+	"retract_before_wipe": [
+		"0%",
+		"0%"
+	],
+	"retract_length_toolchange": [
+		"2",
+		"2"
+	],
+    "retract_when_changing_layer": [
+        "1",
+		"1"
+    ],
+    "retract_restart_extra": [
+        "0",
+		"0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0",
+		"0"
+    ],
+	"deretraction_speed": [
+		"0",
+		"0"
+	],
+    "wipe": [
+        "1",
+		"1"
+    ],
+	"enable_prime_tower": "0",
+	"ams_extruders_count": ["1","1"],
+	"change_filament_gcode": "",
+	"machine_pause_gcode": "; pause print\n",
+	"default_filament_profile": [
+		"MINGDA PLA"
+	],
+	"toolchange_gcode": "; layer [layer_num] tool change",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nG92 E0",
+	"scan_first_layer": "0",
+    "before_layer_change_gcode": "",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "extruder_clearance_height_to_lid": "90",
+    "extruder_clearance_height_to_rod": "36",
+    "extruder_clearance_radius": "68",
+    "is_custom_defined": "0",
+	"machine_start_gcode": "G28 ; home all axes \nM420 S1;\nM117 ; Purge extruder\nG92 E0 ; reset extruder\nG1 Z1.0 F1200 ; move z up little to prevent scratching of surface\nG1 E2 F200;\nG92 E0 \nG1 X54 Y20 Z0.3 F3000\nG1 X4 Y20 Z0.3 F500.0 E5 \nG1 X4 Y70.0 Z0.3 F500.0 E10 \nG1 X4 Y70.0 Z0.4 F3000.0 \nG1 X4 Y20 Z0.4 F500.0 E15 \nG1 X54 Y20 Z0.4 F500.0 E20\nG92 E0\nG1 Z5 E15 F200\nG92 E0\nG1 Z10 F1500 \nG4 S2\nG1 Z15 F1500",
+    "machine_end_gcode": "G91; relative positioning\nG1 Z1.0 F3000 ; move z up little to prevent scratching of print\nG90; absolute positioning\nG28 X F1000 ; prepare for part removal\nM104 S0; turn off extruder\nM140 S0 ; turn off bed\nM84 ; disable motors\nM106 S0 ; turn off fan",
+    "machine_max_acceleration_retracting": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_acceleration_x": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_acceleration_y": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_jerk_e": [
+        "3.5",
+        "5"
+    ],
+    "machine_max_jerk_x": [
+        "9",
+        "5"
+    ],
+    "machine_max_jerk_y": [
+        "9",
+        "5"
+    ],
+    "machine_max_jerk_z": [
+        "3",
+        "0.4"
+    ],
+    "nozzle_volume": "251",
+    "parking_pos_retraction": "0",
+    "print_host": "",
+    "retract_lift_below": [
+        "400"
+    ],
+    "retraction_minimum_travel": [
+        "1",
+        "0.6"
+    ],
+    "wipe_distance": [
+        "2"
+    ],
+    "z_hop": [
+        "0"
+    ],
+	"retraction_length": [
+        "1.5",
+        "1"
+    ],
+    "retraction_speed": [
+        "60",
+        "40"
+    ],
+	"auxiliary_fan": "0",
+    "single_extruder_multi_material": "0",
+    "z_hop_types": [
+        "Normal Lift"
+    ]
+}

@@ -1557,6 +1557,7 @@ int GuideFrame::LoadProfileFamily(std::string strVendor, std::string strFilePath
             json OneProcess = pProcess.at(n);
 
             std::string s2 = OneProcess["sub_path"];
+            
             // wxString ModelFilePath = wxString::Format("%s\\%s\\%s", strFolder, strVendor, s2);
             boost::filesystem::path sub_path = boost::filesystem::absolute(vendor_dir / s2).make_preferred();
             std::string             sub_file = sub_path.string();
@@ -1565,8 +1566,10 @@ int GuideFrame::LoadProfileFamily(std::string strVendor, std::string strFilePath
 
             std::string bInstall = pm["instantiation"];
             if (bInstall == "true") { m_ProfileJson["process"].push_back(OneProcess); }
-        }
 
+            BOOST_LOG_TRIVIAL(debug) << __FUNCTION__ << ":" << n << ": sub_path: " << s2;
+        }
+        BOOST_LOG_TRIVIAL(info) << boost::format("processes end");
     } catch (nlohmann::detail::parse_error &err) {
         BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << ": parse " << strFilePath << " got a nlohmann::detail::parse_error, reason = " << err.what();
         return -1;

@@ -460,10 +460,10 @@ void PartPlate::calc_gridlines(const ExPolygon& poly, const BoundingBox& pp_bbox
 
 	Polylines axes_lines, axes_lines_bolder;
 	int count = 0;
-	for (coord_t x = pp_bbox.min(0); x <= pp_bbox.max(0); x += scale_(10.0)) {
+	for (int64_t x = pp_bbox.min(0); x <= pp_bbox.max(0); x += scale_(10.0)) {
 		Polyline line;
-		line.append(Point(x, pp_bbox.min(1)));
-		line.append(Point(x, pp_bbox.max(1)));
+        line.append(Point((coord_t) x, pp_bbox.min(1)));
+        line.append(Point((coord_t) x, pp_bbox.max(1)));
 
 		if ( (count % 5) == 0 )
 			axes_lines_bolder.push_back(line);
@@ -472,10 +472,10 @@ void PartPlate::calc_gridlines(const ExPolygon& poly, const BoundingBox& pp_bbox
 		count ++;
 	}
 	count = 0;
-	for (coord_t y = pp_bbox.min(1); y <= pp_bbox.max(1); y += scale_(10.0)) {
+    for (int64_t y = pp_bbox.min(1); y <= pp_bbox.max(1); y += scale_(10.0)) {
 		Polyline line;
-		line.append(Point(pp_bbox.min(0), y));
-		line.append(Point(pp_bbox.max(0), y));
+        line.append(Point(pp_bbox.min(0), (coord_t) y));
+        line.append(Point(pp_bbox.max(0), (coord_t) y));
 		axes_lines.push_back(line);
 
 		if ( (count % 5) == 0 )

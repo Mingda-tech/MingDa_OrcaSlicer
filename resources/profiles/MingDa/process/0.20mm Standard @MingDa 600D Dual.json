@@ -1,13 +1,13 @@
 {
 	"type": "process",
 	"setting_id": "MD600DP20",
-	"name": "0.20mm Standard @MingDa 600D(0.4 nozzle) Dual",
+	"name": "0.20mm Standard @MINGDA 600D(0.4 nozzle) Dual",
 	"from": "system",
-	"inherits": "0.20mm Standard @MingDa 600D(0.4 nozzle)",
+	"inherits": "0.20mm Standard @MINGDA 600D(0.4 nozzle)",
 	"instantiation": "true",
-	"print_settings_id": "0.20mm Standard @MingDa 600D(0.4 nozzle) Dual",
+	"print_settings_id": "0.20mm Standard @MINGDA 600D(0.4 nozzle) Dual",
 	"compatible_printers": [
-		"MingDa 600D 0.4 nozzle (Dual)"
+		"MINGDA 600D 0.4 nozzle (Dual)"
 	],
 	"support_filament": "2",
 	"support_interface_filament": "2",

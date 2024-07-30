@@ -1,22 +1,22 @@
 {
 	"type": "machine",
 	"setting_id": "MD400D23",
-	"name": "MingDa 400D 0.6 nozzle (Left)",
+	"name": "MINGDA 400D 0.6 nozzle (Left)",
 	"from": "system",
 	"instantiation": "true",
-	"inherits": "MingDa 400D 0.6 nozzle (Dual)",
+	"inherits": "MINGDA 400D 0.6 nozzle (Dual)",
 	"is_custom_defined": "0",
 	"printer_variant": "0.6",
-	"default_print_profile": "0.30mm Standard @MingDa (0.6 nozzle)",
-	"printer_model": "MingDa 400D",
+	"default_print_profile": "0.30mm Standard @MINGDA (0.6 nozzle)",
+	"printer_model": "MINGDA 400D",
 	"default_filament_profile": [
-	  "MingDa PLA"
+	  "MINGDA PLA"
 	],
 	"nozzle_diameter": [
 		"0.6"
 	  ],
-	"machine_start_gcode": "START_PRINT EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature]",
-    "machine_end_gcode": "END_PRINT",
+	  "machine_start_gcode": "START_PRINT EXTRUDER={nozzle_temperature_initial_layer[0]} BED=[first_layer_bed_temperature]  MESH_MIN={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} MESH_MAX={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} MESH_ALGO=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]}",
+	  "machine_end_gcode": "END_PRINT",
 	"version": "2.0.0.0"
   }
   

@@ -3,12 +3,12 @@
     "setting_id": "MD003",
     "from": "system",
     "instantiation": "true",
-    "inherits": "MingDa S2 (0.4 nozzle)",
-    "printer_model": "MingDa S2",
-    "default_print_profile": "0.50mm Shandard @Mingda  (1.0 nozzle)",
+    "inherits": "MINGDA S2 (0.4 nozzle)",
+    "printer_model": "MINGDA S2",
+    "default_print_profile": "0.50mm Shandard @MINGDA (1.0 nozzle)",
     "is_custom_defined": "0",
     "default_filament_profile": [
-        "MingDa PLA"
+        "MINGDA PLA"
     ],
     "machine_max_acceleration_e": [
         "5000",
@@ -72,12 +72,12 @@
     "min_layer_height": [
         "0.25"
     ],
-    "name": "MingDa S2 (1.0 nozzle)",
+    "name": "MINGDA S2 (1.0 nozzle)",
     "nozzle_diameter": [
         "1.0"
     ],
     "printer_variant": "1.0",
-    "printer_settings_id": "MingDa S2 (1.0 nozzle)",
+    "printer_settings_id": "MINGDA S2 (1.0 nozzle)",
     "retraction_speed": [
         "30"
     ],

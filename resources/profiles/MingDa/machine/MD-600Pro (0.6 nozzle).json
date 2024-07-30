@@ -1,0 +1,23 @@
+{
+	"type": "machine",
+	"setting_id": "MD600D3",
+	"name": "MD-600Pro (0.6 nozzle)",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "MD-600Pro (0.4 nozzle)",
+	"is_custom_defined": "0",
+	"printer_variant": "0.6",
+	"default_print_profile": "0.30mm Standard @MD-600Pro (0.6 nozzle)",
+	"printer_model": "MD-600Pro",
+	"gcode_flavor": "marlin2",
+	"default_filament_profile": [
+	  "MINGDA PLA"
+	],
+	"nozzle_diameter": [
+		"0.6"
+	  ],
+	"machine_start_gcode": " G28 ; home all axes\n M420 S1\n M117 ; Purge extruder\n G92 E0 ; reset extruder\n G1 Z1.0 F1200 ; move z up little to prevent scratching of surface\n G1 X4 Y20 Z0.3 F3000.0 ; move to start-line position\n G1 X4 Y380.0 Z0.3 F1500.0 E30 ; draw 1st line\n G1 X4 Y380.0 Z0.4 F3000.0 ; move to side a little\n G1 X4 Y20 Z0.4 F1500.0 E60 ; draw 2nd line\n G92 E0 ; reset extruder\n G1 Z1.0 F1500 ; move z up little to prevent scratching of surface",
+    "machine_end_gcode": "G91; rel G91; relative positioning\n G1 Z1.0 F3000 ; move z up little to prevent scratching of print\n G90; absolute positioning\n G1 X0 Y0 F1000 ; prepare for part removal\n M104 S0; turn off extruder\n M140 S0 ; turn off bed\n M84 ; disable motors\n M106 S0 ; turn off fan",
+	"version": "2.0.0.0"
+  }
+  

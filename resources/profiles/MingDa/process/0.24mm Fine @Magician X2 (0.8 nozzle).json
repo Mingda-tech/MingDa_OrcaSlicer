@@ -1,0 +1,15 @@
+{
+    "type": "process",
+	"setting_id": "GP012",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_process_MINGDA_common_base",
+    "is_custom_defined": "0",
+    "name": "0.24mm Draft @Magician X2 (0.8 nozzle)",
+    "print_settings_id": "0.24mm Draft @Magician X2 (0.8 nozzle)",
+    "compatible_printers": [
+        "Magician X2 (0.8 nozzle)"
+	],
+	"enable_prime_tower": "0",
+    "version": "2.0.0.0"
+}

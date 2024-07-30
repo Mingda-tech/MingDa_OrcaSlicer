@@ -535,7 +535,9 @@ bool GLTexture::generate_from_text(const std::string &text_str, wxFont &font, wx
         }
     }
 
+
     // sends buffer to gpu
+    //向gpu发送缓冲区
     glsafe(::glPixelStorei(GL_UNPACK_ALIGNMENT, 1));
     glsafe(::glGenTextures(1, &m_id));
     glsafe(::glBindTexture(GL_TEXTURE_2D, (GLuint)m_id));

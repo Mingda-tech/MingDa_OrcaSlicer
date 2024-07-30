@@ -1,0 +1,17 @@
+{
+    "type": "process",
+    "setting_id": "GP013",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_process_MINGDA_common_base",
+    "is_custom_defined": "0",
+    "layer_height": "0.32",
+    "name": "0.32mm Optimal @MD-1000Pro (0.8 nozzle)",
+    "print_settings_id": "0.32mm Optimal @MD-1000Pro (0.8 nozzle)",
+    "compatible_printers": [
+      "MD-1000Pro (0.8 nozzle)"
+    ],
+    "enable_prime_tower": "0",
+    "version": "2.0.0.0"
+  }
+  

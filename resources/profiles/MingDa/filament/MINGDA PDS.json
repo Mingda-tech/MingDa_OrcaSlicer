@@ -1,0 +1,52 @@
+{
+    "type": "filament",
+	"filament_id": "GFL198",
+    "setting_id": "GFSL198",
+    "name": "MINGDA PDS",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_filament_pla",
+	"required_nozzle_HRC": [
+      "40"
+  ],
+  "filament_flow_ratio": [
+      "0.95"
+  ],
+  "filament_type": [
+      "PLA"
+  ],
+  "filament_max_volumetric_speed": [
+      "12"
+  ],
+  "slow_down_layer_time": [
+      "7"
+  ],
+  "additional_cooling_fan_speed": [
+      "0"
+  ],
+  "temperature_vitrification": [
+      "55"
+  ],
+  "nozzle_temperature_range_low": [
+      "190"
+  ],
+  "nozzle_temperature_range_high": [
+      "240"
+  ],
+  "filament_start_gcode": [
+    "; filament start gcode\nM109 S[nozzle_temperature]"
+],
+  "filament_vendor": [
+      "MINGDA3D"
+  ],
+    "compatible_printers": [
+        "MINGDA A128 0.4 nozzle",
+        "MINGDA A128 0.6 nozzle",
+        "MINGDA A128 0.8 nozzle",
+        "MINGDA A128 1.0 nozzle",
+        "MD-A128 Marlin 0.4 nozzle",
+        "MD-A128 Marlin 0.6 nozzle",
+        "MD-A128 Marlin 0.8 nozzle",
+        "MD-A128 Marlin 1.0 nozzle"
+    ]
+}
