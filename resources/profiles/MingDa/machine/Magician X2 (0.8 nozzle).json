@@ -31,7 +31,7 @@
     "cooling_tube_length": "5",
     "cooling_tube_retraction": "91.5",
     "default_filament_profile": [
-        "MingDa PLA"
+        "MINGDA PLA"
     ],
     "deretraction_speed": [
         "40"

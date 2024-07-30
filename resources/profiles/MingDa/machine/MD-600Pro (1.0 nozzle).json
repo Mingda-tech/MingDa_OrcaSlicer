@@ -11,7 +11,7 @@
 	"printer_model": "MD-600Pro",
 	"gcode_flavor": "marlin2",
 	"default_filament_profile": [
-	  "MingDa PLA"
+	  "MINGDA PLA"
 	],
 	"nozzle_diameter": [
 		"1.0"

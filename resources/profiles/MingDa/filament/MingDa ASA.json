@@ -2,12 +2,12 @@
     "type": "filament",
     "filament_id": "ASA",
     "setting_id": "ASA",
-    "name": "MingDa ASA",
+    "name": "MINGDA ASA",
     "from": "system",
     "instantiation": "true",
     "inherits": "fdm_filament_abs",
     "filament_vendor": [
-        "MingDa3D"
+        "MINGDA3D"
     ],
     "activate_air_filtration": [
         "0"
@@ -19,42 +19,42 @@
         "0"
     ],
     "compatible_printers": [
-        "MingDa 400D 0.4 nozzle (Dual)",
-        "MingDa 400D 0.4 nozzle (Left)",
-        "MingDa 400D 0.4 nozzle (Right)",
-        "MingDa 400D 0.6 nozzle (Dual)",
-        "MingDa 400D 0.6 nozzle (Left)",
-        "MingDa 400D 0.6 nozzle (Right)",		
-        "MingDa 400D 0.8 nozzle (Dual)",
-        "MingDa 400D 0.8 nozzle (Left)",
-        "MingDa 400D 0.8 nozzle (Right)",		
-        "MingDa 400D 1.0 nozzle (Dual)",
-        "MingDa 400D 1.0 nozzle (Left)",
-        "MingDa 400D 1.0 nozzle (Right)",		
-        "MingDa 600D 0.4 nozzle (Dual)",
-        "MingDa 600D 0.4 nozzle (Left)",
-        "MingDa 600D 0.4 nozzle (Right)",
-        "MingDa 600D 0.6 nozzle (Dual)",
-        "MingDa 600D 0.6 nozzle (Left)",
-        "MingDa 600D 0.6 nozzle (Right)",		
-        "MingDa 600D 0.8 nozzle (Dual)",
-        "MingDa 600D 0.8 nozzle (Left)",
-        "MingDa 600D 0.8 nozzle (Right)",		
-        "MingDa 600D 1.0 nozzle (Dual)",
-        "MingDa 600D 1.0 nozzle (Left)",
-        "MingDa 600D 1.0 nozzle (Right)",		
-        "MingDa 1000D 0.4 nozzle (Dual)",
-        "MingDa 1000D 0.4 nozzle (Left)",
-        "MingDa 1000D 0.4 nozzle (Right)",
-        "MingDa 1000D 0.6 nozzle (Dual)",
-        "MingDa 1000D 0.6 nozzle (Left)",
-        "MingDa 1000D 0.6 nozzle (Right)",		
-        "MingDa 1000D 0.8 nozzle (Dual)",
-        "MingDa 1000D 0.8 nozzle (Left)",
-        "MingDa 1000D 0.8 nozzle (Right)",		
-        "MingDa 1000D 1.0 nozzle (Dual)",
-        "MingDa 1000D 1.0 nozzle (Left)",
-        "MingDa 1000D 1.0 nozzle (Right)"		
+        "MINGDA 400D 0.4 nozzle (Dual)",
+        "MINGDA 400D 0.4 nozzle (Left)",
+        "MINGDA 400D 0.4 nozzle (Right)",
+        "MINGDA 400D 0.6 nozzle (Dual)",
+        "MINGDA 400D 0.6 nozzle (Left)",
+        "MINGDA 400D 0.6 nozzle (Right)",		
+        "MINGDA 400D 0.8 nozzle (Dual)",
+        "MINGDA 400D 0.8 nozzle (Left)",
+        "MINGDA 400D 0.8 nozzle (Right)",		
+        "MINGDA 400D 1.0 nozzle (Dual)",
+        "MINGDA 400D 1.0 nozzle (Left)",
+        "MINGDA 400D 1.0 nozzle (Right)",		
+        "MINGDA 600D 0.4 nozzle (Dual)",
+        "MINGDA 600D 0.4 nozzle (Left)",
+        "MINGDA 600D 0.4 nozzle (Right)",
+        "MINGDA 600D 0.6 nozzle (Dual)",
+        "MINGDA 600D 0.6 nozzle (Left)",
+        "MINGDA 600D 0.6 nozzle (Right)",		
+        "MINGDA 600D 0.8 nozzle (Dual)",
+        "MINGDA 600D 0.8 nozzle (Left)",
+        "MINGDA 600D 0.8 nozzle (Right)",		
+        "MINGDA 600D 1.0 nozzle (Dual)",
+        "MINGDA 600D 1.0 nozzle (Left)",
+        "MINGDA 600D 1.0 nozzle (Right)",		
+        "MINGDA 1000D 0.4 nozzle (Dual)",
+        "MINGDA 1000D 0.4 nozzle (Left)",
+        "MINGDA 1000D 0.4 nozzle (Right)",
+        "MINGDA 1000D 0.6 nozzle (Dual)",
+        "MINGDA 1000D 0.6 nozzle (Left)",
+        "MINGDA 1000D 0.6 nozzle (Right)",		
+        "MINGDA 1000D 0.8 nozzle (Dual)",
+        "MINGDA 1000D 0.8 nozzle (Left)",
+        "MINGDA 1000D 0.8 nozzle (Right)",		
+        "MINGDA 1000D 1.0 nozzle (Dual)",
+        "MINGDA 1000D 1.0 nozzle (Left)",
+        "MINGDA 1000D 1.0 nozzle (Right)"		
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -99,7 +99,7 @@
         "1.75"
     ],
     "filament_end_gcode": [
-        "; filament end gcode \nM104 S180"
+        "; filament end gcode \nM104 S0"
     ],
     "filament_is_support": [
         "0"
@@ -249,7 +249,7 @@
         "15"
     ],
     "filament_settings_id": [
-        "MingDa ASA"
+        "MINGDA ASA"
     ],
     "hot_plate_temp": [
         "90"

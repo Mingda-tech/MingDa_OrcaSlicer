@@ -1,32 +1,32 @@
 {
-    "name": "MingDa",
+    "name": "MINGDA",
 	"version": "02.00.00.00",
     "force_update": "0",
-    "description": "MingDa configurations",
+    "description": "MINGDA configurations",
     "machine_model_list": [
 		{
-            "name": "MingDa S1",
-            "sub_path": "machine/MingDa S1.json"
+            "name": "MINGDA S1",
+            "sub_path": "machine/MINGDA S1.json"
 		},
 		{
-            "name": "MingDa S2",
-            "sub_path": "machine/MingDa S2.json"
+            "name": "MINGDA S2",
+            "sub_path": "machine/MINGDA S2.json"
 		},
 		{
-            "name": "MingDa S3",
-            "sub_path": "machine/MingDa S3.json"
+            "name": "MINGDA S3",
+            "sub_path": "machine/MINGDA S3.json"
 		},
         {
-            "name": "MingDa 400D",
-            "sub_path": "machine/MingDa 400D.json"
+            "name": "MINGDA 400D",
+            "sub_path": "machine/MINGDA 400D.json"
         },
         {
-            "name": "MingDa 600D",
-            "sub_path": "machine/MingDa 600D.json"
+            "name": "MINGDA 600D",
+            "sub_path": "machine/MINGDA 600D.json"
         },
         {
-            "name": "MingDa 1000D",
-            "sub_path": "machine/MingDa 1000D.json"
+            "name": "MINGDA 1000D",
+            "sub_path": "machine/MINGDA 1000D.json"
         },
 		{
             "name": "MD-400D Marlin",
@@ -43,7 +43,15 @@
 		{
             "name": "Magician X2",
             "sub_path": "machine/Magician X2.json"
-		}   
+		},
+        {
+            "name": "MINGDA A128",
+            "sub_path": "machine/MINGDA A128.json"
+        },
+		{
+            "name": "MD-A128 Marlin",
+            "sub_path": "machine/MD-A128 Marlin.json"
+		}           
     ],
     "process_list": [
         {
@@ -51,28 +59,28 @@
             "sub_path": "process/fdm_process_common.json"
         },
         {
-            "name": "fdm_process_MingDa_common",
-            "sub_path": "process/fdm_process_MingDa_common.json"
+            "name": "fdm_process_MINGDA_common",
+            "sub_path": "process/fdm_process_MINGDA_common.json"
         },
         {
-            "name": "fdm_process_mingda_common_base",
-            "sub_path": "process/fdm_process_mingda_common_base.json"
+            "name": "fdm_process_MINGDA_common_base",
+            "sub_path": "process/fdm_process_MINGDA_common_base.json"
         },
         {
-            "name": "0.12mm Fine @MingDa S2 (0.4 nozzle)",
-            "sub_path": "process/0.12mm Fine @MingDa S2 (0.4 nozzle).json"
+            "name": "0.12mm Fine @MINGDA S2 (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MINGDA S2 (0.4 nozzle).json"
         },
         {
-            "name": "0.15mm Optimal @MingDa S2 (0.4 nozzle)",
-            "sub_path": "process/0.15mm Optimal @MingDa S2 (0.4 nozzle).json"
+            "name": "0.15mm Optimal @MINGDA S2 (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MINGDA S2 (0.4 nozzle).json"
         },
         {
-            "name": "0.20mm Standard @MingDa S2 (0.4 nozzle)",
-            "sub_path": "process/0.20mm Standard @MingDa S2 (0.4 nozzle).json"
+            "name": "0.20mm Standard @MINGDA S2 (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MINGDA S2 (0.4 nozzle).json"
         },
         {
-            "name": "0.24mm Draft @MingDa S2 (0.4 nozzle)",
-            "sub_path": "process/0.24mm Draft @MingDa S2 (0.4 nozzle).json"
+            "name": "0.24mm Draft @MINGDA S2 (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MINGDA S2 (0.4 nozzle).json"
         },
         {
             "name": "0.12mm Fine @Magician X2 (0.4 nozzle)",
@@ -331,141 +339,217 @@
             "sub_path": "process/0.80mm Extra Draft @MD-1000Pro (1.0 nozzle).json"
         },
 		{
-            "name": "0.12mm Fine @MingDa S1 (0.4 nozzle)",
-            "sub_path": "process/0.12mm Fine @MingDa S1 (0.4 nozzle).json"
+            "name": "0.12mm Fine @MINGDA S1 (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MINGDA S1 (0.4 nozzle).json"
         },
         {
-            "name": "0.15mm Optimal @MingDa S1 (0.4 nozzle)",
-            "sub_path": "process/0.15mm Optimal @MingDa S1 (0.4 nozzle).json"
+            "name": "0.15mm Optimal @MINGDA S1 (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MINGDA S1 (0.4 nozzle).json"
         },
         {
-            "name": "0.20mm Standard @MingDa S1 (0.4 nozzle)",
-            "sub_path": "process/0.20mm Standard @MingDa S1 (0.4 nozzle).json"
+            "name": "0.20mm Standard @MINGDA S1 (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MINGDA S1 (0.4 nozzle).json"
         },
 		{
-            "name": "0.12mm Fine @MingDa S3 (0.4 nozzle)",
-            "sub_path": "process/0.12mm Fine @MingDa S3 (0.4 nozzle).json"
+            "name": "0.12mm Fine @MINGDA S3 (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MINGDA S3 (0.4 nozzle).json"
         },
         {
-            "name": "0.15mm Optimal @MingDa S3 (0.4 nozzle)",
-            "sub_path": "process/0.15mm Optimal @MingDa S3 (0.4 nozzle).json"
+            "name": "0.15mm Optimal @MINGDA S3 (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MINGDA S3 (0.4 nozzle).json"
         },
         {
-            "name": "0.20mm Standard @MingDa S3 (0.4 nozzle)",
-            "sub_path": "process/0.20mm Standard @MingDa S3 (0.4 nozzle).json"
+            "name": "0.20mm Standard @MINGDA S3 (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MINGDA S3 (0.4 nozzle).json"
         },
         {
-            "name": "0.24mm Draft @MingDa S3 (0.4 nozzle)",
-            "sub_path": "process/0.24mm Draft @MingDa S3 (0.4 nozzle).json"
+            "name": "0.24mm Draft @MINGDA S3 (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MINGDA S3 (0.4 nozzle).json"
         },
         {
-            "name": "0.10mm Fine @MingDa 400D",
-            "sub_path": "process/0.10mm Fine @MingDa 400D.json"
+            "name": "0.10mm Fine @MINGDA 400D",
+            "sub_path": "process/0.10mm Fine @MINGDA 400D.json"
         },
         {
-            "name": "0.10mm Fine @MingDa 400D Dual",
-            "sub_path": "process/0.10mm Fine @MingDa 400D Dual.json"
+            "name": "0.10mm Fine @MINGDA 400D Dual",
+            "sub_path": "process/0.10mm Fine @MINGDA 400D Dual.json"
         },
         {
-            "name": "0.10mm Fine @MingDa 600D",
-            "sub_path": "process/0.10mm Fine @MingDa 600D.json"
+            "name": "0.10mm Fine @MINGDA 600D",
+            "sub_path": "process/0.10mm Fine @MINGDA 600D.json"
         },
         {
-            "name": "0.10mm Fine @MingDa 1000D",
-            "sub_path": "process/0.10mm Fine @MingDa 1000D.json"
+            "name": "0.10mm Fine @MINGDA 1000D",
+            "sub_path": "process/0.10mm Fine @MINGDA 1000D.json"
         },
         {
-            "name": "0.20mm Standard @MingDa 400D",
-            "sub_path": "process/0.20mm Standard @MingDa 400D.json"
+            "name": "0.20mm Standard @MINGDA 400D",
+            "sub_path": "process/0.20mm Standard @MINGDA 400D.json"
         },
         {
-            "name": "0.20mm Standard @MingDa 600D",
-            "sub_path": "process/0.20mm Standard @MingDa 600D.json"
+            "name": "0.20mm Standard @MINGDA 600D",
+            "sub_path": "process/0.20mm Standard @MINGDA 600D.json"
         },
         {
-            "name": "0.20mm Standard @MingDa 600D Dual",
-            "sub_path": "process/0.20mm Standard @MingDa 600D Dual.json"
+            "name": "0.20mm Standard @MINGDA 600D Dual",
+            "sub_path": "process/0.20mm Standard @MINGDA 600D Dual.json"
         },
         {
-            "name": "0.20mm Standard @MingDa 1000D",
-            "sub_path": "process/0.20mm Standard @MingDa 1000D.json"
+            "name": "0.20mm Standard @MINGDA 1000D",
+            "sub_path": "process/0.20mm Standard @MINGDA 1000D.json"
         },     
         {
-            "name": "0.20mm Standard @MingDa 1000D Dual",
-            "sub_path": "process/0.20mm Standard @MingDa 1000D Dual.json"
+            "name": "0.20mm Standard @MINGDA 1000D Dual",
+            "sub_path": "process/0.20mm Standard @MINGDA 1000D Dual.json"
         },      
         {
-            "name": "0.25mm Draft @MingDa 400D",
-            "sub_path": "process/0.25mm Draft @MingDa 400D.json"
+            "name": "0.25mm Draft @MINGDA 400D",
+            "sub_path": "process/0.25mm Draft @MINGDA 400D.json"
         },
         {
-            "name": "0.25mm Draft @MingDa 600D",
-            "sub_path": "process/0.25mm Draft @MingDa 600D.json"
+            "name": "0.25mm Draft @MINGDA 600D",
+            "sub_path": "process/0.25mm Draft @MINGDA 600D.json"
         },
         {
-            "name": "0.25mm Draft @MingDa 1000D",
-            "sub_path": "process/0.25mm Draft @MingDa 1000D.json"
+            "name": "0.25mm Draft @MINGDA 1000D",
+            "sub_path": "process/0.25mm Draft @MINGDA 1000D.json"
         },
         {
-            "name": "0.24mm Optimal @MingDa (0.6 nozzle)",
-            "sub_path": "process/0.24mm Optimal @MingDa (0.6 nozzle).json"
+            "name": "0.24mm Optimal @MINGDA (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MINGDA (0.6 nozzle).json"
         },
         {
-            "name": "0.18mm Fine @MingDa (0.6 nozzle)",
-            "sub_path": "process/0.18mm Fine @MingDa (0.6 nozzle).json"
+            "name": "0.18mm Fine @MINGDA (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MINGDA (0.6 nozzle).json"
         },
         {
-            "name": "0.30mm Standard @MingDa (0.6 nozzle)",
-            "sub_path": "process/0.30mm Standard @MingDa (0.6 nozzle).json"
+            "name": "0.30mm Standard @MINGDA (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MINGDA (0.6 nozzle).json"
         },        
         {
-            "name": "0.30mm Standard @MingDa (0.6 nozzle) Dual",
-            "sub_path": "process/0.30mm Standard @MingDa (0.6 nozzle) Dual.json"
+            "name": "0.30mm Standard @MINGDA (0.6 nozzle) Dual",
+            "sub_path": "process/0.30mm Standard @MINGDA (0.6 nozzle) Dual.json"
         },
         {
-            "name": "0.36mm Draft @MingDa (0.6 nozzle)",
-            "sub_path": "process/0.36mm Draft @MingDa (0.6 nozzle).json"
+            "name": "0.36mm Draft @MINGDA (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MINGDA (0.6 nozzle).json"
         },
         {
-            "name": "0.24mm Fine @MingDa (0.8 nozzle)",
-            "sub_path": "process/0.24mm Fine @MingDa (0.8 nozzle).json"
+            "name": "0.24mm Fine @MINGDA (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MINGDA (0.8 nozzle).json"
         },
         {
-            "name": "0.32mm Optimal @Mingda (0.8 nozzle)",
-            "sub_path": "process/0.32mm Optimal @Mingda (0.8 nozzle).json"
+            "name": "0.32mm Optimal @MINGDA (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MINGDA (0.8 nozzle).json"
         },
         {
-            "name": "0.40mm Standard @Mingda (0.8 nozzle)",
-            "sub_path": "process/0.40mm Standard @Mingda (0.8 nozzle).json"
+            "name": "0.40mm Standard @MINGDA (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MINGDA (0.8 nozzle).json"
         },      
         {
-            "name": "0.40mm Standard @Mingda (0.8 nozzle)Dual",
-            "sub_path": "process/0.40mm Standard @Mingda (0.8 nozzle)Dual.json"
+            "name": "0.40mm Standard @MINGDA (0.8 nozzle)Dual",
+            "sub_path": "process/0.40mm Standard @MINGDA (0.8 nozzle)Dual.json"
         },
         {
-            "name": "0.48mm Draft @Mingda (0.8 nozzle)",
-            "sub_path": "process/0.48mm Draft @Mingda (0.8 nozzle).json"
+            "name": "0.48mm Draft @MINGDA (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MINGDA (0.8 nozzle).json"
         },
         {
-            "name": "0.30mm Fine @Mingda (1.0 nozzle)",
-            "sub_path": "process/0.30mm Fine @Mingda (1.0 nozzle).json"
+            "name": "0.30mm Fine @MINGDA (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MINGDA (1.0 nozzle).json"
         },
         {
-            "name": "0.50mm Optimal @Mingda (1.0 nozzle)",
-            "sub_path": "process/0.50mm Optimal @Mingda (1.0 nozzle).json"
+            "name": "0.50mm Optimal @MINGDA (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MINGDA (1.0 nozzle).json"
         },
         {
-            "name": "0.50mm Optimal @Mingda (1.0 nozzle) Dual",
-            "sub_path": "process/0.50mm Optimal @Mingda (1.0 nozzle) Dual.json"
+            "name": "0.50mm Optimal @MINGDA (1.0 nozzle) Dual",
+            "sub_path": "process/0.50mm Optimal @MINGDA (1.0 nozzle) Dual.json"
         },
         {
-            "name": "0.60mm Standard @Mingda (1.0 nozzle)",
-            "sub_path": "process/0.60mm Standard @Mingda (1.0 nozzle).json"
+            "name": "0.60mm Standard @MINGDA (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MINGDA (1.0 nozzle).json"
         },
         {
-            "name": "0.80mm Extra Draft @Mingda (1.0 nozzle)",
-            "sub_path": "process/0.80mm Extra Draft @Mingda (1.0 nozzle).json"
-        }
+            "name": "0.80mm Extra Draft @MINGDA (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MINGDA (1.0 nozzle).json"
+        },
+        {
+            "name": "0.12mm Fine @MD-A128 Marlin (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MD-A128 Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.15mm Optimal @MD-A128 Marlin (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MD-A128 Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.20mm Standard @MD-A128 Marlin (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MD-A128 Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.24mm Draft @MD-A128 Marlin (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MD-A128 Marlin (0.4 nozzle).json"
+        },
+        {
+            "name": "0.18mm Fine @MD-A128 Marlin (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MD-A128 Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Optimal @MD-A128 Marlin (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MD-A128 Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.30mm Standard @MD-A128 Marlin (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MD-A128 Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.36mm Draft @MD-A128 Marlin (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MD-A128 Marlin (0.6 nozzle).json"
+        },
+        {
+            "name": "0.24mm Fine @MD-A128 Marlin (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MD-A128 Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.32mm Optimal @MD-A128 Marlin (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MD-A128 Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.40mm Standard @MD-A128 Marlin (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MD-A128 Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.48mm Draft @MD-A128 Marlin (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MD-A128 Marlin (0.8 nozzle).json"
+        },
+        {
+            "name": "0.30mm Fine @MD-A128 Marlin (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MD-A128 Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.50mm Optimal @MD-A128 Marlin (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MD-A128 Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.60mm Standard @MD-A128 Marlin (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MD-A128 Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.80mm Extra Draft @MD-A128 Marlin (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MD-A128 Marlin (1.0 nozzle).json"
+        },
+        {
+            "name": "0.10mm Fine @MINGDA A128 (0.4 nozzle)",
+            "sub_path": "process/0.10mm Fine @MINGDA A128 (0.4 nozzle).json"
+        },
+        {
+            "name": "0.20mm Standard @MINGDA A128 (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MINGDA A128 (0.4 nozzle).json"
+        },  
+        {
+            "name": "0.25mm Draft @MINGDA A128 (0.4 nozzle)",
+            "sub_path": "process/0.25mm Draft @MINGDA A128 (0.4 nozzle).json"
+        }        
     ],
     "filament_list": [
         {
@@ -485,8 +569,8 @@
             "sub_path": "filament/fdm_filament_pa.json"
         },
         {
-            "name": "fdm_filament_htpa",
-            "sub_path": "filament/fdm_filament_htpa.json"
+            "name": "fdm_filament_HtPA",
+            "sub_path": "filament/fdm_filament_HtPA.json"
         },
 		{
             "name": "fdm_filament_pc",
@@ -513,108 +597,108 @@
             "sub_path": "filament/fdm_filament_tpu.json"
         },
         {
-            "name": "MingDa ASA",
-            "sub_path": "filament/MingDa ASA.json"
-        },
-        {
-            "name": "MingDa PA",
-            "sub_path": "filament/MingDa PA.json"
+            "name": "MINGDA ASA",
+            "sub_path": "filament/MINGDA ASA.json"
         },
 		{
-            "name": "MingDa PA-CF",
-            "sub_path": "filament/MingDa PA-CF.json"
+            "name": "MINGDA HtPA-CF",
+            "sub_path": "filament/MINGDA HtPA-CF.json"
         },
 		{
-            "name": "MingDa HTPA-CF",
-            "sub_path": "filament/MingDa HTPA-CF.json"
+            "name": "MINGDA HtPA-CF25",
+            "sub_path": "filament/MINGDA HtPA-CF25.json"
         },
 		{
-            "name": "MingDa HTPA-CF25",
-            "sub_path": "filament/MingDa HTPA-CF25.json"
+            "name": "MINGDA HtPA-GF",
+            "sub_path": "filament/MINGDA HtPA-GF.json"
         },
 		{
-            "name": "MingDa HTPA-GF",
-            "sub_path": "filament/MingDa HTPA-GF.json"
+            "name": "MINGDA HtPA-GF25",
+            "sub_path": "filament/MINGDA HtPA-GF25.json"
         },
 		{
-            "name": "MingDa HTPA-GF25",
-            "sub_path": "filament/MingDa HTPA-GF25.json"
+            "name": "MINGDA PA12-CF",
+            "sub_path": "filament/MINGDA PA12-CF.json"
+        },
+        {
+            "name": "MINGDA PETG",
+            "sub_path": "filament/MINGDA PETG.json"
         },
 		{
-            "name": "MingDa PA-CF25",
-            "sub_path": "filament/MingDa PA-CF25.json"
+            "name": "MINGDA PETG-CF",
+            "sub_path": "filament/MINGDA PETG-CF.json"
         },
 		{
-            "name": "MingDa PA-GF25",
-            "sub_path": "filament/MingDa PA-GF25.json"
+            "name": "MINGDA PETG-HF",
+            "sub_path": "filament/MINGDA PETG-HF.json"
         },
 		{
-            "name": "MingDa PA12-CF",
-            "sub_path": "filament/MingDa PA12-CF.json"
-        },
-        {
-            "name": "MingDa PC",
-            "sub_path": "filament/MingDa PC.json"
-        },
-        {
-            "name": "MingDa PETG",
-            "sub_path": "filament/MingDa PETG.json"
+            "name": "MINGDA PET-CF",
+            "sub_path": "filament/MINGDA PET-CF.json"
         },
 		{
-            "name": "MingDa PETG-CF",
-            "sub_path": "filament/MingDa PETG-CF.json"
+            "name": "MINGDA PET-GF",
+            "sub_path": "filament/MINGDA PET-GF.json"
+        },
+        {
+            "name": "MINGDA PLA Silk",
+            "sub_path": "filament/MINGDA PLA Silk.json"
+        },
+        {
+            "name": "MINGDA PLA",
+            "sub_path": "filament/MINGDA PLA.json"
         },
 		{
-            "name": "MingDa PET-CF",
-            "sub_path": "filament/MingDa PET-CF.json"
+            "name": "MINGDA PLA-CF",
+            "sub_path": "filament/MINGDA PLA-CF.json"
         },
 		{
-            "name": "MingDa PET-GF",
-            "sub_path": "filament/MingDa PET-GF.json"
+            "name": "MINGDA PLA-HF",
+            "sub_path": "filament/MINGDA PLA-HF.json"
         },
         {
-            "name": "MingDa PLA Silk",
-            "sub_path": "filament/MingDa PLA Silk.json"
+            "name": "MINGDA PVA",
+            "sub_path": "filament/MINGDA PVA.json"
         },
         {
-            "name": "MingDa PLA",
-            "sub_path": "filament/MingDa PLA.json"
-        },
-		{
-            "name": "MingDa PLA-CF",
-            "sub_path": "filament/MingDa PLA-CF.json"
+            "name": "MINGDA TPU-95A",
+            "sub_path": "filament/MINGDA TPU-95A.json"
         },
         {
-            "name": "MingDa PVA",
-            "sub_path": "filament/MingDa PVA.json"
+            "name": "MINGDA TPU-95A-HF",
+            "sub_path": "filament/MINGDA TPU-95A-HF.json"
         },
         {
-            "name": "MingDa TPU-95A",
-            "sub_path": "filament/MingDa TPU-95A.json"
+            "name": "MINGDA TPU-75D",
+            "sub_path": "filament/MINGDA TPU-75D.json"
         },
         {
-            "name": "MingDa TPU-75D",
-            "sub_path": "filament/MingDa TPU-75D.json"
+            "name": "MINGDA ABS+",
+            "sub_path": "filament/MINGDA ABS+.json"
         },
         {
-            "name": "MingDa ABS+",
-            "sub_path": "filament/MingDa ABS+.json"
+            "name": "MINGDA ABS-HF",
+            "sub_path": "filament/MINGDA ABS-HF.json"
         },
         {
-            "name": "MingDa ABS-CF20",
-            "sub_path": "filament/MingDa ABS-CF20.json"
+            "name": "MINGDA ABS-CF20",
+            "sub_path": "filament/MINGDA ABS-CF20.json"
         },
         {
-            "name": "MingDa ABS-GF25",
-            "sub_path": "filament/MingDa ABS-GF25.json"
+            "name": "MINGDA ABS-GF25",
+            "sub_path": "filament/MINGDA ABS-GF25.json"
         },
         {
-            "name": "MingDa S-Multi",
-            "sub_path": "filament/MingDa S-Multi.json"
+            "name": "MINGDA S-Multi",
+            "sub_path": "filament/MINGDA S-Multi.json"
         },
         {
-            "name": "MingDa S-PAHT",
-            "sub_path": "filament/MingDa S-PAHT.json"
+            "name": "MINGDA S-HtPA",
+            "sub_path": "filament/MINGDA S-HtPA.json"
+        },
+        {
+            "name": "MINGDA PDS",
+            "sub_path": "filament/MINGDA PDS.json"
         }
     ],
     "machine_list": [
@@ -723,196 +807,228 @@
             "sub_path": "machine/MD-1000Pro (1.0 nozzle).json"
         },
 		{
-            "name": "MingDa S2 (0.4 nozzle)",
-            "sub_path": "machine/MingDa S2 (0.4 nozzle).json"
+            "name": "MINGDA S2 (0.4 nozzle)",
+            "sub_path": "machine/MINGDA S2 (0.4 nozzle).json"
         },
         {
-            "name": "MingDa S2 (0.6 nozzle)",
-            "sub_path": "machine/MingDa S2 (0.6 nozzle).json"
+            "name": "MINGDA S2 (0.6 nozzle)",
+            "sub_path": "machine/MINGDA S2 (0.6 nozzle).json"
         },
         {
-            "name": "MingDa S2 (0.8 nozzle)",
-            "sub_path": "machine/MingDa S2 (0.8 nozzle).json"
+            "name": "MINGDA S2 (0.8 nozzle)",
+            "sub_path": "machine/MINGDA S2 (0.8 nozzle).json"
         },
         {
-            "name": "MingDa S2 (1.0 nozzle)",
-            "sub_path": "machine/MingDa S2 (1.0 nozzle).json"
+            "name": "MINGDA S2 (1.0 nozzle)",
+            "sub_path": "machine/MINGDA S2 (1.0 nozzle).json"
         },
 		{
-            "name": "MingDa S1 (0.4 nozzle)",
-            "sub_path": "machine/MingDa S1 (0.4 nozzle).json"
+            "name": "MINGDA S1 (0.4 nozzle)",
+            "sub_path": "machine/MINGDA S1 (0.4 nozzle).json"
         },
         {
-            "name": "MingDa S1 (0.6 nozzle)",
-            "sub_path": "machine/MingDa S1 (0.6 nozzle).json"
+            "name": "MINGDA S1 (0.6 nozzle)",
+            "sub_path": "machine/MINGDA S1 (0.6 nozzle).json"
         },
         {
-            "name": "MingDa S1 (0.8 nozzle)",
-            "sub_path": "machine/MingDa S1 (0.8 nozzle).json"
+            "name": "MINGDA S1 (0.8 nozzle)",
+            "sub_path": "machine/MINGDA S1 (0.8 nozzle).json"
         },
         {
-            "name": "MingDa S1 (1.0 nozzle)",
-            "sub_path": "machine/MingDa S1 (1.0 nozzle).json"
+            "name": "MINGDA S1 (1.0 nozzle)",
+            "sub_path": "machine/MINGDA S1 (1.0 nozzle).json"
         },
 	    {
-            "name": "MingDa S3 (0.4 nozzle)",
-            "sub_path": "machine/MingDa S3 (0.4 nozzle).json"
+            "name": "MINGDA S3 (0.4 nozzle)",
+            "sub_path": "machine/MINGDA S3 (0.4 nozzle).json"
         },
         {
-            "name": "MingDa S3 (0.6 nozzle)",
-            "sub_path": "machine/MingDa S3 (0.6 nozzle).json"
+            "name": "MINGDA S3 (0.6 nozzle)",
+            "sub_path": "machine/MINGDA S3 (0.6 nozzle).json"
         },
         {
-            "name": "MingDa S3 (0.8 nozzle)",
-            "sub_path": "machine/MingDa S3 (0.8 nozzle).json"
+            "name": "MINGDA S3 (0.8 nozzle)",
+            "sub_path": "machine/MINGDA S3 (0.8 nozzle).json"
         },
         {
-            "name": "MingDa S3 (1.0 nozzle)",
-            "sub_path": "machine/MingDa S3 (1.0 nozzle).json"
+            "name": "MINGDA S3 (1.0 nozzle)",
+            "sub_path": "machine/MINGDA S3 (1.0 nozzle).json"
         },
         {
-            "name": "MingDa 400D 0.4 nozzle (Dual)",
-            "sub_path": "machine/MingDa 400D 0.4 nozzle (Dual).json"
+            "name": "MINGDA 400D 0.4 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 400D 0.4 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 400D 0.4 nozzle (Left)",
-            "sub_path": "machine/MingDa 400D 0.4 nozzle (Left).json"
+            "name": "MINGDA 400D 0.4 nozzle (Left)",
+            "sub_path": "machine/MINGDA 400D 0.4 nozzle (Left).json"
         },
         {
-            "name": "MingDa 400D 0.4 nozzle (Right)",
-            "sub_path": "machine/MingDa 400D 0.4 nozzle (Right).json"
+            "name": "MINGDA 400D 0.4 nozzle (Right)",
+            "sub_path": "machine/MINGDA 400D 0.4 nozzle (Right).json"
         },
         {
-            "name": "MingDa 400D 0.6 nozzle (Dual)",
-            "sub_path": "machine/MingDa 400D 0.6 nozzle (Dual).json"
+            "name": "MINGDA 400D 0.6 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 400D 0.6 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 400D 0.6 nozzle (Left)",
-            "sub_path": "machine/MingDa 400D 0.6 nozzle (Left).json"
+            "name": "MINGDA 400D 0.6 nozzle (Left)",
+            "sub_path": "machine/MINGDA 400D 0.6 nozzle (Left).json"
         },
         {
-            "name": "MingDa 400D 0.6 nozzle (Right)",
-            "sub_path": "machine/MingDa 400D 0.6 nozzle (Right).json"
+            "name": "MINGDA 400D 0.6 nozzle (Right)",
+            "sub_path": "machine/MINGDA 400D 0.6 nozzle (Right).json"
         },
         {
-            "name": "MingDa 400D 0.8 nozzle (Dual)",
-            "sub_path": "machine/MingDa 400D 0.8 nozzle (Dual).json"
+            "name": "MINGDA 400D 0.8 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 400D 0.8 nozzle (Dual).json"
         },        
         {
-            "name": "MingDa 400D 0.8 nozzle (Left)",
-            "sub_path": "machine/MingDa 400D 0.8 nozzle (Left).json"
+            "name": "MINGDA 400D 0.8 nozzle (Left)",
+            "sub_path": "machine/MINGDA 400D 0.8 nozzle (Left).json"
         },
         {
-            "name": "MingDa 400D 0.8 nozzle (Right)",
-            "sub_path": "machine/MingDa 400D 0.8 nozzle (Right).json"
+            "name": "MINGDA 400D 0.8 nozzle (Right)",
+            "sub_path": "machine/MINGDA 400D 0.8 nozzle (Right).json"
         },
         {
-            "name": "MingDa 400D 1.0 nozzle (Dual)",
-            "sub_path": "machine/MingDa 400D 1.0 nozzle (Dual).json"
+            "name": "MINGDA 400D 1.0 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 400D 1.0 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 400D 1.0 nozzle (Left)",
-            "sub_path": "machine/MingDa 400D 1.0 nozzle (Left).json"
+            "name": "MINGDA 400D 1.0 nozzle (Left)",
+            "sub_path": "machine/MINGDA 400D 1.0 nozzle (Left).json"
         },
         {
-            "name": "MingDa 400D 1.0 nozzle (Right)",
-            "sub_path": "machine/MingDa 400D 1.0 nozzle (Right).json"
+            "name": "MINGDA 400D 1.0 nozzle (Right)",
+            "sub_path": "machine/MINGDA 400D 1.0 nozzle (Right).json"
         },
         {
-            "name": "MingDa 600D 0.4 nozzle (Dual)",
-            "sub_path": "machine/MingDa 600D 0.4 nozzle (Dual).json"
+            "name": "MINGDA 600D 0.4 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 600D 0.4 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 600D 0.4 nozzle (Left)",
-            "sub_path": "machine/MingDa 600D 0.4 nozzle (Left).json"
+            "name": "MINGDA 600D 0.4 nozzle (Left)",
+            "sub_path": "machine/MINGDA 600D 0.4 nozzle (Left).json"
         },
         {
-            "name": "MingDa 600D 0.4 nozzle (Right)",
-            "sub_path": "machine/MingDa 600D 0.4 nozzle (Right).json"
+            "name": "MINGDA 600D 0.4 nozzle (Right)",
+            "sub_path": "machine/MINGDA 600D 0.4 nozzle (Right).json"
         },
         {
-            "name": "MingDa 600D 0.6 nozzle (Dual)",
-            "sub_path": "machine/MingDa 600D 0.6 nozzle (Dual).json"
+            "name": "MINGDA 600D 0.6 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 600D 0.6 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 600D 0.6 nozzle (Left)",
-            "sub_path": "machine/MingDa 600D 0.6 nozzle (Left).json"
+            "name": "MINGDA 600D 0.6 nozzle (Left)",
+            "sub_path": "machine/MINGDA 600D 0.6 nozzle (Left).json"
         },
         {
-            "name": "MingDa 600D 0.6 nozzle (Right)",
-            "sub_path": "machine/MingDa 600D 0.6 nozzle (Right).json"
+            "name": "MINGDA 600D 0.6 nozzle (Right)",
+            "sub_path": "machine/MINGDA 600D 0.6 nozzle (Right).json"
         },
         {
-            "name": "MingDa 600D 0.8 nozzle (Dual)",
-            "sub_path": "machine/MingDa 600D 0.8 nozzle (Dual).json"
+            "name": "MINGDA 600D 0.8 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 600D 0.8 nozzle (Dual).json"
         },        
         {
-            "name": "MingDa 600D 0.8 nozzle (Left)",
-            "sub_path": "machine/MingDa 600D 0.8 nozzle (Left).json"
+            "name": "MINGDA 600D 0.8 nozzle (Left)",
+            "sub_path": "machine/MINGDA 600D 0.8 nozzle (Left).json"
         },
         {
-            "name": "MingDa 600D 0.8 nozzle (Right)",
-            "sub_path": "machine/MingDa 600D 0.8 nozzle (Right).json"
+            "name": "MINGDA 600D 0.8 nozzle (Right)",
+            "sub_path": "machine/MINGDA 600D 0.8 nozzle (Right).json"
         },
         {
-            "name": "MingDa 600D 1.0 nozzle (Dual)",
-            "sub_path": "machine/MingDa 600D 1.0 nozzle (Dual).json"
+            "name": "MINGDA 600D 1.0 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 600D 1.0 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 600D 1.0 nozzle (Left)",
-            "sub_path": "machine/MingDa 600D 1.0 nozzle (Left).json"
+            "name": "MINGDA 600D 1.0 nozzle (Left)",
+            "sub_path": "machine/MINGDA 600D 1.0 nozzle (Left).json"
         },
         {
-            "name": "MingDa 600D 1.0 nozzle (Right)",
-            "sub_path": "machine/MingDa 600D 1.0 nozzle (Right).json"
+            "name": "MINGDA 600D 1.0 nozzle (Right)",
+            "sub_path": "machine/MINGDA 600D 1.0 nozzle (Right).json"
         },
         {
-            "name": "MingDa 1000D 0.4 nozzle (Dual)",
-            "sub_path": "machine/MingDa 1000D 0.4 nozzle (Dual).json"
+            "name": "MINGDA 1000D 0.4 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 1000D 0.4 nozzle (Dual).json"
         },        
         {
-            "name": "MingDa 1000D 0.4 nozzle (Left)",
-            "sub_path": "machine/MingDa 1000D 0.4 nozzle (Left).json"
+            "name": "MINGDA 1000D 0.4 nozzle (Left)",
+            "sub_path": "machine/MINGDA 1000D 0.4 nozzle (Left).json"
         },
         {
-            "name": "MingDa 1000D 0.4 nozzle (Right)",
-            "sub_path": "machine/MingDa 1000D 0.4 nozzle (Right).json"
+            "name": "MINGDA 1000D 0.4 nozzle (Right)",
+            "sub_path": "machine/MINGDA 1000D 0.4 nozzle (Right).json"
         },
         {
-            "name": "MingDa 1000D 0.6 nozzle (Dual)",
-            "sub_path": "machine/MingDa 1000D 0.6 nozzle (Dual).json"
+            "name": "MINGDA 1000D 0.6 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 1000D 0.6 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 1000D 0.6 nozzle (Left)",
-            "sub_path": "machine/MingDa 1000D 0.6 nozzle (Left).json"
+            "name": "MINGDA 1000D 0.6 nozzle (Left)",
+            "sub_path": "machine/MINGDA 1000D 0.6 nozzle (Left).json"
         },
         {
-            "name": "MingDa 1000D 0.6 nozzle (Right)",
-            "sub_path": "machine/MingDa 1000D 0.6 nozzle (Right).json"
+            "name": "MINGDA 1000D 0.6 nozzle (Right)",
+            "sub_path": "machine/MINGDA 1000D 0.6 nozzle (Right).json"
         },
         {
-            "name": "MingDa 1000D 0.8 nozzle (Dual)",
-            "sub_path": "machine/MingDa 1000D 0.8 nozzle (Dual).json"
+            "name": "MINGDA 1000D 0.8 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 1000D 0.8 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 1000D 0.8 nozzle (Left)",
-            "sub_path": "machine/MingDa 1000D 0.8 nozzle (Left).json"
+            "name": "MINGDA 1000D 0.8 nozzle (Left)",
+            "sub_path": "machine/MINGDA 1000D 0.8 nozzle (Left).json"
         },
         {
-            "name": "MingDa 1000D 0.8 nozzle (Right)",
-            "sub_path": "machine/MingDa 1000D 0.8 nozzle (Right).json"
+            "name": "MINGDA 1000D 0.8 nozzle (Right)",
+            "sub_path": "machine/MINGDA 1000D 0.8 nozzle (Right).json"
         },
         {
-            "name": "MingDa 1000D 1.0 nozzle (Dual)",
-            "sub_path": "machine/MingDa 1000D 1.0 nozzle (Dual).json"
+            "name": "MINGDA 1000D 1.0 nozzle (Dual)",
+            "sub_path": "machine/MINGDA 1000D 1.0 nozzle (Dual).json"
         },
         {
-            "name": "MingDa 1000D 1.0 nozzle (Left)",
-            "sub_path": "machine/MingDa 1000D 1.0 nozzle (Left).json"
+            "name": "MINGDA 1000D 1.0 nozzle (Left)",
+            "sub_path": "machine/MINGDA 1000D 1.0 nozzle (Left).json"
         },
         {
-            "name": "MingDa 1000D 1.0 nozzle (Right)",
-            "sub_path": "machine/MingDa 1000D 1.0 nozzle (Right).json"
-        }
+            "name": "MINGDA 1000D 1.0 nozzle (Right)",
+            "sub_path": "machine/MINGDA 1000D 1.0 nozzle (Right).json"
+        },
+        {
+            "name": "MD-A128 Marlin 0.4 nozzle",
+            "sub_path": "machine/MD-A128 Marlin 0.4 nozzle.json"
+        },
+        {
+            "name": "MD-A128 Marlin 0.6 nozzle",
+            "sub_path": "machine/MD-A128 Marlin 0.6 nozzle.json"
+        },
+        {
+            "name": "MD-A128 Marlin 0.8 nozzle",
+            "sub_path": "machine/MD-A128 Marlin 0.8 nozzle.json"
+        },
+        {
+            "name": "MD-A128 Marlin 1.0 nozzle",
+            "sub_path": "machine/MD-A128 Marlin 1.0 nozzle.json"
+        },
+        {
+            "name": "MINGDA A128 0.4 nozzle",
+            "sub_path": "machine/MINGDA A128 0.4 nozzle.json"
+        },
+        {
+            "name": "MINGDA A128 0.6 nozzle",
+            "sub_path": "machine/MINGDA A128 0.6 nozzle.json"
+        },     
+        {
+            "name": "MINGDA A128 0.8 nozzle",
+            "sub_path": "machine/MINGDA A128 0.8 nozzle.json"
+        },
+        {
+            "name": "MINGDA A128 1.0 nozzle",
+            "sub_path": "machine/MINGDA A128 1.0 nozzle.json"
+        }        
     ]
 }

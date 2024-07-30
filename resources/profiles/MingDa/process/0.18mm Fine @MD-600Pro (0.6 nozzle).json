@@ -3,7 +3,7 @@
 	"setting_id": "GP010",
     "from": "system",
 	"instantiation": "true",
-    "inherits": "fdm_process_MingDa_common",
+    "inherits": "fdm_process_MINGDA_common",
     "is_custom_defined": "0",
     "layer_height": "0.18",
     "compatible_printers": [
@@ -13,5 +13,6 @@
     "print_settings_id": "0.18mm Fine @MD-600Pro (0.6 nozzle)",
     "support_bottom_z_distance": "0.18",
     "support_top_z_distance": "0.18",
+	"enable_prime_tower": "0",
     "version": "2.0.0.0"
 }

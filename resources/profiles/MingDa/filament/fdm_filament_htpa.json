@@ -1,6 +1,6 @@
 {
     "type": "filament",
-    "name": "fdm_filament_htpa",
+    "name": "fdm_filament_HtPA",
     "from": "system",
     "instantiation": "false",
     "inherits": "fdm_filament_common",

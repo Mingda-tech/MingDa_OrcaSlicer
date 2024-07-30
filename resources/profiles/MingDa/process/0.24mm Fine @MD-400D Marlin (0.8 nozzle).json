@@ -3,7 +3,7 @@
 	"setting_id": "GP012",
     "from": "system",
     "instantiation": "true",
-    "inherits": "fdm_process_mingda_common_base",
+    "inherits": "fdm_process_MINGDA_common_base",
     "is_custom_defined": "0",
     "name": "0.24mm Fine @MD-400D Marlin (0.8 nozzle)",
     "print_settings_id": "0.24mm Fine @MD-400D Marlin (0.8 nozzle)",
@@ -12,5 +12,6 @@
         "MD-400D Marlin 0.8 nozzle (Left)",
         "MD-400D Marlin 0.8 nozzle (Right)"
     	],
-    "version": "2.0.0.0"
+        "enable_prime_tower": "0",
+        "version": "2.0.0.0"
 }

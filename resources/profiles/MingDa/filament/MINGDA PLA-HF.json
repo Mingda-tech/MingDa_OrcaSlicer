@@ -1,0 +1,108 @@
+{
+    "type": "filament",
+	"filament_id": "GFL198",
+    "setting_id": "GFSL198",
+    "name": "MINGDA PLA-HF",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_filament_pla",
+	"required_nozzle_HRC": [
+      "40"
+  ],
+  "filament_flow_ratio": [
+      "0.95"
+  ],
+  "filament_type": [
+      "PLA"
+  ],
+  "filament_max_volumetric_speed": [
+      "12"
+  ],
+  "slow_down_layer_time": [
+      "7"
+  ],
+  "additional_cooling_fan_speed": [
+      "0"
+  ],
+  "temperature_vitrification": [
+      "55"
+  ],
+  "nozzle_temperature_range_low": [
+      "190"
+  ],
+  "nozzle_temperature_range_high": [
+      "240"
+  ],
+  "filament_start_gcode": [
+    "; filament start gcode\nM109 S[nozzle_temperature]"
+],
+  "filament_vendor": [
+      "MINGDA3D"
+  ],
+    "compatible_printers": [
+        "MINGDA 400D 0.4 nozzle (Dual)",
+        "MINGDA 400D 0.4 nozzle (Left)",
+        "MINGDA 400D 0.4 nozzle (Right)",
+        "MINGDA 400D 0.6 nozzle (Dual)",
+        "MINGDA 400D 0.6 nozzle (Left)",
+        "MINGDA 400D 0.6 nozzle (Right)",		
+        "MINGDA 400D 0.8 nozzle (Dual)",
+        "MINGDA 400D 0.8 nozzle (Left)",
+        "MINGDA 400D 0.8 nozzle (Right)",		
+        "MINGDA 400D 1.0 nozzle (Dual)",
+        "MINGDA 400D 1.0 nozzle (Left)",
+        "MINGDA 400D 1.0 nozzle (Right)",		
+        "MINGDA 600D 0.4 nozzle (Dual)",
+        "MINGDA 600D 0.4 nozzle (Left)",
+        "MINGDA 600D 0.4 nozzle (Right)",
+        "MINGDA 600D 0.6 nozzle (Dual)",
+        "MINGDA 600D 0.6 nozzle (Left)",
+        "MINGDA 600D 0.6 nozzle (Right)",		
+        "MINGDA 600D 0.8 nozzle (Dual)",
+        "MINGDA 600D 0.8 nozzle (Left)",
+        "MINGDA 600D 0.8 nozzle (Right)",		
+        "MINGDA 600D 1.0 nozzle (Dual)",
+        "MINGDA 600D 1.0 nozzle (Left)",
+        "MINGDA 600D 1.0 nozzle (Right)",		
+        "MINGDA 1000D 0.4 nozzle (Dual)",
+        "MINGDA 1000D 0.4 nozzle (Left)",
+        "MINGDA 1000D 0.4 nozzle (Right)",
+        "MINGDA 1000D 0.6 nozzle (Dual)",
+        "MINGDA 1000D 0.6 nozzle (Left)",
+        "MINGDA 1000D 0.6 nozzle (Right)",		
+        "MINGDA 1000D 0.8 nozzle (Dual)",
+        "MINGDA 1000D 0.8 nozzle (Left)",
+        "MINGDA 1000D 0.8 nozzle (Right)",		
+        "MINGDA 1000D 1.0 nozzle (Dual)",
+        "MINGDA 1000D 1.0 nozzle (Left)",
+        "MD-400D Marlin 0.4 nozzle (Dual)",
+        "MD-400D Marlin 0.4 nozzle (Left)",
+        "MD-400D Marlin 0.4 nozzle (Right)",
+        "MD-400D Marlin 0.6 nozzle (Dual)",
+        "MD-400D Marlin 0.6 nozzle (Left)",
+        "MD-400D Marlin 0.6 nozzle (Right)",		
+        "MD-400D Marlin 0.8 nozzle (Dual)",
+        "MD-400D Marlin 0.8 nozzle (Left)",
+        "MD-400D Marlin 0.8 nozzle (Right)",		
+        "MD-400D Marlin 1.0 nozzle (Dual)",
+        "MD-400D Marlin 1.0 nozzle (Left)",
+        "MD-400D Marlin 1.0 nozzle (Right)", 
+          "MD-600Pro (0.4 nozzle)",
+          "MD-600Pro (0.6 nozzle)",
+          "MD-600Pro (0.8 nozzle)",
+          "MD-600Pro (1.0 nozzle)",
+          "MD-1000Pro (0.4 nozzle)",
+          "MD-1000Pro (0.6 nozzle)",
+          "MD-1000Pro (0.8 nozzle)",
+          "MD-1000Pro (1.0 nozzle)",        
+        "MINGDA 1000D 1.0 nozzle (Right)",
+        "MINGDA A128 0.4 nozzle",
+        "MINGDA A128 0.6 nozzle",
+        "MINGDA A128 0.8 nozzle",
+        "MINGDA A128 1.0 nozzle",
+        "MD-A128 Marlin 0.4 nozzle",
+        "MD-A128 Marlin 0.6 nozzle",
+        "MD-A128 Marlin 0.8 nozzle",
+        "MD-A128 Marlin 1.0 nozzle"
+    ]
+}

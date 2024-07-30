@@ -3,25 +3,30 @@
 	"setting_id": "GP012",
     "from": "system",
     "instantiation": "true",
-    "inherits": "fdm_process_mingda_common_base",
+    "inherits": "fdm_process_MINGDA_common_base",
     "is_custom_defined": "0",
-    "name": "0.24mm Fine @MingDa (0.8 nozzle)",
-    "print_settings_id": "0.24mm Fine @MingDa (0.8 nozzle)",
+    "name": "0.24mm Fine @MINGDA (0.8 nozzle)",
+    "print_settings_id": "0.24mm Fine @MINGDA (0.8 nozzle)",
     "compatible_printers": [
-		"MingDa S1 (0.8 nozzle)",
-        "MingDa S2 (0.8 nozzle)",
-        "MingDa S3 (0.8 nozzle)",	
-        "MingDa 400D 0.8 nozzle (Dual)",
-        "MingDa 400D 0.8 nozzle (Left)",
-        "MingDa 400D 0.8 nozzle (Right)",				
-        "MingDa 600D 0.8 nozzle (Dual)",
-        "MingDa 600D 0.8 nozzle (Left)",
-        "MingDa 600D 0.8 nozzle (Right)",			
-        "MingDa 1000D 0.8 nozzle (Dual)",
-        "MingDa 1000D 0.8 nozzle (Left)",
-        "MingDa 1000D 0.8 nozzle (Right)"
-	
-	
+		"MINGDA S1 (0.8 nozzle)",
+        "MINGDA S2 (0.8 nozzle)",
+        "MINGDA S3 (0.8 nozzle)",	
+        "MINGDA 400D 0.8 nozzle (Dual)",
+        "MINGDA 400D 0.8 nozzle (Left)",
+        "MINGDA 400D 0.8 nozzle (Right)",				
+        "MINGDA 600D 0.8 nozzle (Dual)",
+        "MINGDA 600D 0.8 nozzle (Left)",
+        "MINGDA 600D 0.8 nozzle (Right)",			
+        "MINGDA 1000D 0.8 nozzle (Dual)",
+        "MINGDA 1000D 0.8 nozzle (Left)",
+        "MINGDA 1000D 0.8 nozzle (Right)",	
+
+        "MINGDA A128 0.8 nozzle"
+
 	],
+	"enable_prime_tower": "0",
+    "top_surface_acceleration": "2000",
+    "travel_acceleration": "5000",
+    "travel_speed": "250",    
     "version": "2.0.0.0"
 }

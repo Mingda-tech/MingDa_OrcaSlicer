@@ -1,15 +1,15 @@
 {
 	"type": "machine",
 	"setting_id": "MD400D3",
-	"name": "MingDa 400D 1.0 nozzle (Dual)",
+	"name": "MINGDA 400D 1.0 nozzle (Dual)",
 	"from": "system",
 	"instantiation": "true",
-	"inherits": "MingDa 400D 0.4 nozzle (Dual)",
+	"inherits": "MINGDA 400D 0.4 nozzle (Dual)",
 	"is_custom_defined": "0",
-	"default_print_profile": "0.50mm Shandard @Mingda (1.0 nozzle) Dual",
-	"printer_model": "MingDa 400D",
+	"default_print_profile": "0.50mm Shandard @MINGDA (1.0 nozzle) Dual",
+	"printer_model": "MINGDA 400D",
 	"default_filament_profile": [
-	  "MingDa PLA"
+	  "MINGDA PLA"
 	],
 	"extruder_colour": [
 		"#FCE94F",
@@ -57,6 +57,7 @@
 	  "1.0"
 	],
 	"printer_variant": "1.0",
+    "single_nozzle_with_multiple_fans": "1",
 	"version": "2.0.0.0"
   }
   

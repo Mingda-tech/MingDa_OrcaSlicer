@@ -14,7 +14,7 @@
     "gap_infill_speed": "100",
     "infill_jerk": "12",
     "infill_wall_overlap": "25%",
-    "inherits": "fdm_process_mingda_common_base",
+    "inherits": "fdm_process_MINGDA_common_base",
     "initial_layer_acceleration": "500",
     "initial_layer_infill_speed": "105",
     "initial_layer_line_width": "1.02",

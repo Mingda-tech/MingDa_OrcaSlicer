@@ -11,7 +11,7 @@
 	"printer_model": "MD-400D Marlin",
 	"gcode_flavor": "marlin2",
 	"default_filament_profile": [
-	  "MingDa PLA"
+	  "MINGDA PLA"
 	],
 	"nozzle_diameter": [
 		"0.6"

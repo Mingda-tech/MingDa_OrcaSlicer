@@ -1,12 +1,12 @@
 {
   "type": "machine",
   "setting_id": "MD001",
-  "name": "MingDa S2 (0.4 nozzle)",
+  "name": "MINGDA S2 (0.4 nozzle)",
   "from": "system",
   "instantiation": "true",
   "inherits": "fdm_klipper_common",
-  "printer_model": "MingDa S2",
-  "default_print_profile": "0.20mm Standard @MingDa S2 (0.4 nozzle)",
+  "printer_model": "MINGDA S2",
+  "default_print_profile": "0.20mm Standard @MINGDA S2 (0.4 nozzle)",
   "nozzle_diameter": [
     "0.4"
   ],
@@ -32,7 +32,7 @@
     "cooling_tube_length": "5",
     "cooling_tube_retraction": "91.5",
     "default_filament_profile": [
-        "MingDa PLA"
+        "MINGDA PLA"
     ],
     "deretraction_speed": [
         "40"
@@ -138,7 +138,8 @@
     "nozzle_hrc": "0",
     "nozzle_volume": "0",
     "parking_pos_retraction": "92",
-      "print_host_webui": "",
+    "print_host": "",
+    "print_host_webui": "",
     "printer_notes": "",
     "printer_structure": "undefine",
     "printer_technology": "FFF",

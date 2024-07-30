@@ -1,16 +1,16 @@
 {
 	"type": "machine",
 	"setting_id": "MD1000D3",
-	"name": "MingDa 1000D 0.6 nozzle (Dual)",
+	"name": "MINGDA 1000D 0.6 nozzle (Dual)",
 	"from": "system",
 	"instantiation": "true",
-	"inherits": "MingDa 1000D 0.4 nozzle (Dual)",
+	"inherits": "MINGDA 1000D 0.4 nozzle (Dual)",
 	"is_custom_defined": "0",
 	"printer_variant": "0.6",
-	"default_print_profile": "0.30mm Standard @MingDa (0.6 nozzle) Dual",
-	"printer_model": "MingDa 1000D",
+	"default_print_profile": "0.30mm Standard @MINGDA (0.6 nozzle) Dual",
+	"printer_model": "MINGDA 1000D",
 	"default_filament_profile": [
-	  "MingDa PLA"
+	  "MINGDA PLA"
 	],
 	"enable_prime_tower": "1",
 	"extruder_colour": [
@@ -57,6 +57,7 @@
 	  "0.8",
 	  "0.8"
 	],
+    "single_nozzle_with_multiple_fans": "1",
 	"version": "2.0.0.0"
   }
   

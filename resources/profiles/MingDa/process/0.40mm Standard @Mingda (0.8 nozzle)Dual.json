@@ -3,17 +3,28 @@
     "setting_id": "GP014",
     "from": "system",
     "instantiation": "true",
-    "inherits": "0.40mm Standard @Mingda (0.8 nozzle)",
+    "inherits": "0.40mm Standard @MINGDA (0.8 nozzle)",
     "is_custom_defined": "0",
     "layer_height": "0.4",
-    "name": "0.40mm Standard @Mingda (0.8 nozzle)Dual",
-    "print_settings_id": "0.40mm Standard @Mingda (0.8 nozzle)Dual",
+    "name": "0.40mm Standard @MINGDA (0.8 nozzle)Dual",
+    "print_settings_id": "0.40mm Standard @MINGDA (0.8 nozzle)Dual",
     "compatible_printers": [
-      "MingDa 400D 0.8 nozzle (Dual)",
-      "MingDa 600D 0.8 nozzle (Dual)",
-      "MingDa 1000D 0.8 nozzle (Dual)"
+      "MINGDA 400D 0.8 nozzle (Dual)",
+      "MINGDA 600D 0.8 nozzle (Dual)",
+      "MINGDA 1000D 0.8 nozzle (Dual)"
   ],
-  "enable_prime_tower": "1",
-    "version": "2.0.0.0"
+  "enable_prime_tower": "0",
+  "initial_layer_acceleration": "500",
+  "inner_wall_acceleration": "3000",
+  "inner_wall_speed": "100",
+  "internal_solid_infill_speed": "100",
+  "outer_wall_acceleration": "2000",
+  "outer_wall_speed": "80",
+  "sparse_infill_speed": "80",
+  "top_surface_acceleration": "2000",
+  "top_surface_speed": "80",
+  "travel_acceleration": "5000",
+  "travel_speed": "250",  
+  "version": "2.0.0.0"
   }
   

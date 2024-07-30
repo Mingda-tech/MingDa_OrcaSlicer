@@ -110,8 +110,8 @@
 	"change_filament_gcode": "M106 P1 S255 ;change filament gcode",
 	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
-		"MingDa PLA",
-		"MingDa PLA"
+		"MINGDA PLA",
+		"MINGDA PLA"
 	],
 	"toolchange_gcode": "; layer [layer_num] tool change",
     "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nG92 E0",

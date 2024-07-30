@@ -67,7 +67,7 @@
 		"0.1",
 		"0.1"
 	],
-	"printer_settings_id": "MingDa",
+	"printer_settings_id": "MINGDA",
 	"retract_before_wipe": [
 		"0%",
 		"0%"
@@ -100,7 +100,7 @@
 	"change_filament_gcode": "",
 	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
-		"MingDa PLA"
+		"MINGDA PLA"
 	],
 	"toolchange_gcode": "; layer [layer_num] tool change",
     "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]\nG92 E0",

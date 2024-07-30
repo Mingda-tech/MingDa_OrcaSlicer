@@ -1,12 +1,12 @@
 {
     "type": "machine_model",
     "name": "MD-600Pro",
-    "model_id": "MingDa-600D",
+    "model_id": "MINGDA-600D",
     "nozzle_diameter": "0.4;0.6;0.8;1.0",
     "machine_tech": "FFF",
-    "family": "MingDa",
+    "family": "MINGDA",
     "bed_model": "600x600_buildplate_model.stl",
-    "bed_texture": "MingDa_600Pro_buildplate_texture.png",
+    "bed_texture": "MINGDA_600Pro_buildplate_texture.png",
     "hotend_model": "",
-	"default_materials": "MingDa PETG-CF;MingDa PETG;MingDa PLA;MingDa PLA-CF;MingDa PA-CF25;MingDa PA-GF25;MingDa PA12-CF;MingDa TPU-95A;MingDa TPU-75D;MingDa ABS+.json;MingDa ABS-CF20.json;MingDa ABS-GF25;MingDa PET-CF;MingDa PET-GF;MingDa S-PAHT;MingDa S-Multi;MingDa PET-GF;MingDa PET-CF;MingDa PET-GF25;MingDa PET-CF25;"
+	"default_materials": "MINGDA PETG-CF;MINGDA PETG-HF;MINGDA PETG;MINGDA PLA;MINGDA PLA-CF;MINGDA PLA-HF;MINGDA PA12-CF;MINGDA TPU-95A;MINGDA TPU-95A-HF;MINGDA TPU-75D;MINGDA ABS+;MINGDA ABS-HF;MINGDA ABS-CF20;MINGDA ABS-GF25;MINGDA PET-CF;MINGDA PET-GF;MINGDA S-HtPA;MINGDA S-Multi;MINGDA PET-GF;MINGDA PET-CF;MINGDA PET-GF25;MINGDA PET-CF25;"
 }
