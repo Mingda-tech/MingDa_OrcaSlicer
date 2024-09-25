@@ -5,23 +5,19 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1024 1024"
 	 style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#SVGID_1_);stroke:#D7D4C3;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#1DADE5;}
+	.st2{fill:#0068B6;}
 </style>
+<circle class="st0" cx="512" cy="512" r="512"/>
 <sodipodi:namedview  bordercolor="#000000" borderopacity="0.25" id="namedview4" inkscape:current-layer="layer1" inkscape:cx="1105" inkscape:cy="188" inkscape:deskcolor="#d1d1d1" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="1369" inkscape:window-maximized="1" inkscape:window-width="3440" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="0.5" pagecolor="#ffffff" showgrid="false">
 	</sodipodi:namedview>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="157.6994" y1="157.6971" x2="864.8039" y2="864.8062">
-	<stop  offset="0" style="stop-color:#1DADE5"/>
-	<stop  offset="0.621" style="stop-color:#0A7FC6"/>
-	<stop  offset="1" style="stop-color:#0068B6"/>
-</linearGradient>
-<circle class="st0" cx="512" cy="512" r="500"/>
 <g>
-	<polygon class="st1" points="505.4,196 505.4,401.7 339.1,298.8 	"/>
-	<polygon class="st1" points="519,196 519,401.7 685.3,298.8 	"/>
-	<polygon class="st1" points="146.9,284.1 505.3,508.6 505.3,650 253.3,493.1 253.3,811.9 146.9,747.1 	"/>
-	<polygon class="st1" points="267.2,516.8 499.8,661.2 267.2,805.8 	"/>
-	<polygon class="st1" points="877.4,284.1 519,508.6 519,650 771.1,493.1 771.1,811.9 877.4,747.1 	"/>
-	<polygon class="st1" points="757.1,516.8 524.6,661.2 757.1,805.8 	"/>
+	<polygon class="st1" points="512,180.4 327.1,295.8 512,409.8 	"/>
+	<polygon class="st1" points="118.1,283.9 512,524.6 512,673.7 234.6,502.9 234.6,843.6 118.1,773.8 	"/>
+	<polygon class="st2" points="512,673.7 234.6,843.6 234.6,502.9 	"/>
+	<polygon class="st2" points="512,180.4 696.9,295.8 512,409.8 	"/>
+	<polygon class="st2" points="905.9,283.9 512,524.6 512,673.7 789.4,502.9 789.4,843.6 905.9,773.8 	"/>
+	<polygon class="st1" points="512,673.7 789.4,843.6 789.4,502.9 	"/>
 </g>
 </svg>

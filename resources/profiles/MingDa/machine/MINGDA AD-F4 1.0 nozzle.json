@@ -1,0 +1,80 @@
+{
+	"type": "machine",
+	"setting_id": "MDA1283",
+	"name": "MINGDA AD-F4 1.0 nozzle",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "MINGDA AD-F4 0.4 nozzle",
+	"is_custom_defined": "0",
+	"default_print_profile": "0.50mm Optimal @MINGDA (1.0 nozzle)",
+	"printer_model": "MINGDA AD-F4",
+	"machine_max_acceleration_x": [
+	  "5000",
+	  "5000"
+	],
+	"machine_max_acceleration_y": [
+	  "5000",
+	  "5000"
+	],
+	"machine_max_jerk_e": [
+	  "3",
+	  "3"
+	],
+	"machine_max_speed_e": [
+	  "30",
+	  "30"
+	],
+	"machine_max_speed_z": [
+	  "30",
+	  "30"
+	],
+	"printer_variant": "1.0",
+    
+	"version": "2.0.0.0",
+    "deretraction_speed": [
+        "0"
+    ],
+    "extruder_colour": [
+        "#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0"
+    ],
+    "max_layer_height": [
+        "0.42"
+    ],
+    "min_layer_height": [
+        "0.12"
+    ],
+    "nozzle_diameter": [
+        "0.6"
+    ],
+    "retract_before_wipe": [
+        "0%"
+    ],
+    "retract_length_toolchange": [
+        "2"
+    ],
+    "retract_restart_extra": [
+        "0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "1"
+    ],
+    "retraction_length": [
+        "0.8"
+    ],
+    "retraction_minimum_travel": [
+        "1"
+    ],
+    "retraction_speed": [
+        "40"
+    ],
+    "wipe": [
+        "1"
+    ]	
+  }
+  

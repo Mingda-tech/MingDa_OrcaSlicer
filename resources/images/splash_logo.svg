@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" data-name="图层 1">
+<svg width="480" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" data-name="图层 1">
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
 
  <g class="layer">
   <title>Layer 1</title>
-  <g id="svg_22" transform="translate(-64 -5) translate(255.081 92.3578) matrix(0.486559 0 0 0.486559 -90.3027 -15.994)">
+  <g id="svg_22" transform="translate(170.149 81.4256) matrix(0.535475 0 0 0.535475 -99.4262 -17.6469)">
    <path class="cls-1" d="m218.67,34.7l198.49,0a31.22,31.22 0 0 1 31.24,31.24l0,198.67a31.22,31.22 0 0 1 -31.24,31.24l-198.49,0a31.22,31.22 0 0 1 -31.24,-31.24l0,-198.68a31.34,31.34 0 0 1 31.24,-31.24z" fill="#e5e5e5" id="svg_20"/>
    <path class="cls-2" d="m291.64,399.14a4.08,4.08 0 0 0 -4.05,4.05l0,0l0,40.44a4.05,4.05 0 1 0 8.09,0l0,-40.43a3.96,3.96 0 0 0 -4.04,-4.05z" fill="#999999" id="svg_19"/>
    <path class="cls-2" d="m397.68,399.14l-9.74,0a24.26,24.26 0 1 0 0,48.52l9.74,0a4.05,4.05 0 1 0 0,-8.09l-9.74,0a16.18,16.18 0 0 1 -1.1,-32.35l10.66,0a4.08,4.08 0 0 0 4.05,-4.05c0.18,-2.2 -1.47,-4.04 -3.86,-4.04l0,0z" fill="#999999" id="svg_18"/>

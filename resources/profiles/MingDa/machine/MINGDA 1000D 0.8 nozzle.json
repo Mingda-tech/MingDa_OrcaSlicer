@@ -1,0 +1,59 @@
+{
+	"type": "machine",
+	"setting_id": "MD1000D3",
+	"name": "MINGDA 1000D 0.8 nozzle",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "MINGDA 1000D 0.4 nozzle",
+	"is_custom_defined": "0",
+	"printer_variant": "0.8",
+	"default_print_profile": "0.40mm Standard @MINGDA (0.8 nozzle)",
+	"printer_model": "MINGDA 1000D",
+	"extruder_colour": [
+		"#FCE94F",
+		"#FCE94F"
+	  ],
+	  "extruder_offset": [
+		"0x0",
+		"0x0"
+	  ],
+	"machine_max_acceleration_x": [
+	  "10000",
+	  "10000"
+	],
+	"machine_max_acceleration_y": [
+	  "10000",
+	  "10000"
+	],
+	"machine_max_jerk_e": [
+	  "3",
+	  "3"
+	],
+	"machine_max_speed_e": [
+	  "30",
+	  "30"
+	],
+	"machine_max_speed_z": [
+	  "30",
+	  "30"
+	],
+	"max_layer_height": [
+        "0.5",
+        "0.5"
+	],
+	"min_layer_height": [
+	  "0.12",
+	  "0.12"
+	],
+	"nozzle_diameter": [
+	  "0.8",
+	  "0.8"
+	],
+	"retraction_length": [
+	  "0.8",
+	  "0.8"
+	],
+    
+	"version": "2.0.0.0"
+  }
+  

@@ -1,0 +1,55 @@
+{
+	"type": "machine",
+	"setting_id": "MD400D3",
+	"name": "MINGDA 400D 0.6 nozzle",
+	"from": "system",
+	"instantiation": "true",
+	"inherits": "MINGDA 400D 0.4 nozzle",
+	"is_custom_defined": "0",
+	"printer_variant": "0.6",
+	"default_print_profile": "0.30mm Standard @MINGDA (0.6 nozzle)",
+	"printer_model": "MINGDA 400D",
+
+	"machine_max_acceleration_x": [
+	  "5000",
+	  "5000"
+	],
+	"machine_max_acceleration_y": [
+	  "5000",
+	  "5000"
+	],
+	"machine_max_jerk_e": [
+	  "3",
+	  "3"
+	],
+	"machine_max_speed_e": [
+	  "30",
+	  "30"
+	],
+	"machine_max_speed_z": [
+	  "30",
+	  "30"
+	],
+	"max_layer_height": [
+	  "0.42",
+	  "0.42"
+	],
+	"min_layer_height": [
+	  "0.12",
+	  "0.12"
+	],
+	"nozzle_diameter": [
+	  "0.6",
+	  "0.6"
+	],
+    "extruder_offset": [
+        "0x0",
+		"0x0"
+    ],
+	"retraction_length": [
+	  "0.8",
+	  "0.8"
+	],
+	"version": "2.0.0.0"
+  }
+  
