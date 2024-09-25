@@ -22,9 +22,6 @@
     "chamber_temperature": [
         "0"
     ],
-    "close_fan_the_first_x_layers": [
-        "3"
-    ],
     "compatible_printers": [
         "Magician X2 (0.4 nozzle)",
         "MINGDA S2 (0.4 nozzle)",
@@ -39,53 +36,53 @@
         "MINGDA S3 (0.6 nozzle)",
         "MINGDA S3 (0.8 nozzle)",
         "MINGDA S3 (1.0 nozzle)",
-        "MINGDA 400D 0.4 nozzle (Dual)",
-        "MINGDA 400D 0.4 nozzle (Left)",
-        "MINGDA 400D 0.4 nozzle (Right)",
-        "MINGDA 400D 0.6 nozzle (Dual)",
-        "MINGDA 400D 0.6 nozzle (Left)",
-        "MINGDA 400D 0.6 nozzle (Right)",		
-        "MINGDA 400D 0.8 nozzle (Dual)",
-        "MINGDA 400D 0.8 nozzle (Left)",
-        "MINGDA 400D 0.8 nozzle (Right)",		
-        "MINGDA 400D 1.0 nozzle (Dual)",
-        "MINGDA 400D 1.0 nozzle (Left)",
-        "MINGDA 400D 1.0 nozzle (Right)",		
-        "MINGDA 600D 0.4 nozzle (Dual)",
-        "MINGDA 600D 0.4 nozzle (Left)",
-        "MINGDA 600D 0.4 nozzle (Right)",
-        "MINGDA 600D 0.6 nozzle (Dual)",
-        "MINGDA 600D 0.6 nozzle (Left)",
-        "MINGDA 600D 0.6 nozzle (Right)",		
-        "MINGDA 600D 0.8 nozzle (Dual)",
-        "MINGDA 600D 0.8 nozzle (Left)",
-        "MINGDA 600D 0.8 nozzle (Right)",		
-        "MINGDA 600D 1.0 nozzle (Dual)",
-        "MINGDA 600D 1.0 nozzle (Left)",
-        "MINGDA 600D 1.0 nozzle (Right)",		
-        "MINGDA 1000D 0.4 nozzle (Dual)",
-        "MINGDA 1000D 0.4 nozzle (Left)",
-        "MINGDA 1000D 0.4 nozzle (Right)",
-        "MINGDA 1000D 0.6 nozzle (Dual)",
-        "MINGDA 1000D 0.6 nozzle (Left)",
-        "MINGDA 1000D 0.6 nozzle (Right)",		
-        "MINGDA 1000D 0.8 nozzle (Dual)",
-        "MINGDA 1000D 0.8 nozzle (Left)",
-        "MINGDA 1000D 0.8 nozzle (Right)",		
-        "MINGDA 1000D 1.0 nozzle (Dual)",
-        "MINGDA 1000D 1.0 nozzle (Left)",
-        "MD-400D Marlin 0.4 nozzle (Dual)",
-        "MD-400D Marlin 0.4 nozzle (Left)",
-        "MD-400D Marlin 0.4 nozzle (Right)",
-        "MD-400D Marlin 0.6 nozzle (Dual)",
-        "MD-400D Marlin 0.6 nozzle (Left)",
-        "MD-400D Marlin 0.6 nozzle (Right)",		
-        "MD-400D Marlin 0.8 nozzle (Dual)",
-        "MD-400D Marlin 0.8 nozzle (Left)",
-        "MD-400D Marlin 0.8 nozzle (Right)",		
-        "MD-400D Marlin 1.0 nozzle (Dual)",
-        "MD-400D Marlin 1.0 nozzle (Left)",
-        "MD-400D Marlin 1.0 nozzle (Right)", 
+        "MINGDA 400D 0.4 nozzle",
+        
+        
+        "MINGDA 400D 0.6 nozzle",
+        
+        		
+        "MINGDA 400D 0.8 nozzle",
+        
+        		
+        "MINGDA 400D 1.0 nozzle",
+        
+        		
+        "MINGDA 600D 0.4 nozzle",
+        
+        
+        "MINGDA 600D 0.6 nozzle",
+        
+        		
+        "MINGDA 600D 0.8 nozzle",
+        
+        		
+        "MINGDA 600D 1.0 nozzle",
+        
+        		
+        "MINGDA 1000D 0.4 nozzle",
+        
+        
+        "MINGDA 1000D 0.6 nozzle",
+        
+        		
+        "MINGDA 1000D 0.8 nozzle",
+        
+        		
+        "MINGDA 1000D 1.0 nozzle",
+        
+        "MD-400D Marlin 0.4 nozzle",
+        
+        
+        "MD-400D Marlin 0.6 nozzle",
+        
+        		
+        "MD-400D Marlin 0.8 nozzle",
+        
+        		
+        "MD-400D Marlin 1.0 nozzle",
+        
+         
           "MD-600Pro (0.4 nozzle)",
           "MD-600Pro (0.6 nozzle)",
           "MD-600Pro (0.8 nozzle)",
@@ -94,11 +91,11 @@
           "MD-1000Pro (0.6 nozzle)",
           "MD-1000Pro (0.8 nozzle)",
           "MD-1000Pro (1.0 nozzle)",        
-        "MINGDA 1000D 1.0 nozzle (Right)",
-        "MINGDA A128 0.4 nozzle",
-        "MINGDA A128 0.6 nozzle",
-        "MINGDA A128 0.8 nozzle",
-        "MINGDA A128 1.0 nozzle",
+        
+        "MINGDA AD-F4 0.4 nozzle",
+        "MINGDA AD-F4 0.6 nozzle",
+        "MINGDA AD-F4 0.8 nozzle",
+        "MINGDA AD-F4 1.0 nozzle",
         "MD-A128 Marlin 0.4 nozzle",
         "MD-A128 Marlin 0.6 nozzle",
         "MD-A128 Marlin 0.8 nozzle",
@@ -126,7 +123,7 @@
         "1"
     ],
     "enable_pressure_advance": [
-        "0"
+        "1"
     ],
     "eng_plate_temp": [
         "0"
@@ -143,15 +140,6 @@
     "fan_min_speed": [
         "100"
     ],
-    "filament_cooling_final_speed": [
-        "3.4"
-    ],
-    "filament_cooling_initial_speed": [
-        "2.2"
-    ],
-    "filament_cooling_moves": [
-        "4"
-    ],
     "filament_cost": [
         "20"
     ],
@@ -164,9 +152,6 @@
     "filament_diameter": [
         "1.75"
     ],
-    "filament_end_gcode": [
-        "; filament end gcode \nM104 S0"
-    ],
     "filament_flow_ratio": [
         "0.98"
     ],
@@ -175,21 +160,6 @@
     ],
     "filament_load_time": [
         "0"
-    ],
-    "filament_loading_speed": [
-        "28"
-    ],
-    "filament_loading_speed_start": [
-        "3"
-    ],
-    "filament_max_volumetric_speed": [
-        "21"
-    ],
-    "filament_minimal_purge_on_wipe_tower": [
-        "50"
-    ],
-    "filament_multitool_ramming_flow": [
-        "10"
     ],
     "filament_multitool_ramming_volume": [
         "10"
@@ -233,9 +203,6 @@
     "filament_soluble": [
         "0"
     ],
-    "filament_start_gcode": [
-        "; filament start gcode\nM109 S[nozzle_temperature]"
-    ],
     "filament_toolchange_delay": [
         "0"
     ],
@@ -244,9 +211,6 @@
     ],
     "filament_unload_time": [
         "0"
-    ],
-    "filament_unloading_speed": [
-        "90"
     ],
     "filament_unloading_speed_start": [
         "100"
@@ -293,7 +257,7 @@
         "50%"
     ],
     "pressure_advance": [
-        "0.02"
+        "0.022"
     ],
     "reduce_fan_stop_start_freq": [
         "1"
@@ -303,9 +267,6 @@
     ],
     "slow_down_for_layer_cooling": [
         "1"
-    ],
-    "slow_down_layer_time": [
-        "4"
     ],
     "slow_down_min_speed": [
         "10"
@@ -321,5 +282,58 @@
     ],
     "textured_plate_temp_initial_layer": [
         "45"
-    ]
+    ],
+    "close_fan_the_first_x_layers": [
+        "1"
+    ],
+    "filament_cooling_final_speed": [
+        "3.5"
+    ],
+    "filament_cooling_initial_speed": [
+        "10"
+    ],
+    "filament_cooling_moves": [
+        "2"
+    ],
+    "filament_end_gcode": [
+        "; filament end gcode \n"
+    ],
+    "filament_loading_speed": [
+        "10"
+    ],
+    "filament_loading_speed_start": [
+        "50"
+    ],
+    "filament_max_volumetric_speed": [
+        "12"
+    ],
+    "filament_minimal_purge_on_wipe_tower": [
+        "15"
+    ],
+    "filament_multitool_ramming_flow": [
+        "40"
+    ],
+    "filament_settings_id": [
+        "MINGDA PLA"
+    ],
+    "filament_stamping_distance": [
+        "45"
+    ],
+    "filament_stamping_loading_speed": [
+        "29"
+    ],
+    "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
+    "filament_unloading_speed": [
+        "100"
+    ],
+    "idle_temperature": [
+        "25"
+    ],
+    "is_custom_defined": "0",
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "version": "2.0.0.0"
 }

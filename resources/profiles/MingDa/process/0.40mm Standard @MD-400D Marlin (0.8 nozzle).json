@@ -9,8 +9,8 @@
     "name": "0.40mm Standard @MD-400D Marlin (0.8 nozzle)",
     "print_settings_id": "0.40mm Standard @MD-400D Marlin (0.8 nozzle)",
     "compatible_printers": [
-      "MD-400D Marlin 0.8 nozzle (Dual)",
-      "MD-400D Marlin 0.8 nozzle (Left)",
+      "MD-400D Marlin 0.8 nozzle",
+      
       "MD-400D Marlin 0.8 nozzle (Right)"
 ],
   "enable_prime_tower": "0",

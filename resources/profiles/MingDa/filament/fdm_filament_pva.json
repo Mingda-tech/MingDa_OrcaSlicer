@@ -88,7 +88,7 @@
     "additional_cooling_fan_speed": [
         "70"
     ],
-    "filament_start_gcode": [
-        "; Filament gcode\nM109 S[nozzle_temperature]"
+        "filament_start_gcode": [
+        "; filament start gcode\n"
     ]
 }

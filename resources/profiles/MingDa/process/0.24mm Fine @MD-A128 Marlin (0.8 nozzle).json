@@ -3,7 +3,7 @@
 	"setting_id": "GP012",
     "from": "system",
     "instantiation": "true",
-    "inherits": "fdm_process_MINGDA_common_base",
+    "inherits": "0.20mm Standard @MD-A128 Marlin (0.4 nozzle)",
     "is_custom_defined": "0",
     "name": "0.24mm Fine @MD-A128 Marlin (0.8 nozzle)",
     "print_settings_id": "0.24mm Fine @MD-A128 Marlin (0.8 nozzle)",

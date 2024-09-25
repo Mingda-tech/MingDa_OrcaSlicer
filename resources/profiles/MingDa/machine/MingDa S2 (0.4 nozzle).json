@@ -28,7 +28,7 @@
     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
     "best_object_pos": "0.5,0.5",
     "change_extrusion_role_gcode": "",
-    "change_filament_gcode": "M600",
+    "change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
     "cooling_tube_length": "5",
     "cooling_tube_retraction": "91.5",
     "default_filament_profile": [
@@ -124,7 +124,7 @@
         "0",
         "0"
     ],
-    "machine_pause_gcode": "M601\n",
+    "machine_pause_gcode": "; pause print\nPAUSE\n",
     "machine_start_gcode": "START_PRINT EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature]",
     "machine_end_gcode": "END_PRINT",
     "machine_unload_filament_time": "0",
@@ -187,7 +187,7 @@
     ],
     "scan_first_layer": "0",
     "silent_mode": "0",
-    "single_extruder_multi_material": "1",
+    "single_extruder_multi_material": "0",
     "support_air_filtration": "1",
     "support_chamber_temp_control": "1",
     "template_custom_gcode": "SET_FAN_SPEED FAN=Auxiliary_Cooling_Fan SPEED=1.0",

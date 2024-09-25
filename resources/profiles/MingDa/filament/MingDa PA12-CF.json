@@ -7,7 +7,7 @@
     "instantiation": "true",
     "inherits": "fdm_filament_pa",
     "filament_type": [
-      "PA-CF"
+      "PA12"
     ],
     "filament_max_volumetric_speed": [
       "8"
@@ -34,44 +34,44 @@
         "MINGDA3D"
     ],
     "compatible_printers": [
-      "MINGDA 400D 0.4 nozzle (Dual)",
-      "MINGDA 400D 0.4 nozzle (Left)",
-      "MINGDA 400D 0.4 nozzle (Right)",
-      "MINGDA 400D 0.6 nozzle (Dual)",
-      "MINGDA 400D 0.6 nozzle (Left)",
-      "MINGDA 400D 0.6 nozzle (Right)",
-      "MINGDA 400D 0.8 nozzle (Dual)",
-      "MINGDA 400D 0.8 nozzle (Left)",
-      "MINGDA 400D 0.8 nozzle (Right)",
-      "MINGDA 600D 0.4 nozzle (Dual)",
-      "MINGDA 600D 0.4 nozzle (Left)",
-      "MINGDA 600D 0.4 nozzle (Right)",
-      "MINGDA 600D 0.6 nozzle (Dual)",
-      "MINGDA 600D 0.6 nozzle (Left)",
-      "MINGDA 600D 0.6 nozzle (Right)",
-      "MINGDA 600D 0.8 nozzle (Dual)",
-      "MINGDA 600D 0.8 nozzle (Left)",
-      "MINGDA 600D 0.8 nozzle (Right)",
-      "MINGDA 1000D 0.4 nozzle (Dual)",
-      "MINGDA 1000D 0.4 nozzle (Left)",
-      "MINGDA 1000D 0.4 nozzle (Right)",
-      "MINGDA 1000D 0.6 nozzle (Dual)",
-      "MINGDA 1000D 0.6 nozzle (Left)",
-      "MINGDA 1000D 0.6 nozzle (Right)",
-      "MINGDA 1000D 0.8 nozzle (Dual)",
-      "MINGDA 1000D 0.8 nozzle (Left)",
-      "MD-400D Marlin 0.4 nozzle (Dual)",
-      "MD-400D Marlin 0.4 nozzle (Left)",
-      "MD-400D Marlin 0.4 nozzle (Right)",
-      "MD-400D Marlin 0.6 nozzle (Dual)",
-      "MD-400D Marlin 0.6 nozzle (Left)",
-      "MD-400D Marlin 0.6 nozzle (Right)",		
-      "MD-400D Marlin 0.8 nozzle (Dual)",
-      "MD-400D Marlin 0.8 nozzle (Left)",
-      "MD-400D Marlin 0.8 nozzle (Right)",		
-      "MD-400D Marlin 1.0 nozzle (Dual)",
-      "MD-400D Marlin 1.0 nozzle (Left)",
-      "MD-400D Marlin 1.0 nozzle (Right)", 
+      "MINGDA 400D 0.4 nozzle",
+      
+      
+      "MINGDA 400D 0.6 nozzle",
+      
+      
+      "MINGDA 400D 0.8 nozzle",
+      
+      
+      "MINGDA 600D 0.4 nozzle",
+      
+      
+      "MINGDA 600D 0.6 nozzle",
+      
+      
+      "MINGDA 600D 0.8 nozzle",
+      
+      
+      "MINGDA 1000D 0.4 nozzle",
+      
+      
+      "MINGDA 1000D 0.6 nozzle",
+      
+      
+      "MINGDA 1000D 0.8 nozzle",
+      
+      "MD-400D Marlin 0.4 nozzle",
+      
+      
+      "MD-400D Marlin 0.6 nozzle",
+      
+      		
+      "MD-400D Marlin 0.8 nozzle",
+      
+      		
+      "MD-400D Marlin 1.0 nozzle",
+      
+       
         "MD-600Pro (0.4 nozzle)",
         "MD-600Pro (0.6 nozzle)",
         "MD-600Pro (0.8 nozzle)",
@@ -79,8 +79,7 @@
         "MD-1000Pro (0.4 nozzle)",
         "MD-1000Pro (0.6 nozzle)",
         "MD-1000Pro (0.8 nozzle)",
-        "MD-1000Pro (1.0 nozzle)",      
-      "MINGDA 1000D 0.8 nozzle (Right)"
+        "MD-1000Pro (1.0 nozzle)"
     ],
 
     "enable_pressure_advance": [
@@ -98,9 +97,9 @@
   "filament_settings_id": [
       "MINGDA PA12-CF"
   ],
-  "filament_start_gcode": [
-      "; Filament gcode\nM109 S[nozzle_temperature]"
-  ],
+      "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
   "is_custom_defined": "0",
   "nozzle_temperature": [
       "280"

@@ -6,9 +6,6 @@
     "printer_model": "MINGDA S2",
     "inherits": "MINGDA S2 (0.4 nozzle)",
     "default_print_profile": "0.30mm Standard @MINGDA (0.6 nozzle)",
-    "default_filament_profile": [
-        "MINGDA PLA"
-    ],
     "machine_max_acceleration_e": [
         "5000",
         "10000"

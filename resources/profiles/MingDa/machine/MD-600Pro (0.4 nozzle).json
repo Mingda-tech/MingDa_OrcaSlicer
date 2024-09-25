@@ -95,8 +95,8 @@
         "1",
 		"1"
     ],
-	"ams_extruders_count": ["1","1"],
-	"change_filament_gcode": "",
+	
+	"change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
 	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
 		"MINGDA PLA"

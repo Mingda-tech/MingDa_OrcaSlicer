@@ -9,29 +9,6 @@
 	"default_print_profile": "0.50mm Optimal @MD-A128 Marlin (1.0 nozzle)",
 	"printer_model": "MD-A128 Marlin",
 	"gcode_flavor": "marlin2",
-	"default_filament_profile": [
-	  "MINGDA PLA"
-	],
-	"machine_max_acceleration_x": [
-	  "5000",
-	  "5000"
-	],
-	"machine_max_acceleration_y": [
-	  "5000",
-	  "5000"
-	],
-	"machine_max_jerk_e": [
-	  "3",
-	  "3"
-	],
-	"machine_max_speed_e": [
-	  "30",
-	  "30"
-	],
-	"machine_max_speed_z": [
-	  "30",
-	  "30"
-	],
 	"printer_variant": "1.0",
 	"version": "2.0.0.0",
     "deretraction_speed": [

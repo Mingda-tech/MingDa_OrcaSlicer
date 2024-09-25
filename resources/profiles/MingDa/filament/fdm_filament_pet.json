@@ -35,7 +35,7 @@
         "25"
     ],
     "filament_type": [
-        "PETG"
+        "PET"
     ],
     "filament_density": [
         "1.27"
@@ -70,7 +70,7 @@
     "nozzle_temperature_range_high": [
         "260"
     ],
-    "filament_start_gcode": [
-        "; Filament gcode\nM109 S[nozzle_temperature]"
+        "filament_start_gcode": [
+        "; filament start gcode\n"
     ]
 }

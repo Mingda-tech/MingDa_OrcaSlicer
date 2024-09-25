@@ -10,16 +10,16 @@
 		"MINGDA S1 (0.6 nozzle)",
         "MINGDA S2 (0.6 nozzle)",
         "MINGDA S3 (0.6 nozzle)",	
-        "MINGDA 400D 0.6 nozzle (Dual)",
-        "MINGDA 400D 0.6 nozzle (Left)",
-        "MINGDA 400D 0.6 nozzle (Right)",				
-        "MINGDA 600D 0.6 nozzle (Dual)",
-        "MINGDA 600D 0.6 nozzle (Left)",
-        "MINGDA 600D 0.6 nozzle (Right)",			
-        "MINGDA 1000D 0.6 nozzle (Dual)",
-        "MINGDA 1000D 0.6 nozzle (Left)",
-        "MINGDA 1000D 0.6 nozzle (Right)",	
-        "MINGDA A128 0.6 nozzle"
+        "MINGDA 400D 0.6 nozzle",
+        
+        				
+        "MINGDA 600D 0.6 nozzle",
+        
+        			
+        "MINGDA 1000D 0.6 nozzle",
+        
+        	
+        "MINGDA AD-F4 0.6 nozzle"
 	],
     "name": "0.18mm Fine @MINGDA (0.6 nozzle)",
     "print_settings_id": "0.18mm Fine @MINGDA (0.6 nozzle)",
@@ -31,7 +31,7 @@
     "initial_layer_speed": "35",
     "inner_wall_acceleration": "0",
     "inner_wall_speed": "200",
-    "internal_bridge_speed": "30",
+    "internal_bridge_speed": "150%",
     "internal_solid_infill_speed": "150",
     "outer_wall_acceleration": "3000",
     "outer_wall_speed": "180",

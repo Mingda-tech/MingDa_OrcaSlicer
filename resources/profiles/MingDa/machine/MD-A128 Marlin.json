@@ -5,7 +5,7 @@
     "nozzle_diameter": "0.4;0.6;0.8;1.0",
     "machine_tech": "FFF",
     "family": "MINGDA",
-    "bed_model": "800x1200_buildplate_model.stl",
+    "bed_model": "MINGDA_A128_buildplate_model.stl",
     "bed_texture": "MINGDA_A128_buildplate_texture.png",
     "hotend_model": "",
 	"default_materials": "MINGDA PETG-CF;MINGDA PETG-HF;MINGDA PETG;MINGDA PLA;MINGDA PLA-CF;MINGDA PLA-HF;MINGDA PA12-CF;MINGDA TPU-95A;MINGDA TPU-95A-HF;MINGDA TPU-75D;MINGDA PET-CF;MINGDA PET-GF;MINGDA S-HtPA;MINGDA S-Multi;MINGDA PET-GF;MINGDA PET-CF;MINGDA PET-GF25;MINGDA PET-CF25;"

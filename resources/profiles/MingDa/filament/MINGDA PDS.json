@@ -13,7 +13,7 @@
       "0.95"
   ],
   "filament_type": [
-      "PLA"
+      "PDS"
   ],
   "filament_max_volumetric_speed": [
       "12"
@@ -33,20 +33,37 @@
   "nozzle_temperature_range_high": [
       "240"
   ],
-  "filament_start_gcode": [
-    "; filament start gcode\nM109 S[nozzle_temperature]"
-],
+      "filament_start_gcode": [
+        "; filament start gcode\n"
+    ],
   "filament_vendor": [
       "MINGDA3D"
   ],
     "compatible_printers": [
-        "MINGDA A128 0.4 nozzle",
-        "MINGDA A128 0.6 nozzle",
-        "MINGDA A128 0.8 nozzle",
-        "MINGDA A128 1.0 nozzle",
+        "MINGDA AD-F4 0.4 nozzle",
+        "MINGDA AD-F4 0.6 nozzle",
+        "MINGDA AD-F4 0.8 nozzle",
+        "MINGDA AD-F4 1.0 nozzle",
         "MD-A128 Marlin 0.4 nozzle",
         "MD-A128 Marlin 0.6 nozzle",
         "MD-A128 Marlin 0.8 nozzle",
         "MD-A128 Marlin 1.0 nozzle"
-    ]
+    ],
+    "filament_settings_id": [
+        "MINGDA PDS - Copy"
+    ],
+    "hot_plate_temp": [
+        "60"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "60"
+    ],
+    "is_custom_defined": "0",
+    "nozzle_temperature": [
+        "200"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "205"
+    ],
+    "version": "2.0.0.0"
 }

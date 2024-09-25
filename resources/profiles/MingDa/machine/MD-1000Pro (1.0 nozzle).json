@@ -10,9 +10,6 @@
 	"default_print_profile": "0.50mm Optimal @MD-1000Pro (1.0 nozzle)",
 	"gcode_flavor": "marlin2",
 	"printer_model": "MD-1000Pro",
-	"default_filament_profile": [
-	  "MINGDA PLA"
-	],
 	"nozzle_diameter": [
 		"1.0"
 	  ],

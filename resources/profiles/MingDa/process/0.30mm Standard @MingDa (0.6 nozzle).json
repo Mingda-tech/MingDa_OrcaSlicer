@@ -9,14 +9,11 @@
     "compatible_printers": [
 		"MINGDA S1 (0.6 nozzle)",
         "MINGDA S2 (0.6 nozzle)",
-        "MINGDA S3 (0.6 nozzle)",	
-        "MINGDA 400D 0.6 nozzle (Left)",
-        "MINGDA 400D 0.6 nozzle (Right)",				
-        "MINGDA 600D 0.6 nozzle (Left)",
-        "MINGDA 600D 0.6 nozzle (Right)",			
-        "MINGDA 1000D 0.6 nozzle (Left)",
-        "MINGDA 1000D 0.6 nozzle (Right)",	
-        "MINGDA A128 0.6 nozzle"
+        "MINGDA S3 (0.6 nozzle)",   			
+        "MINGDA 400D 0.6 nozzle",    				
+        "MINGDA 600D 0.6 nozzle",
+        "MINGDA 1000D 0.6 nozzle",        	
+        "MINGDA AD-F4 0.6 nozzle"
 	],
     "enable_prime_tower": "0",
     "name": "0.30mm Standard @MINGDA (0.6 nozzle)",

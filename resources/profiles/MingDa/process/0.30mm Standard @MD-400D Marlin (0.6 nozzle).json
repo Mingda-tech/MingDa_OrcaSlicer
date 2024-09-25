@@ -7,8 +7,8 @@
     "is_custom_defined": "0",
     "layer_height": "0.3",
     "compatible_printers": [
-        "MD-400D Marlin 0.6 nozzle (Dual)",
-        "MD-400D Marlin 0.6 nozzle (Left)",
+        "MD-400D Marlin 0.6 nozzle",
+        
         "MD-400D Marlin 0.6 nozzle (Right)"
 	],
     "enable_prime_tower": "0",

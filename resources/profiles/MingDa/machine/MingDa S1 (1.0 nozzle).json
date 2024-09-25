@@ -5,11 +5,8 @@
     "instantiation": "true",
     "inherits": "MINGDA S1 (0.4 nozzle)",
     "printer_model": "MINGDA S1",
-    "default_print_profile": "0.50mm Shandard @MINGDA (1.0 nozzle)",
+    "default_print_profile": "0.50mm Optimal @MINGDA (1.0 nozzle)",
     "is_custom_defined": "0",
-    "default_filament_profile": [
-        "MINGDA PLA"
-    ],
     "machine_max_acceleration_e": [
         "5000",
         "10000"
