@@ -40,7 +40,6 @@ void CoolingBuffer::reset(const Vec3d &position)
     m_current_pos[4] = float(m_config.travel_speed.value);
     m_fan_speed = -1;
     m_additional_fan_speed = -1;
-    m_single_nozzle_with_multiple_fans = -1;
     m_current_fan_speed = -1;
 }
 
@@ -223,6 +222,9 @@ struct PerExtruderAdjustments
     float                       slow_down_layer_time = 0.f;
     // Minimum print speed allowed for this extruder.
     float                       slow_down_min_speed     = 0.f;
+    
+    bool                        dont_slow_down_outer_wall = false;
+
 
     // Parsed lines.
     std::vector<CoolingLine>    lines;
@@ -331,6 +333,8 @@ std::vector<PerExtruderAdjustments> CoolingBuffer::parse_layer_gcode(const std::
         adj.cooling_slow_down_enabled = m_config.slow_down_for_layer_cooling.get_at(extruder_id);
         adj.slow_down_layer_time = float(m_config.slow_down_layer_time.get_at(extruder_id));
         adj.slow_down_min_speed           = float(m_config.slow_down_min_speed.get_at(extruder_id));
+        // ORCA: To enable dont slow down external perimeters feature per filament (extruder)
+        adj.dont_slow_down_outer_wall   = m_config.dont_slow_down_outer_wall.get_at(extruder_id);
         map_extruder_to_per_extruder_adjustment[extruder_id] = i;
     }
 
@@ -400,7 +404,15 @@ std::vector<PerExtruderAdjustments> CoolingBuffer::parse_layer_gcode(const std::
                 line.type |= CoolingLine::TYPE_EXTERNAL_PERIMETER;
             if (wipe)
                 line.type |= CoolingLine::TYPE_WIPE;
-            if (boost::contains(sline, ";_EXTRUDE_SET_SPEED") && ! wipe) {
+            
+            // ORCA: Dont slowdown external perimeters for layer time feature
+            // use the adjustment pointer to ensure the value for the current extruder (filament) is used.
+            bool adjust_external = true;
+            if(adjustment->dont_slow_down_outer_wall && external_perimeter) adjust_external = false;
+            
+            // ORCA: Dont slowdown external perimeters for layer time works by not marking the external perimeter as adjustable, 
+            // hence the slowdown algorithm ignores it.
+            if (boost::contains(sline, ";_EXTRUDE_SET_SPEED") && ! wipe && adjust_external) {
                 line.type |= CoolingLine::TYPE_ADJUSTABLE;
                 active_speed_modifier = adjustment->lines.size();
             }
@@ -509,62 +521,6 @@ std::vector<PerExtruderAdjustments> CoolingBuffer::parse_layer_gcode(const std::
     return per_extruder_adjustments;
 }
 
-// Slow down an extruder range proportionally down to slow_down_layer_time.
-// Return the total time for the complete layer.
-static inline float extruder_range_slow_down_proportional(
-    std::vector<PerExtruderAdjustments*>::iterator it_begin,
-    std::vector<PerExtruderAdjustments*>::iterator it_end,
-    // Elapsed time for the extruders already processed.
-    float elapsed_time_total0,
-    // Initial total elapsed time before slow down.
-    float elapsed_time_before_slowdown,
-    // Target time for the complete layer (all extruders applied).
-    float slow_down_layer_time)
-{
-    // Total layer time after the slow down has been applied.
-    float total_after_slowdown = elapsed_time_before_slowdown;
-    // Now decide, whether the external perimeters shall be slowed down as well.
-    float max_time_nep = elapsed_time_total0;
-    for (auto it = it_begin; it != it_end; ++ it)
-        max_time_nep += (*it)->maximum_time_after_slowdown(false);
-    if (max_time_nep > slow_down_layer_time) {
-        // It is sufficient to slow down the non-external perimeter moves to reach the target layer time.
-        // Slow down the non-external perimeters proportionally.
-        float non_adjustable_time = elapsed_time_total0;
-        for (auto it = it_begin; it != it_end; ++ it)
-            non_adjustable_time += (*it)->non_adjustable_time(false);
-        // The following step is a linear programming task due to the minimum movement speeds of the print moves.
-        // Run maximum 5 iterations until a good enough approximation is reached.
-        for (size_t iter = 0; iter < 5; ++ iter) {
-            float factor = (slow_down_layer_time - non_adjustable_time) / (total_after_slowdown - non_adjustable_time);
-            assert(factor > 1.f);
-            total_after_slowdown = elapsed_time_total0;
-            for (auto it = it_begin; it != it_end; ++ it)
-                total_after_slowdown += (*it)->slow_down_proportional(factor, false);
-            if (total_after_slowdown > 0.95f * slow_down_layer_time)
-                break;
-        }
-    } else {
-        // Slow down everything. First slow down the non-external perimeters to maximum.
-        for (auto it = it_begin; it != it_end; ++ it)
-            (*it)->slowdown_to_minimum_feedrate(false);
-        // Slow down the external perimeters proportionally.
-        float non_adjustable_time = elapsed_time_total0;
-        for (auto it = it_begin; it != it_end; ++ it)
-            non_adjustable_time += (*it)->non_adjustable_time(true);
-        for (size_t iter = 0; iter < 5; ++ iter) {
-            float factor = (slow_down_layer_time - non_adjustable_time) / (total_after_slowdown - non_adjustable_time);
-            assert(factor > 1.f);
-            total_after_slowdown = elapsed_time_total0;
-            for (auto it = it_begin; it != it_end; ++ it)
-                total_after_slowdown += (*it)->slow_down_proportional(factor, true);
-            if (total_after_slowdown > 0.95f * slow_down_layer_time)
-                break;
-        }
-    }
-    return total_after_slowdown;
-}
-
 // Slow down an extruder range to slow_down_layer_time.
 // Return the total time for the complete layer.
 static inline void extruder_range_slow_down_non_proportional(
@@ -662,9 +618,8 @@ float CoolingBuffer::calculate_layer_slowdown(std::vector<PerExtruderAdjustments
         adj.time_maximum = adj.maximum_time_after_slowdown(true);
         if (adj.cooling_slow_down_enabled && adj.lines.size() > 0) {
             by_slowdown_time.emplace_back(&adj);
-            if (! m_cooling_logic_proportional)
-                // sorts the lines, also sets adj.time_non_adjustable
-                adj.sort_lines_by_decreasing_feedrate();
+            // sorts the lines, also sets adj.time_non_adjustable
+            adj.sort_lines_by_decreasing_feedrate();
         } else
             elapsed_time_total0 += adj.elapsed_time_total();
     }
@@ -688,10 +643,7 @@ float CoolingBuffer::calculate_layer_slowdown(std::vector<PerExtruderAdjustments
             for (auto it = cur_begin; it != by_slowdown_time.end(); ++ it)
                 max_time += (*it)->time_maximum;
             if (max_time > slow_down_layer_time) {
-                if (m_cooling_logic_proportional)
-                    extruder_range_slow_down_proportional(cur_begin, by_slowdown_time.end(), elapsed_time_total0, total, slow_down_layer_time);
-                else
-                    extruder_range_slow_down_non_proportional(cur_begin, by_slowdown_time.end(), slow_down_layer_time - total);
+                extruder_range_slow_down_non_proportional(cur_begin, by_slowdown_time.end(), slow_down_layer_time - total);
             } else {
                 // Slow down to maximum possible.
                 for (auto it = cur_begin; it != by_slowdown_time.end(); ++ it)
@@ -707,20 +659,16 @@ float CoolingBuffer::calculate_layer_slowdown(std::vector<PerExtruderAdjustments
 // Apply slow down over G-code lines stored in per_extruder_adjustments, enable fan if needed.
 // Returns the adjusted G-code.
 std::string CoolingBuffer::apply_layer_cooldown(
-    // Source G-code for the current layer. 源代码为当前层的g代码。
+    // Source G-code for the current layer.
     const std::string                      &gcode,
     // ID of the current layer, used to disable fan for the first n layers.
-    // // 当前层ID，用于关闭前n层的风扇。
     size_t                                  layer_id, 
     // Total time of this layer after slow down, used to control the fan.
-    //这层总时间经过减速后，用来控制风机。
     float                                   layer_time,
     // Per extruder list of G-code lines and their cool down attributes.
-    //每个挤出机的g代码行列表及其冷却属性。
     std::vector<PerExtruderAdjustments>    &per_extruder_adjustments)
 {
     // First sort the adjustment lines by of multiple extruders by their position in the source G-code.
-    //首先按多个挤出机在源代码中的位置对调整线进行排序。
     std::vector<const CoolingLine*> lines;
     {
         size_t n_lines = 0;
@@ -791,23 +739,6 @@ std::string CoolingBuffer::apply_layer_cooldown(
             supp_interface_fan_control= false;
             supp_interface_fan_speed   = 0;
         }
-        //TODO:ylg 单喷头多风扇
-        int   close_fan_the_first_x_layers_1 = m_config.close_fan_the_first_x_layers_1.get_at(m_current_extruder);
-        int   full_fan_speed_layer_1         = m_config.full_fan_speed_layer_1.get_at(m_current_extruder);
-        float fan_min_speed_1                = m_config.fan_min_speed_1.get_at(m_current_extruder);
-        if (close_fan_the_first_x_layers_1 <= 0 && full_fan_speed_layer_1 > 0) {
-            close_fan_the_first_x_layers_1 = 1;
-        }
-        if (int(layer_id) >= close_fan_the_first_x_layers_1) {
-            if (int(layer_id) >= close_fan_the_first_x_layers_1 && int(layer_id) + 1 < full_fan_speed_layer_1) {
-                float factor = float(int(layer_id + 1) - close_fan_the_first_x_layers_1) /
-                               float(full_fan_speed_layer_1 - close_fan_the_first_x_layers_1);
-                fan_min_speed_1    = std::clamp(int(float(fan_min_speed_1) * factor + 0.5f), 0, 255);
-            }
-        }else{
-            fan_min_speed_1 = 0;
-
-        }
         if (fan_speed_new != m_fan_speed) {
             m_fan_speed = fan_speed_new;
             m_current_fan_speed = fan_speed_new;
@@ -819,12 +750,6 @@ std::string CoolingBuffer::apply_layer_cooldown(
             m_additional_fan_speed = additional_fan_speed_new;
             if (immediately_apply && m_config.auxiliary_fan.value)
                 new_gcode += GCodeWriter::set_additional_fan(m_additional_fan_speed);
-        }
-                //BBS
-        if (fan_min_speed_1 != m_single_nozzle_with_multiple_fans) {
-            m_single_nozzle_with_multiple_fans = fan_min_speed_1;
-            if (immediately_apply && m_config.single_nozzle_with_multiple_fans.value)
-                new_gcode += GCodeWriter::set_single_nozzle_with_multiple_fan(m_single_nozzle_with_multiple_fans);
         }
     };
 
@@ -882,8 +807,6 @@ std::string CoolingBuffer::apply_layer_cooldown(
             }
             if (m_additional_fan_speed != -1 && m_config.auxiliary_fan.value)
                 new_gcode += GCodeWriter::set_additional_fan(m_additional_fan_speed);
-            if (m_single_nozzle_with_multiple_fans != -1 && m_config.single_nozzle_with_multiple_fans.value)
-                new_gcode += GCodeWriter::set_single_nozzle_with_multiple_fan(m_single_nozzle_with_multiple_fans);
         }
         else if (line->type & CoolingLine::TYPE_EXTRUDE_END) {
             // Just remove this comment.

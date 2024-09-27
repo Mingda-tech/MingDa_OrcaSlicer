@@ -1,9 +1,3 @@
-///|/ Copyright (c) Prusa Research 2016 - 2023 Pavel Mikuš @Godrak, Oleksandra Iushchenko @YuSanka, Vojtěch Bubník @bubnikv, Lukáš Matěna @lukasmatena, Filip Sykala @Jony01, David Kocík @kocikdav, Roman Beránek @zavorka, Enrico Turri @enricoturri1966, Tomáš Mészáros @tamasmeszaros, Vojtěch Král @vojtechkral
-///|/ Copyright (c) 2021 Justin Schuh @jschuh
-///|/ Copyright (c) Slic3r 2013 - 2015 Alessandro Ranellucci @alranel
-///|/
-///|/ PrusaSlicer is released under the terms of the AGPLv3 or higher
-///|/
 #include "Utils.hpp"
 #include "I18N.hpp"
 
@@ -286,7 +280,7 @@ void set_data_dir(const std::string &dir)
 {
     g_data_dir = dir;
     if (!g_data_dir.empty() && !boost::filesystem::exists(g_data_dir)) {
-       boost::filesystem::create_directories(g_data_dir);
+       boost::filesystem::create_directory(g_data_dir);
     }
 }
 
@@ -307,6 +301,9 @@ std::string debug_out_path(const char *name, ...)
 	static constexpr const char *SLIC3R_DEBUG_OUT_PATH_PREFIX = "out/";
     if (! debug_out_path_called.exchange(true)) {
 		std::string path = boost::filesystem::system_complete(SLIC3R_DEBUG_OUT_PATH_PREFIX).string();
+        if (!boost::filesystem::exists(path)) {
+            boost::filesystem::create_directory(path);
+		}
         printf("Debugging output files will be written to %s\n", path.c_str());
     }
 	char buffer[2048];
@@ -335,7 +332,7 @@ void set_log_path_and_level(const std::string& file, unsigned int level)
 	//BBS log file at C:\\Users\\[yourname]\\AppData\\Roaming\\OrcaSlicer\\log\\[log_filename].log
 	auto log_folder = boost::filesystem::path(g_data_dir) / "log";
 	if (!boost::filesystem::exists(log_folder)) {
-		boost::filesystem::create_directories(log_folder);
+		boost::filesystem::create_directory(log_folder);
 	}
 	auto full_path = (log_folder / file).make_preferred();
 
@@ -1158,11 +1155,6 @@ std::string string_printf(const char *format, ...)
 std::string header_slic3r_generated()
 {
 	return std::string(SLIC3R_APP_NAME " " SoftFever_VERSION);
-}
-
-std::string header_OrcaSlicer_generated()
-{
-	return std::string(OrcaSlicer_APP_FULL_NAME " " SoftFever_VERSION);
 }
 
 std::string header_gcodeviewer_generated()
