@@ -10,7 +10,7 @@ function OnInit()
 
 function SendStealthModeCheck()
 {
-	let nVal="no";
+	let nVal="yes";
 	if( $('#StealthMode').is(':checked') ) 
 		nVal="yes";
 	
