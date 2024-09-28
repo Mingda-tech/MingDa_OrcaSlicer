@@ -8,8 +8,7 @@ else()
     if(WIN32)
         set(_cross_arch "VC-WIN64A")
     elseif(APPLE)
-        #set(_cross_arch "darwin64-arm64-cc") 
-	    set(_cross_arch "darwin64-x86_64-cc")
+        set(_cross_arch "darwin64-arm64-cc")
 	endif()
 endif()
 
@@ -20,8 +19,6 @@ if(WIN32)
     set(_install_cmd nmake install_sw )
 else()
     if(APPLE)
-	message("aaa-${CMAKE_OSX_DEPLOYMENT_TARGET}")
-	message("bbb-${_cross_arch}")
         set(_conf_cmd export MACOSX_DEPLOYMENT_TARGET=${CMAKE_OSX_DEPLOYMENT_TARGET} && ./Configure -mmacosx-version-min=${CMAKE_OSX_DEPLOYMENT_TARGET})
     else()
         set(_conf_cmd "./config")
@@ -49,8 +46,8 @@ ExternalProject_Add(dep_OpenSSL
     # URL_HASH SHA256=8c776993154652d0bb393f506d850b811517c8bd8d24b1008aef57fbe55d3f31
     DOWNLOAD_DIR ${DEP_DOWNLOAD_DIR}/OpenSSL
 	CONFIGURE_COMMAND ${_conf_cmd} ${_cross_arch}
-        "--openssldir=${DESTDIR}/usr/local"
-        "--prefix=${DESTDIR}/usr/local"
+        "--openssldir=${DESTDIR}"
+        "--prefix=${DESTDIR}"
         ${_cross_comp_prefix_line}
         no-shared
         no-asm
@@ -64,6 +61,6 @@ ExternalProject_Add(dep_OpenSSL
 ExternalProject_Add_Step(dep_OpenSSL install_cmake_files
     DEPENDEES install
 
-    COMMAND ${CMAKE_COMMAND} -E copy_directory openssl "${DESTDIR}/usr/local/${CMAKE_INSTALL_LIBDIR}/cmake/openssl"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory openssl "${DESTDIR}${CMAKE_INSTALL_LIBDIR}/cmake/openssl"
     WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
 )
