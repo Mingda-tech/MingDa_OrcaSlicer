@@ -22,6 +22,7 @@
 #include "slic3r/GUI/Gizmos/GLGizmoMmuSegmentation.hpp"
 #include "slic3r/GUI/Gizmos/GLGizmoSimplify.hpp"
 #include "slic3r/GUI/Gizmos/GLGizmoEmboss.hpp"
+#include "slic3r/GUI/Gizmos/GLGizmoAD.hpp"
 #include "slic3r/GUI/Gizmos/GLGizmoSVG.hpp"
 #include "slic3r/GUI/Gizmos/GLGizmoMeasure.hpp"
 #include "slic3r/GUI/Gizmos/GLGizmoMeshBoolean.hpp"
@@ -161,6 +162,9 @@ void GLGizmosManager::switch_gizmos_icon_filename()
         case(EType::Measure):
             gizmo->set_icon_filename(m_is_dark ? "toolbar_measure_dark.svg" : "toolbar_measure.svg");
             break;
+        case(EType::AD):
+            gizmo->set_icon_filename(m_is_dark ? "toolbar_text_dark.svg" : "toolbar_text.svg");
+            break;
         }
 
     }
@@ -197,6 +201,9 @@ bool GLGizmosManager::init()
     m_gizmos.emplace_back(new GLGizmoSeam(m_parent, m_is_dark ? "toolbar_seam_dark.svg" : "toolbar_seam.svg", EType::Seam));
     m_gizmos.emplace_back(new GLGizmoMmuSegmentation(m_parent, m_is_dark ? "mmu_segmentation_dark.svg" : "mmu_segmentation.svg", EType::MmuSegmentation));
     m_gizmos.emplace_back(new GLGizmoEmboss(m_parent, m_is_dark ? "toolbar_text_dark.svg" : "toolbar_text.svg", EType::Emboss));
+
+    m_gizmos.emplace_back(new GLGizmoAD(m_parent, "toolbar_ad.svg", EType::AD, &m_object_manipulation));
+
     m_gizmos.emplace_back(new GLGizmoSVG(m_parent));
     m_gizmos.emplace_back(new GLGizmoMeasure(m_parent, m_is_dark ? "toolbar_measure_dark.svg" : "toolbar_measure.svg", EType::Measure));
     m_gizmos.emplace_back(new GLGizmoSimplify(m_parent, "reduce_triangles.svg", EType::Simplify));
@@ -1355,6 +1362,8 @@ std::string get_name_from_gizmo_etype(GLGizmosManager::EType type)
         return "Text";
     case GLGizmosManager::EType::MmuSegmentation:
         return "Color Painting";
+    case GLGizmosManager::EType::AD:
+        return "AD";
     default:
         return "";
     }

@@ -133,6 +133,8 @@ set(SLIC3R_GUI_SOURCES
     GUI/Gizmos/GLGizmoCut.hpp
     #GUI/Gizmos/GLGizmoHollow.cpp
     #GUI/Gizmos/GLGizmoHollow.hpp
+    GUI/Gizmos/GLGizmoAD.cpp
+    GUI/Gizmos/GLGizmoAD.hpp
     GUI/Gizmos/GLGizmoPainterBase.cpp
     GUI/Gizmos/GLGizmoPainterBase.hpp
     GUI/Gizmos/GLGizmoSimplify.cpp

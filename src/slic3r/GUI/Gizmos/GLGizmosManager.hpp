@@ -84,9 +84,10 @@ public:
         Seam,
         MmuSegmentation,
         Emboss,
+        AD,
         Svg,
         Measure,
-        Simplify,
+        Simplify,        
         //SlaSupports,
         // BBS
         //FaceRecognition,
