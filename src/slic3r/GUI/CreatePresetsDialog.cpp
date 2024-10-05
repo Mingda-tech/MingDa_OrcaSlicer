@@ -47,7 +47,8 @@ static const std::vector<std::string> filament_types = {"PLA",    "PLA+",  "PLA 
                                                         "TPE",    "GLAZE", "Nylon",     "CPE",   "METAL",  "ABST",   "Carbon Fiber"};
 
 static const std::vector<std::string> system_filament_types = {"PLA",      "ABS",    "TPU",    "PC",     "ASA", "PA-CF", "PA6-CF", "PET-CF", "PETG", "PETG-CF",
-                                                               "PLA Aero", "PLA-CF", "PPA-CF", "PPA-GF", "PA",  "HIPS",  "PPS",    "PPS-CF", "PVA"};
+                                                               "PLA Aero", "PLA-CF", "PPA-CF", "PPA-GF", "PA",  "HIPS",  "PPS",    "PPS-CF", "PVA", "PDS", "HtPA", 
+                                                               "PA12", "PET-GF", "PETG-HF", "S-HtPA", "S-Multi"};
 
 static std::unordered_map<std::string, std::string> system_filament_types_map = {{"PLA", "PLA"},         {"ABS", "ABS"},           {"TPU", "TPU"},
                                                                                  {"PC", "PC"},           {"ASA", "ASA"},           {"PA-CF", "PA-CF"},
@@ -55,7 +56,9 @@ static std::unordered_map<std::string, std::string> system_filament_types_map = 
                                                                                  {"PETG-CF", "PETG-CF"}, {"PLA Aero", "PLA-AERO"}, {"PLA-CF", "PLA-CF"},
                                                                                  {"PPA-CF", "PPA-CF"},   {"PPA-GF", "PPA-GF"},     {"PA", "PA"},
                                                                                  {"HIPS", "HIPS"},       {"PPS", "PPS"},           {"PPS-CF", "PPS-CF"},
-                                                                                 {"PVA", "PVA"}};
+                                                                                 {"PVA", "PVA"},         {"PDS", "PDS"},           {"HtPA", "HtPA"}, 
+                                                                                 {"PA12", "PA12"},       {"PET-GF", "PET-GF"},     {"PETG-HF", "PETG-HF"}, 
+                                                                                 {"S-HtPA", "S-HtPA"},   {"S-Multi", "S-Multi"}};
 
 static const std::vector<std::string> printer_vendors = {"Anycubic",  "Artillery", "BIBO",           "BIQU",     "Creality ENDER", "Creality CR", "Creality SERMOON",
                                                          "FLSun",     "gCreate",   "Geeetech",       "INAT",     "Infinity3D",     "Jubilee",     "LNL3D",
