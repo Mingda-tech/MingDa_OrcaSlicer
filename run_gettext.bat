@@ -26,10 +26,10 @@ goto :eof
     set "file=%~1"
     set "dir=%~dp1"
     set "name=%~n1"
-    set "lang=%name:OrcaSlicer_=%"
+    set "lang=%name:MINGDA-Slicer_=%"
     if %FULL_MODE%==1 (
         .\tools\msgmerge.exe -N -o "%file%" "%file%" "%pot_file%"
     )
     if not exist "./resources/i18n/%lang%" mkdir "./resources/i18n/%lang%"
-    .\tools\msgfmt.exe --check-format -o "./resources/i18n/%lang%/OrcaSlicer.mo" "%file%"
+    .\tools\msgfmt.exe --check-format -o "./resources/i18n/%lang%/MINGDA-Slicer.mo" "%file%"
 goto :eof
