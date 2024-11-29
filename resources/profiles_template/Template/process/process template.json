@@ -104,6 +104,6 @@
     "wipe_tower_no_sparse_layers": "0",
     "wall_generator": "classic",
     "xy_hole_compensation": "0",
-    "xy_contour_compensation": "0",
+    "xy_contour_compensation": "0.4",
     "compatible_printers": []
 }

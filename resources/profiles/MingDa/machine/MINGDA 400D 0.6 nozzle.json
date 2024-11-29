@@ -9,6 +9,7 @@
 	"printer_variant": "0.6",
 	"default_print_profile": "0.30mm Standard @MINGDA (0.6 nozzle)",
 	"printer_model": "MINGDA 400D",
+    "auxiliary_fan": "1",
 
 	"machine_max_acceleration_x": [
 	  "5000",
