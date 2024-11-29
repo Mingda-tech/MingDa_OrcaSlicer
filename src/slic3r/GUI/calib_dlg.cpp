@@ -227,6 +227,7 @@ enum FILAMENT_TYPE : int
     tPLA = 0,
     tABS_ASA,
     tPETG,
+    tPCTG,
     tTPU,
     tPA_CF,
     tPET_CF,
@@ -376,6 +377,10 @@ void Temp_Calibration_Dlg::on_filament_type_changed(wxCommandEvent& event) {
     unsigned long start,end;
     switch(selection)
     {
+        case tPLA:
+            start = 320;
+            end = 280;
+            break;
         case tABS_ASA:
             start = 270;
             end = 230;
@@ -384,19 +389,22 @@ void Temp_Calibration_Dlg::on_filament_type_changed(wxCommandEvent& event) {
             start = 250;
             end = 230;
             break;
-        case tTPU:
+        case tPCTG:
             start = 240;
             end = 210;
+            break;
+        case tTPU:
+            start = 210;
+            end = 180;
             break;
         case tPA_CF:
             start = 320;
             end = 280;
             break;
         case tPET_CF:
-            start = 320;
-            end = 280;
+            start = 300;
+            end = 270;
             break;
-        case tPLA:
         case tCustom:
             start = 230;
             end = 190;
