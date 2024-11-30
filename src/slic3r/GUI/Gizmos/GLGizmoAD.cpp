@@ -64,12 +64,13 @@ void GLGizmoAD::data_changed(bool is_serializing) {
     wxString exeDir = wxFileName(exePath).GetPath();
     // 获取当前工作目录
     wxString currentDir = wxGetCwd();
+    std::string _language = GUI::into_u8(GUI::wxGetApp().current_language_code_safe());
     // 输出程序路径
     wxLogMessage("The executable path is: %s", exePath);
     // wxProcess使用，异步读取另一个程序的标准输出 
     //auto process = new wxProcess();
     //process->Redirect();
-    exeDir += "/AdWordCraft/AdWordCraft.exe";
+    exeDir += "/AdWordCraft/AdWordCraft.exe " + _language;
     if (!IsProcessRunning(("AdWordCraft"))) {
         auto execute = wxExecute(exeDir, wxEXEC_ASYNC);
 

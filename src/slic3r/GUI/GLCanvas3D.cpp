@@ -6437,16 +6437,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.enabling_callback = []()->bool { return wxGetApp().plater()->can_layers_editing(); };
     if (!m_main_toolbar.add_item(item))
         return false;
-
-    // item.name = "Mirror";
-    // item.icon_filename = m_is_dark ? "OcticonMirror16.svg" : "OcticonMirror16.svg";
-    // item.tooltip = "镜像模式";
-    // item.sprite_id++;
-    // item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_ADD)); };
-    // item.enabling_callback = []()->bool {return true; };
-    // if (!m_main_toolbar.add_item(item))
-    //     return false;
-
+        
     return true;
 }
 
