@@ -53,7 +53,7 @@
 	"wipe_tower_no_sparse_layers": "0",
 	"prime_tower_width": "40",
 	"xy_hole_compensation": "0",
-	"xy_contour_compensation": "0",
+	"xy_contour_compensation": "0.4",
 	"compatible_printers": [
 		"MINGDA 600D 0.4 nozzle"
 	],

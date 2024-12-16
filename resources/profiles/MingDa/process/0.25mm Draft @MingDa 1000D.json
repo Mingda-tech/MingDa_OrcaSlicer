@@ -52,7 +52,7 @@
 	"enable_prime_tower": "0",
 	"wipe_tower_no_sparse_layers": "0",
 	"xy_hole_compensation": "0",
-	"xy_contour_compensation": "0",
+	"xy_contour_compensation": "0.4",
 	"compatible_printers": [
 		"MINGDA 1000D 0.4 nozzle"		
 	],
