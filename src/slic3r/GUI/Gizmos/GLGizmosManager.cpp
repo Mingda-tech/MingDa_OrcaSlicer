@@ -163,7 +163,7 @@ void GLGizmosManager::switch_gizmos_icon_filename()
             gizmo->set_icon_filename(m_is_dark ? "toolbar_measure_dark.svg" : "toolbar_measure.svg");
             break;
         case(EType::AD):
-            gizmo->set_icon_filename(m_is_dark ? "toolbar_text_dark.svg" : "toolbar_text.svg");
+            gizmo->set_icon_filename(m_is_dark ? "toolbar_ad.svg" : "toolbar_ad.svg");
             break;
         }
 
