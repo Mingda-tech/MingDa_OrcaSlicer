@@ -198,7 +198,7 @@
         "70",
         "70"
     ],
-    "xy_contour_compensation": "0.4",
+    "xy_contour_compensation": "0",
     "xy_hole_compensation": "0",
     "bottom_shell_layers": "4",
     "bridge_speed": "100",

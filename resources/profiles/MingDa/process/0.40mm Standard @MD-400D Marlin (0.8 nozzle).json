@@ -12,7 +12,7 @@
     "MD-400D Marlin 0.8 nozzle",
     "MD-400D Marlin 0.8 nozzle (Right)"
   ],
-  "xy_contour_compensation": "0.4",
+  "xy_contour_compensation": "0",
   "enable_prime_tower": "0",
     "version": "2.0.0.0"
   }

@@ -11,7 +11,7 @@
 	"printer_model": "MINGDA 1000D",
 	"extruder_colour": [
 		"#FCE94F",
-		"#FCE94F"
+		"#FF0000"
 	  ],
 	  "extruder_offset": [
 		"0x0",
