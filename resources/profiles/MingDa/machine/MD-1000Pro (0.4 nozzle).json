@@ -7,7 +7,7 @@
 	"inherits": "fdm_machine_common",
 	"printer_model": "MD-1000Pro",
 	"default_print_profile": "0.20mm Standard @MD-1000Pro (0.4 nozzle)",
-	"gcode_flavor": "marlin2",
+	"gcode_flavor": "klipper",
 	"nozzle_diameter": [
 		"0.4"
 	],

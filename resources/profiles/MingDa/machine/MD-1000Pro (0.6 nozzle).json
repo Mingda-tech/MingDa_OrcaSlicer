@@ -8,7 +8,7 @@
 	"is_custom_defined": "0",
 	"printer_variant": "0.6",
 	"default_print_profile": "0.30mm Standard @MD-1000Pro (0.6 nozzle)",
-	"gcode_flavor": "marlin2",
+	"gcode_flavor": "klipper",
 	"printer_model": "MD-1000Pro",
 	"nozzle_diameter": [
 		"0.6"
