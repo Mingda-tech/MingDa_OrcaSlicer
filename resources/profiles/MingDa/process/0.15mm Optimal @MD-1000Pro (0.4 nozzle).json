@@ -1,0 +1,12 @@
+{
+    "type": "process",
+    "setting_id": "MD1000P15",
+    "name": "0.15mm Optimal @MD-1000Pro (0.4 nozzle)",
+    "from": "system",
+    "inherits": "fdm_process_MINGDA_common",
+    "instantiation": "true",
+    "layer_height": "0.15",
+    "compatible_printers": [
+        "MD-1000Pro (0.4 nozzle)"
+    ]
+}

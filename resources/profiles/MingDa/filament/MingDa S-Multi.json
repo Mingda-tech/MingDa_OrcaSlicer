@@ -1,107 +1,77 @@
 {
-  "type": "filament",
+    "type": "filament",
     "filament_id": "SMULTI",
     "setting_id": "SMULTI",
     "name": "MINGDA S-Multi",
-
-  "from": "system",
-  "instantiation": "true",
-  "inherits": "fdm_filament_pet",
-  "cool_plate_temp" : [
-      "0"
-  ],
-  "eng_plate_temp" : [
-      "70"
-  ],
-  "textured_plate_temp" : [
-      "70"
-  ],
-  "cool_plate_temp_initial_layer" : [
-      "0"
-  ],
-  "eng_plate_temp_initial_layer" : [
-      "70"
-  ],
-  "textured_plate_temp_initial_layer" : [
-      "70"
-  ],
-  "required_nozzle_HRC": [
-      "40"
-  ],
-  "filament_vendor": [
-      "MINGDA3D"
-  ],
-  "filament_type": [
-      "S-Multi"
-  ],
-  "filament_cost": [
-      "34.99"
-  ],
-  "filament_density": [
-    "1.25"
-  ],
-  "fan_max_speed": [
-      "30"
-  ],
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_filament_pet",
+    "cool_plate_temp": [
+        "0"
+    ],
+    "eng_plate_temp": [
+        "70"
+    ],
+    "textured_plate_temp": [
+        "70"
+    ],
+    "cool_plate_temp_initial_layer": [
+        "0"
+    ],
+    "eng_plate_temp_initial_layer": [
+        "70"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "70"
+    ],
+    "required_nozzle_HRC": [
+        "40"
+    ],
+    "filament_vendor": [
+        "MINGDA3D"
+    ],
+    "filament_type": [
+        "S-Multi"
+    ],
+    "filament_cost": [
+        "34.99"
+    ],
+    "filament_density": [
+        "1.25"
+    ],
+    "fan_max_speed": [
+        "30"
+    ],
     "compatible_printers": [
         "MINGDA 400D 0.4 nozzle",
-        
-        
         "MINGDA 400D 0.6 nozzle",
-        
-        		
         "MINGDA 400D 0.8 nozzle",
-        
-        		
         "MINGDA 400D 1.0 nozzle",
-        
-        		
         "MINGDA 600D 0.4 nozzle",
-        
-        
         "MINGDA 600D 0.6 nozzle",
-        
-        		
         "MINGDA 600D 0.8 nozzle",
-        
-        		
         "MINGDA 600D 1.0 nozzle",
-        
-        		
         "MINGDA 1000D 0.4 nozzle",
-        
-        
         "MINGDA 1000D 0.6 nozzle",
-        
-        		
         "MINGDA 1000D 0.8 nozzle",
-        
-        		
         "MINGDA 1000D 1.0 nozzle",
-        
         "MD-400D Marlin 0.4 nozzle",
-        
-        
         "MD-400D Marlin 0.6 nozzle",
-        
-        		
         "MD-400D Marlin 0.8 nozzle",
-        
-        		
         "MD-400D Marlin 1.0 nozzle",
-        
-         
-          "MD-600Pro (0.4 nozzle)",
-          "MD-600Pro (0.6 nozzle)",
-          "MD-600Pro (0.8 nozzle)",
-          "MD-600Pro (1.0 nozzle)",
-          "MD-1000Pro+ (0.4 nozzle)",
-          "MD-1000Pro+ (0.6 nozzle)",
-          "MD-1000Pro+ (0.8 nozzle)",
-          "MD-1000Pro+ (1.0 nozzle)"       
-        		
+        "MD-600Pro (0.4 nozzle)",
+        "MD-600Pro (0.6 nozzle)",
+        "MD-600Pro (0.8 nozzle)",
+        "MD-600Pro (1.0 nozzle)",
+        "MD-1000Pro (0.4 nozzle)",
+        "MD-1000Pro (0.6 nozzle)",
+        "MD-1000Pro (0.8 nozzle)",
+        "MD-1000Pro (1.0 nozzle)",
+        "MD-1000Pro+ (0.4 nozzle)",
+        "MD-1000Pro+ (0.6 nozzle)",
+        "MD-1000Pro+ (0.8 nozzle)",
+        "MD-1000Pro+ (1.0 nozzle)"
     ],
-
     "complete_print_exhaust_fan_speed": [
         "70"
     ],
@@ -114,7 +84,7 @@
     "fan_min_speed": [
         "10"
     ],
-        "filament_end_gcode": [
+    "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_max_volumetric_speed": [
@@ -123,7 +93,7 @@
     "filament_settings_id": [
         "MINGDA S-Multi"
     ],
-        "filament_start_gcode": [
+    "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "hot_plate_temp": [

@@ -21,12 +21,12 @@
             "sub_path": "machine/MINGDA AD-F4.json"
         },
         {
-            "name": "MD-A128 Marlin",
-            "sub_path": "machine/MD-A128 Marlin.json"
-        },           
+            "name": "MD-600Pro+",
+            "sub_path": "machine/MD-600Pro.json"
+        },
         {
-            "name": "Magician X2",
-            "sub_path": "machine/Magician X2.json"
+            "name": "MD-1000Pro+",
+            "sub_path": "machine/MD-1000Pro+.json"
         },
 		{
             "name": "MINGDA S1",
@@ -49,9 +49,17 @@
             "sub_path": "machine/MD-600Pro.json"
         },
 		{
-            "name": "MD-1000Pro+",
-            "sub_path": "machine/MD-1000Pro+.json"
-		}
+            "name": "MD-1000Pro",
+            "sub_path": "machine/MD-1000Pro.json"
+		},
+        {
+            "name": "MD-A128 Marlin",
+            "sub_path": "machine/MD-A128 Marlin.json"
+        },           
+        {
+            "name": "Magician X2",
+            "sub_path": "machine/Magician X2.json"
+        }
     ],
     "process_list": [
         {

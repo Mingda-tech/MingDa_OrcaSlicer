@@ -1,0 +1,12 @@
+{
+    "type": "process",
+    "setting_id": "MD1000P1030",
+    "name": "0.30mm Fine @MD-1000Pro (1.0 nozzle)",
+    "from": "system",
+    "inherits": "fdm_process_MINGDA_common",
+    "instantiation": "true",
+    "layer_height": "0.30",
+    "compatible_printers": [
+        "MD-1000Pro (1.0 nozzle)"
+    ]
+}

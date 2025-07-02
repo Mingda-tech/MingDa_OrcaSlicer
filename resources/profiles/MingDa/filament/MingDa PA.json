@@ -7,63 +7,42 @@
     "instantiation": "true",
     "inherits": "fdm_filament_pa",
     "required_nozzle_HRC": [
-      "3"
+        "3"
     ],
     "nozzle_temperature_initial_layer": [
-      "280"
+        "280"
     ],
     "nozzle_temperature": [
-      "280"
+        "280"
     ],
     "filament_max_volumetric_speed": [
-      "16"
+        "16"
     ],
     "filament_vendor": [
         "MINGDA3D"
     ],
     "compatible_printers": [
-      "MINGDA 400D 0.4 nozzle",
-      
-      
-      "MINGDA 400D 0.6 nozzle",
-      
-      
-      "MINGDA 400D 0.8 nozzle",
-      
-      
-      "MINGDA 600D 0.4 nozzle",
-      
-      
-      "MINGDA 600D 0.6 nozzle",
-      
-      
-      "MINGDA 600D 0.8 nozzle",
-      
-      
-      "MINGDA 1000D 0.4 nozzle",
-      
-      
-      "MINGDA 1000D 0.6 nozzle",
-      
-      
-      "MINGDA 1000D 0.8 nozzle",
-      
-      "MD-400D Marlin 0.4 nozzle",
-      
-      
-      "MD-400D Marlin 0.6 nozzle",
-      
-      		
-      "MD-400D Marlin 0.8 nozzle",
-      
-      		
-      "MD-400D Marlin 1.0 nozzle",
-      
-       
+        "MINGDA 400D 0.4 nozzle",
+        "MINGDA 400D 0.6 nozzle",
+        "MINGDA 400D 0.8 nozzle",
+        "MINGDA 600D 0.4 nozzle",
+        "MINGDA 600D 0.6 nozzle",
+        "MINGDA 600D 0.8 nozzle",
+        "MINGDA 1000D 0.4 nozzle",
+        "MINGDA 1000D 0.6 nozzle",
+        "MINGDA 1000D 0.8 nozzle",
+        "MD-400D Marlin 0.4 nozzle",
+        "MD-400D Marlin 0.6 nozzle",
+        "MD-400D Marlin 0.8 nozzle",
+        "MD-400D Marlin 1.0 nozzle",
         "MD-600Pro (0.4 nozzle)",
         "MD-600Pro (0.6 nozzle)",
         "MD-600Pro (0.8 nozzle)",
         "MD-600Pro (1.0 nozzle)",
+        "MD-1000Pro (0.4 nozzle)",
+        "MD-1000Pro (0.6 nozzle)",
+        "MD-1000Pro (0.8 nozzle)",
+        "MD-1000Pro (1.0 nozzle)",
         "MD-1000Pro+ (0.4 nozzle)",
         "MD-1000Pro+ (0.6 nozzle)",
         "MD-1000Pro+ (0.8 nozzle)",

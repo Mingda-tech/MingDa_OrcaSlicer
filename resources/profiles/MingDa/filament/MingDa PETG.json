@@ -32,7 +32,7 @@
         "MINGDA S2 (0.4 nozzle)",
         "MINGDA S2 (0.6 nozzle)",
         "MINGDA S2 (0.8 nozzle)",
-        "MINGDA S2 (1.0 nozzle)",   
+        "MINGDA S2 (1.0 nozzle)",
         "MINGDA S1 (0.4 nozzle)",
         "MINGDA S1 (0.6 nozzle)",
         "MINGDA S1 (0.8 nozzle)",
@@ -42,61 +42,33 @@
         "MINGDA S3 (0.8 nozzle)",
         "MINGDA S3 (1.0 nozzle)",
         "MINGDA 400D 0.4 nozzle",
-        
-        
         "MINGDA 400D 0.6 nozzle",
-        
-        		
         "MINGDA 400D 0.8 nozzle",
-        
-        		
         "MINGDA 400D 1.0 nozzle",
-        
-        		
         "MINGDA 600D 0.4 nozzle",
-        
-        
         "MINGDA 600D 0.6 nozzle",
-        
-        		
         "MINGDA 600D 0.8 nozzle",
-        
-        		
         "MINGDA 600D 1.0 nozzle",
-        
-        		
         "MINGDA 1000D 0.4 nozzle",
-        
-        
         "MINGDA 1000D 0.6 nozzle",
-        
-        		
         "MINGDA 1000D 0.8 nozzle",
-        
-        		
         "MINGDA 1000D 1.0 nozzle",
-        
         "MD-400D Marlin 0.4 nozzle",
-        
-        
         "MD-400D Marlin 0.6 nozzle",
-        
-        		
         "MD-400D Marlin 0.8 nozzle",
-        
-        		
         "MD-400D Marlin 1.0 nozzle",
-        
-         
-          "MD-600Pro (0.4 nozzle)",
-          "MD-600Pro (0.6 nozzle)",
-          "MD-600Pro (0.8 nozzle)",
-          "MD-600Pro (1.0 nozzle)",
-          "MD-1000Pro+ (0.4 nozzle)",
-          "MD-1000Pro+ (0.6 nozzle)",
-          "MD-1000Pro+ (0.8 nozzle)",
-          "MD-1000Pro+ (1.0 nozzle)",        
-        
+        "MD-600Pro (0.4 nozzle)",
+        "MD-600Pro (0.6 nozzle)",
+        "MD-600Pro (0.8 nozzle)",
+        "MD-600Pro (1.0 nozzle)",
+        "MD-1000Pro (0.4 nozzle)",
+        "MD-1000Pro (0.6 nozzle)",
+        "MD-1000Pro (0.8 nozzle)",
+        "MD-1000Pro (1.0 nozzle)",
+        "MD-1000Pro+ (0.4 nozzle)",
+        "MD-1000Pro+ (0.6 nozzle)",
+        "MD-1000Pro+ (0.8 nozzle)",
+        "MD-1000Pro+ (1.0 nozzle)",
         "MINGDA AD-F4 0.4 nozzle",
         "MINGDA AD-F4 0.6 nozzle",
         "MINGDA AD-F4 0.8 nozzle",
@@ -105,7 +77,6 @@
         "MD-A128 Marlin 0.6 nozzle",
         "MD-A128 Marlin 0.8 nozzle",
         "MD-A128 Marlin 1.0 nozzle"
-
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -221,7 +192,6 @@
     "filament_retraction_speed": [
         "50"
     ],
-
     "filament_shrink": [
         "100%"
     ],
@@ -291,12 +261,10 @@
     "textured_plate_temp_initial_layer": [
         "45"
     ],
-
-
     "enable_pressure_advance": [
         "1"
     ],
-        "filament_end_gcode": [
+    "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [
@@ -308,7 +276,7 @@
     "filament_settings_id": [
         "MINGDA PETG"
     ],
-        "filament_start_gcode": [
+    "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "hot_plate_temp": [

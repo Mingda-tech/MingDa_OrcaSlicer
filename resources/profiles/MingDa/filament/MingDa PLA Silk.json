@@ -1,17 +1,17 @@
 {
     "type": "filament",
-	"filament_id": "GFA05",
+    "filament_id": "GFA05",
     "setting_id": "GFSL99_01",
     "name": "MINGDA PLA Silk",
     "from": "system",
     "instantiation": "true",
     "inherits": "fdm_filament_pla",
-  "filament_start_gcode": [
-      "; filament start gcode\n{if  (bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S180\n{endif};Prevent PLA from jamming"
-  ],
-  "filament_vendor": [
-      "MINGDA3D"
-  ],
+    "filament_start_gcode": [
+        "; filament start gcode\n{if  (bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S180\n{endif};Prevent PLA from jamming"
+    ],
+    "filament_vendor": [
+        "MINGDA3D"
+    ],
     "activate_air_filtration": [
         "0"
     ],
@@ -32,71 +32,43 @@
         "MINGDA S2 (0.4 nozzle)",
         "MINGDA S2 (0.6 nozzle)",
         "MINGDA S2 (0.8 nozzle)",
-        "MINGDA S2 (1.0 nozzle)",   
+        "MINGDA S2 (1.0 nozzle)",
         "MINGDA S1 (0.4 nozzle)",
         "MINGDA S1 (0.6 nozzle)",
         "MINGDA S1 (0.8 nozzle)",
-        "MINGDA S1 (1.0 nozzle)",        
+        "MINGDA S1 (1.0 nozzle)",
         "MINGDA S3 (0.4 nozzle)",
         "MINGDA S3 (0.6 nozzle)",
         "MINGDA S3 (0.8 nozzle)",
         "MINGDA S3 (1.0 nozzle)",
         "MINGDA 400D 0.4 nozzle",
-        
-        
         "MINGDA 400D 0.6 nozzle",
-        
-        		
         "MINGDA 400D 0.8 nozzle",
-        
-        		
         "MINGDA 400D 1.0 nozzle",
-        
-        		
         "MINGDA 600D 0.4 nozzle",
-        
-        
         "MINGDA 600D 0.6 nozzle",
-        
-        		
         "MINGDA 600D 0.8 nozzle",
-        
-        		
         "MINGDA 600D 1.0 nozzle",
-        
-        		
         "MINGDA 1000D 0.4 nozzle",
-        
-        
         "MINGDA 1000D 0.6 nozzle",
-        
-        		
         "MINGDA 1000D 0.8 nozzle",
-        
-        		
         "MINGDA 1000D 1.0 nozzle",
-        
         "MD-400D Marlin 0.4 nozzle",
-        
-        
         "MD-400D Marlin 0.6 nozzle",
-        
-        		
         "MD-400D Marlin 0.8 nozzle",
-        
-        		
         "MD-400D Marlin 1.0 nozzle",
-        
-         
-          "MD-600Pro (0.4 nozzle)",
-          "MD-600Pro (0.6 nozzle)",
-          "MD-600Pro (0.8 nozzle)",
-          "MD-600Pro (1.0 nozzle)",
-          "MD-1000Pro+ (0.4 nozzle)",
-          "MD-1000Pro+ (0.6 nozzle)",
-          "MD-1000Pro+ (0.8 nozzle)",
-          "MD-1000Pro+ (1.0 nozzle)"     
-        		
+        "MD-600Pro (0.4 nozzle)",
+        "MD-600Pro (0.6 nozzle)",
+        "MD-600Pro (0.8 nozzle)",
+        "MD-600Pro (1.0 nozzle)",
+        "MD-1000Pro (0.4 nozzle)",
+        "MD-1000Pro (0.6 nozzle)",
+        "MD-1000Pro (0.8 nozzle)",
+        "MD-1000Pro (1.0 nozzle)",
+        "MD-1000Pro+ (0.4 nozzle)",
+        "MD-1000Pro+ (0.6 nozzle)",
+        "MD-1000Pro+ (0.8 nozzle)",
+        "MD-1000Pro+ (1.0 nozzle)"
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -158,7 +130,7 @@
     "filament_diameter": [
         "1.75"
     ],
-        "filament_end_gcode": [
+    "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_flow_ratio": [

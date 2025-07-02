@@ -20,41 +20,17 @@
     ],
     "compatible_printers": [
         "MINGDA 400D 0.4 nozzle",
-        
-        
         "MINGDA 400D 0.6 nozzle",
-        
-        		
         "MINGDA 400D 0.8 nozzle",
-        
-        		
         "MINGDA 400D 1.0 nozzle",
-        
-        		
         "MINGDA 600D 0.4 nozzle",
-        
-        
         "MINGDA 600D 0.6 nozzle",
-        
-        		
         "MINGDA 600D 0.8 nozzle",
-        
-        		
         "MINGDA 600D 1.0 nozzle",
-        
-        		
         "MINGDA 1000D 0.4 nozzle",
-        
-        
         "MINGDA 1000D 0.6 nozzle",
-        
-        		
         "MINGDA 1000D 0.8 nozzle",
-        
-        		
         "MINGDA 1000D 1.0 nozzle"
-        
-        		
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
@@ -98,7 +74,7 @@
     "filament_diameter": [
         "1.75"
     ],
-        "filament_end_gcode": [
+    "filament_end_gcode": [
         "; filament end gcode \n"
     ],
     "filament_is_support": [
@@ -161,7 +137,7 @@
     "filament_soluble": [
         "0"
     ],
-        "filament_start_gcode": [
+    "filament_start_gcode": [
         "; filament start gcode\n"
     ],
     "filament_toolchange_delay": [
