@@ -450,7 +450,7 @@ void GLGizmoMmuSegmentation::on_render_input_window(float x, float y, float bott
         const ColorRGBA &extruder_color = m_extruders_colors[extruder_idx];
         ImVec4           color_vec      = ImGuiWrapper::to_ImVec4(extruder_color);
         std::string color_label = std::string("##extruder color ") + std::to_string(extruder_idx);
-        std::string item_text = std::to_string(extruder_idx + 1);
+        std::string item_text = std::to_string(extruder_idx);
         const ImVec2 label_size = ImGui::CalcTextSize(item_text.c_str(), NULL, true);
 
         const ImVec2 button_size(max_label_size.x + m_imgui->scaled(0.5f),0.f);

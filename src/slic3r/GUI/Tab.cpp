@@ -4230,7 +4230,7 @@ if (is_marlin_flavor)
     // Orca: build missed extruder pages
     for (auto extruder_idx = m_extruders_count_old; extruder_idx < m_extruders_count; ++extruder_idx) {
         // auto extruder_idx = 0;
-        const wxString& page_name = wxString::Format("Extruder %d", int(extruder_idx + 1));
+        const wxString& page_name = wxString::Format("Extruder %d", int(extruder_idx));
         bool page_exist = false;
         for (auto page_temp : m_pages) {
             if (page_temp->title() == page_name) {

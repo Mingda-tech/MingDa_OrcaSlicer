@@ -1160,7 +1160,7 @@ void Sidebar::init_filament_combo(PlaterPresetComboBox **combo, const int filame
     // BBS:  filament double columns
     int em = wxGetApp().em_unit();
     combo_and_btn_sizer->Add(FromDIP(8), 0, 0, 0, 0 );
-    (*combo)->clr_picker->SetLabel(wxString::Format("%d", filament_idx + 1));
+    (*combo)->clr_picker->SetLabel(wxString::Format("%d", filament_idx));
     combo_and_btn_sizer->Add((*combo)->clr_picker, 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, FromDIP(3));
     combo_and_btn_sizer->Add(*combo, 1, wxALL | wxEXPAND, FromDIP(2))->SetMinSize({-1, FromDIP(30)});
 

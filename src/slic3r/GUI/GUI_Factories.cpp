@@ -904,7 +904,7 @@ void MenuFactory::append_menu_item_change_extruder(wxMenu* menu)
         if (i > 0) {
             auto preset = wxGetApp().preset_bundle->filaments.find_preset(wxGetApp().preset_bundle->filament_presets[i - 1]);
             if (preset == nullptr) {
-                item_name = wxString::Format(_L("Filament %d"), i);
+                item_name = wxString::Format(_L("Filament %d"), i - 1);
             } else {
                 item_name = from_u8(preset->label(false));
             }
@@ -1943,7 +1943,7 @@ void MenuFactory::append_menu_item_change_filament(wxMenu* menu)
         if (i > 0) {
             auto preset = wxGetApp().preset_bundle->filaments.find_preset(wxGetApp().preset_bundle->filament_presets[i - 1]);
             if (preset == nullptr) {
-                item_name = wxString::Format(_L("Filament %d"), i);
+                item_name = wxString::Format(_L("Filament %d"), i - 1);
             } else {
                 item_name = from_u8(preset->label(false));
             }
