@@ -49,8 +49,8 @@
             "sub_path": "machine/MD-600Pro.json"
         },
 		{
-            "name": "MD-1000Pro",
-            "sub_path": "machine/MD-1000Pro.json"
+            "name": "MD-1000Pro+",
+            "sub_path": "machine/MD-1000Pro+.json"
 		}
     ],
     "process_list": [
@@ -275,68 +275,68 @@
             "sub_path": "process/0.80mm Extra Draft @MD-600Pro (1.0 nozzle).json"
         },
         {
-            "name": "0.12mm Fine @MD-1000Pro (0.4 nozzle)",
-            "sub_path": "process/0.12mm Fine @MD-1000Pro (0.4 nozzle).json"
+            "name": "0.12mm Fine @MD-1000Pro+ (0.4 nozzle)",
+            "sub_path": "process/0.12mm Fine @MD-1000Pro+ (0.4 nozzle).json"
         },
         {
-            "name": "0.15mm Optimal @MD-1000Pro (0.4 nozzle)",
-            "sub_path": "process/0.15mm Optimal @MD-1000Pro (0.4 nozzle).json"
+            "name": "0.15mm Optimal @MD-1000Pro+ (0.4 nozzle)",
+            "sub_path": "process/0.15mm Optimal @MD-1000Pro+ (0.4 nozzle).json"
         },
         {
-            "name": "0.20mm Standard @MD-1000Pro (0.4 nozzle)",
-            "sub_path": "process/0.20mm Standard @MD-1000Pro (0.4 nozzle).json"
+            "name": "0.20mm Standard @MD-1000Pro+ (0.4 nozzle)",
+            "sub_path": "process/0.20mm Standard @MD-1000Pro+ (0.4 nozzle).json"
         },
         {
-            "name": "0.24mm Draft @MD-1000Pro (0.4 nozzle)",
-            "sub_path": "process/0.24mm Draft @MD-1000Pro (0.4 nozzle).json"
+            "name": "0.24mm Draft @MD-1000Pro+ (0.4 nozzle)",
+            "sub_path": "process/0.24mm Draft @MD-1000Pro+ (0.4 nozzle).json"
         },
         {
-            "name": "0.18mm Fine @MD-1000Pro (0.6 nozzle)",
-            "sub_path": "process/0.18mm Fine @MD-1000Pro (0.6 nozzle).json"
+            "name": "0.18mm Fine @MD-1000Pro+ (0.6 nozzle)",
+            "sub_path": "process/0.18mm Fine @MD-1000Pro+ (0.6 nozzle).json"
         },       
         {
-            "name": "0.24mm Optimal @MD-1000Pro (0.6 nozzle)",
-            "sub_path": "process/0.24mm Optimal @MD-1000Pro (0.6 nozzle).json"
+            "name": "0.24mm Optimal @MD-1000Pro+ (0.6 nozzle)",
+            "sub_path": "process/0.24mm Optimal @MD-1000Pro+ (0.6 nozzle).json"
         },
         {
-            "name": "0.30mm Standard @MD-1000Pro (0.6 nozzle)",
-            "sub_path": "process/0.30mm Standard @MD-1000Pro (0.6 nozzle).json"
+            "name": "0.30mm Standard @MD-1000Pro+ (0.6 nozzle)",
+            "sub_path": "process/0.30mm Standard @MD-1000Pro+ (0.6 nozzle).json"
         },
         {
-            "name": "0.36mm Draft @MD-1000Pro (0.6 nozzle)",
-            "sub_path": "process/0.36mm Draft @MD-1000Pro (0.6 nozzle).json"
+            "name": "0.36mm Draft @MD-1000Pro+ (0.6 nozzle)",
+            "sub_path": "process/0.36mm Draft @MD-1000Pro+ (0.6 nozzle).json"
         },
         {
-            "name": "0.24mm Fine @MD-1000Pro (0.8 nozzle)",
-            "sub_path": "process/0.24mm Fine @MD-1000Pro (0.8 nozzle).json"
+            "name": "0.24mm Fine @MD-1000Pro+ (0.8 nozzle)",
+            "sub_path": "process/0.24mm Fine @MD-1000Pro+ (0.8 nozzle).json"
         },
         {
-            "name": "0.32mm Optimal @MD-1000Pro (0.8 nozzle)",
-            "sub_path": "process/0.32mm Optimal @MD-1000Pro (0.8 nozzle).json"
+            "name": "0.32mm Optimal @MD-1000Pro+ (0.8 nozzle)",
+            "sub_path": "process/0.32mm Optimal @MD-1000Pro+ (0.8 nozzle).json"
         },
         {
-            "name": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
-            "sub_path": "process/0.40mm Standard @MD-1000Pro (0.8 nozzle).json"
+            "name": "0.40mm Standard @MD-1000Pro+ (0.8 nozzle)",
+            "sub_path": "process/0.40mm Standard @MD-1000Pro+ (0.8 nozzle).json"
         },
         {
-            "name": "0.48mm Draft @MD-1000Pro (0.8 nozzle)",
-            "sub_path": "process/0.48mm Draft @MD-1000Pro (0.8 nozzle).json"
+            "name": "0.48mm Draft @MD-1000Pro+ (0.8 nozzle)",
+            "sub_path": "process/0.48mm Draft @MD-1000Pro+ (0.8 nozzle).json"
         },
         {
-            "name": "0.30mm Fine @MD-1000Pro (1.0 nozzle)",
-            "sub_path": "process/0.30mm Fine @MD-1000Pro (1.0 nozzle).json"
+            "name": "0.30mm Fine @MD-1000Pro+ (1.0 nozzle)",
+            "sub_path": "process/0.30mm Fine @MD-1000Pro+ (1.0 nozzle).json"
         },
         {
-            "name": "0.50mm Optimal @MD-1000Pro (1.0 nozzle)",
-            "sub_path": "process/0.50mm Optimal @MD-1000Pro (1.0 nozzle).json"
+            "name": "0.50mm Optimal @MD-1000Pro+ (1.0 nozzle)",
+            "sub_path": "process/0.50mm Optimal @MD-1000Pro+ (1.0 nozzle).json"
         },
         {
-            "name": "0.60mm Standard @MD-1000Pro (1.0 nozzle)",
-            "sub_path": "process/0.60mm Standard @MD-1000Pro (1.0 nozzle).json"
+            "name": "0.60mm Standard @MD-1000Pro+ (1.0 nozzle)",
+            "sub_path": "process/0.60mm Standard @MD-1000Pro+ (1.0 nozzle).json"
         },
         {
-            "name": "0.80mm Extra Draft @MD-1000Pro (1.0 nozzle)",
-            "sub_path": "process/0.80mm Extra Draft @MD-1000Pro (1.0 nozzle).json"
+            "name": "0.80mm Extra Draft @MD-1000Pro+ (1.0 nozzle)",
+            "sub_path": "process/0.80mm Extra Draft @MD-1000Pro+ (1.0 nozzle).json"
         },
 		{
             "name": "0.12mm Fine @MINGDA S1 (0.4 nozzle)",
@@ -795,20 +795,20 @@
             "sub_path": "machine/MD-600Pro (1.0 nozzle).json"
         },
         {
-            "name": "MD-1000Pro (0.4 nozzle)",
-            "sub_path": "machine/MD-1000Pro (0.4 nozzle).json"
+            "name": "MD-1000Pro+ (0.4 nozzle)",
+            "sub_path": "machine/MD-1000Pro+ (0.4 nozzle).json"
         },
         {
-            "name": "MD-1000Pro (0.6 nozzle)",
-            "sub_path": "machine/MD-1000Pro (0.6 nozzle).json"
+            "name": "MD-1000Pro+ (0.6 nozzle)",
+            "sub_path": "machine/MD-1000Pro+ (0.6 nozzle).json"
         },
         {
-            "name": "MD-1000Pro (0.8 nozzle)",
-            "sub_path": "machine/MD-1000Pro (0.8 nozzle).json"
+            "name": "MD-1000Pro+ (0.8 nozzle)",
+            "sub_path": "machine/MD-1000Pro+ (0.8 nozzle).json"
         },
         {
-            "name": "MD-1000Pro (1.0 nozzle)",
-            "sub_path": "machine/MD-1000Pro (1.0 nozzle).json"
+            "name": "MD-1000Pro+ (1.0 nozzle)",
+            "sub_path": "machine/MD-1000Pro+ (1.0 nozzle).json"
         },
 		{
             "name": "MINGDA S2 (0.4 nozzle)",

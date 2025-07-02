@@ -9,7 +9,7 @@
     "from": "system",
     "instantiation": "true",
     "compatible_printers": [
-        "MD-1000Pro (1.0 nozzle)"
+        "MD-1000Pro+ (1.0 nozzle)"
 	],
     "gap_infill_speed": "100",
     "infill_jerk": "12",
@@ -30,7 +30,7 @@
     "is_custom_defined": "0",
     "layer_height": "0.5",
     "line_width": "105%",
-    "name": "0.50mm Optimal @MD-1000Pro (1.0 nozzle)",
+    "name": "0.50mm Optimal @MD-1000Pro+ (1.0 nozzle)",
     "only_one_wall_top": "0",
     "outer_wall_acceleration": "3000",
     "outer_wall_jerk": "7",
@@ -38,7 +38,7 @@
     "overhang_1_4_speed": "80",
     "overhang_3_4_speed": "30",
     "overhang_4_4_speed": "10",
-    "print_settings_id": "0.50mm Optimal @MD-1000Pro (1.0 nozzle)",
+    "print_settings_id": "0.50mm Optimal @MD-1000Pro+ (1.0 nozzle)",
     "reduce_infill_retraction": "1",
     "sparse_infill_line_width": "110%",
     "sparse_infill_speed": "200",

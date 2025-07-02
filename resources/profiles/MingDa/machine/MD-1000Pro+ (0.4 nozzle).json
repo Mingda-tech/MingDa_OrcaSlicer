@@ -1,12 +1,12 @@
 {
 	"type": "machine",
 	"setting_id": "MD1000D0",
-	"name": "MD-1000Pro (0.4 nozzle)",
+	"name": "MD-1000Pro+ (0.4 nozzle)",
 	"from": "system",
 	"instantiation": "true",
 	"inherits": "fdm_klipper_common",
-	"printer_model": "MD-1000Pro",
-	"default_print_profile": "0.20mm Standard @MD-1000Pro (0.4 nozzle)",
+	"printer_model": "MD-1000Pro+",
+	"default_print_profile": "0.20mm Standard @MD-1000Pro+ (0.4 nozzle)",
 	"gcode_flavor": "klipper",
 	"nozzle_diameter": [
 		"0.4"

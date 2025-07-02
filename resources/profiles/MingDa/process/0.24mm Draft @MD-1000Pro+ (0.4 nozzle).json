@@ -1,7 +1,7 @@
 {
     "type": "process",
     "setting_id": "Magicianx220",
-    "name": "0.15mm Optimal @MD-1000Pro (0.4 nozzle)",
+    "name": "0.24mm Draft @MD-1000Pro+ (0.4 nozzle)",
     "from": "system",
     "inherits": "fdm_process_MINGDA_common",
     "instantiation": "true",
@@ -21,7 +21,7 @@
     "brim_type": "no_brim",
     "brim_width": "5",
     "compatible_printers": [
-        "MD-1000Pro (0.4 nozzle)"
+        "MD-1000Pro+ (0.4 nozzle)"
     ],
     "compatible_printers_condition": "",
     "detect_narrow_internal_solid_infill": "1",
@@ -57,7 +57,7 @@
     "infill_combination": "0",
     "infill_direction": "45",
     "initial_layer_min_bead_width": "85%",
-    "initial_layer_print_height": "0.15",
+    "initial_layer_print_height": "0.24",
     "initial_layer_travel_speed": "100%",
     "inner_wall_line_width": "110%",
     "interface_shells": "0",
@@ -71,7 +71,7 @@
     "ironing_spacing": "0.1",
     "ironing_speed": "15",
     "ironing_type": "no ironing",
-    "layer_height": "0.15",
+    "layer_height": "0.24",
     "make_overhang_printable": "0",
     "make_overhang_printable_angle": "55",
     "make_overhang_printable_hole_size": "0",

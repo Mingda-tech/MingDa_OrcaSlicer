@@ -953,6 +953,11 @@ Sidebar::Sidebar(Plater *parent)
         wxGetApp().plater()->on_filaments_change(filament_count);
         wxGetApp().get_tab(Preset::TYPE_PRINT)->update();
         wxGetApp().preset_bundle->export_selections(*wxGetApp().app_config);
+        
+        // Ensure PresetBundle has updated the flush volumes matrix before auto calculation
+        wxGetApp().preset_bundle->update_multi_material_filament_presets();
+        
+        // Now safe to auto calculate flush volumes for the new filament
         auto_calc_flushing_volumes(filament_count - 1);
     });
     p->m_bpButton_add_filament = add_btn;
@@ -2072,10 +2077,23 @@ void Sidebar::auto_calc_flushing_volumes(const int modify_id)
     }
 
     if (modify_id >= 0 && modify_id < multi_colours.size()) {
+        // Check if min_flush_volumes array is large enough
+        if (modify_id >= min_flush_volumes.size() || multi_colours.size() > min_flush_volumes.size()) {
+            BOOST_LOG_TRIVIAL(warning) << "auto_calc_flushing_volumes: min_flush_volumes size mismatch, skipping calculation";
+            return;
+        }
+        
+        // Check if matrix needs to be resized
+        unsigned int expected_size = multi_colours.size() * multi_colours.size();
+        if (matrix.size() < expected_size) {
+            matrix.resize(expected_size, 0.0);
+            m_number_of_extruders = multi_colours.size();
+        }
+        
         for (int i = 0; i < multi_colours.size(); ++i) {
             // from to modify
             int from_idx = i;
-            if (from_idx != modify_id) {
+            if (from_idx != modify_id && from_idx < min_flush_volumes.size()) {
                 Slic3r::FlushVolCalculator calculator(min_flush_volumes[from_idx], m_max_flush_volume);
                 int flushing_volume = 0;
                 bool is_from_support = is_support_filament(from_idx);
@@ -2095,12 +2113,14 @@ void Sidebar::auto_calc_flushing_volumes(const int modify_id)
                     if (is_from_support)
                         flushing_volume = std::max(flushing_volume, Slic3r::g_min_flush_volume_from_support);
                 }
-                matrix[m_number_of_extruders * from_idx + modify_id] = flushing_volume;
+                if (m_number_of_extruders * from_idx + modify_id < matrix.size()) {
+                    matrix[m_number_of_extruders * from_idx + modify_id] = flushing_volume;
+                }
             }
 
             // modify to to
             int to_idx = i;
-            if (to_idx != modify_id) {
+            if (to_idx != modify_id && modify_id < min_flush_volumes.size()) {
                 Slic3r::FlushVolCalculator calculator(min_flush_volumes[modify_id], m_max_flush_volume);
                 bool is_from_support = is_support_filament(modify_id);
                 bool is_to_support = is_support_filament(to_idx);
@@ -2119,7 +2139,9 @@ void Sidebar::auto_calc_flushing_volumes(const int modify_id)
                     }
                     if (is_from_support)
                         flushing_volume = std::max(flushing_volume, Slic3r::g_min_flush_volume_from_support);
-
+                }
+                
+                if (m_number_of_extruders * modify_id + to_idx < matrix.size()) {
                     matrix[m_number_of_extruders * modify_id + to_idx] = flushing_volume;
                 }
             }
