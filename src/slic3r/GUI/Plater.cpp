@@ -956,6 +956,7 @@ Sidebar::Sidebar(Plater *parent)
         auto_calc_flushing_volumes(filament_count - 1);
     });
     p->m_bpButton_add_filament = add_btn;
+    add_btn->Hide(); // Hide add filament button
 
     bSizer39->Add(add_btn, 0, wxALIGN_CENTER|wxALL, FromDIP(5));
     bSizer39->Add(FromDIP(10), 0, 0, 0, 0 );
@@ -981,6 +982,7 @@ Sidebar::Sidebar(Plater *parent)
         wxGetApp().preset_bundle->export_selections(*wxGetApp().app_config);
     });
     p->m_bpButton_del_filament = del_btn;
+    del_btn->Hide(); // Hide delete filament button
 
     bSizer39->Add(del_btn, 0, wxALIGN_CENTER_VERTICAL, FromDIP(5));
     bSizer39->Add(FromDIP(20), 0, 0, 0, 0);
@@ -1849,10 +1851,11 @@ void Sidebar::sync_ams_list()
 
 void Sidebar::show_SEMM_buttons(bool bshow)
 {
+    // Always hide add/delete filament buttons to prevent crashes
     if(p->m_bpButton_add_filament)
-        p->m_bpButton_add_filament->Show(bshow);
+        p->m_bpButton_add_filament->Show(false);
     if(p->m_bpButton_del_filament)
-        p->m_bpButton_del_filament->Show(bshow);
+        p->m_bpButton_del_filament->Show(false);
     if (p->m_flushing_volume_btn)
         p->m_flushing_volume_btn->Show(bshow);
     Layout();
