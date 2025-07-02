@@ -1635,7 +1635,36 @@ void PresetBundle::update_selections(AppConfig &config)
     if (!f_colors.empty()) {
         boost::algorithm::split(filament_colors, f_colors, boost::algorithm::is_any_of(","));
     }
-    filament_colors.resize(filament_presets.size(), "#26A69A");
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            
+            // Adjust filament presets to match expected count
+            if (filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = filament_presets.empty() ? filaments.first_visible().name : filament_presets.back();
+                while (filament_presets.size() < expected_filaments) {
+                    filament_presets.push_back(last_preset);
+                }
+            } else if (filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                filament_presets.resize(expected_filaments);
+            }
+            
+            // Ensure colors match the printer's extruder_colour array
+            filament_colors.resize(expected_filaments);
+            for (size_t i = 0; i < expected_filaments; ++i) {
+                if (i >= filament_colors.size() || filament_colors[i].empty()) {
+                    filament_colors[i] = extruder_colours->values[i];
+                }
+            }
+        }
+    } else {
+        filament_colors.resize(filament_presets.size(), "#26A69A");
+    }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
     if (config.has_printer_setting(initial_printer_profile_name, "flush_volumes_matrix")) {
@@ -1742,7 +1771,36 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
     if (!f_colors.empty()) {
         boost::algorithm::split(filament_colors, f_colors, boost::algorithm::is_any_of(","));
     }
-    filament_colors.resize(filament_presets.size(), "#26A69A");
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            
+            // Adjust filament presets to match expected count
+            if (filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = filament_presets.empty() ? filaments.first_visible().name : filament_presets.back();
+                while (filament_presets.size() < expected_filaments) {
+                    filament_presets.push_back(last_preset);
+                }
+            } else if (filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                filament_presets.resize(expected_filaments);
+            }
+            
+            // Ensure colors match the printer's extruder_colour array
+            filament_colors.resize(expected_filaments);
+            for (size_t i = 0; i < expected_filaments; ++i) {
+                if (i >= filament_colors.size() || filament_colors[i].empty()) {
+                    filament_colors[i] = extruder_colours->values[i];
+                }
+            }
+        }
+    } else {
+        filament_colors.resize(filament_presets.size(), "#26A69A");
+    }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
     if (config.has_printer_setting(initial_printer_profile_name, "flush_volumes_matrix")) {
@@ -1803,6 +1861,42 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
     if (!initial_physical_printer_name.empty())
         physical_printers.select_printer(initial_physical_printer_name);
 
+    // For SEMM printers, ensure filament count matches extruder_colour array size
+    const Preset& loaded_printer = this->printers.get_selected_preset();
+    if (loaded_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = loaded_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            if (this->filament_presets.size() != expected_filaments) {
+                size_t old_size = this->filament_presets.size();
+                if (old_size < expected_filaments) {
+                    // Add more filaments if needed
+                    this->filament_presets.resize(expected_filaments, this->filament_presets.empty() ? 
+                        this->filaments.first_compatible().name : this->filament_presets.back());
+                } else {
+                    // Trim if we have more
+                    this->filament_presets.resize(expected_filaments);
+                }
+                
+                // Update filament colors in project config to match printer's extruder_colour
+                ConfigOptionStrings* filament_color = project_config.option<ConfigOptionStrings>("filament_colour");
+                filament_color->resize(expected_filaments);
+                for (size_t i = 0; i < expected_filaments; ++i) {
+                    if (i >= old_size || filament_color->values[i].empty()) {
+                        // Use color from printer's extruder_colour array
+                        filament_color->values[i] = extruder_colours->values[i];
+                    }
+                }
+                
+                // Update multi-material filament presets
+                this->update_multi_material_filament_presets();
+                
+                BOOST_LOG_TRIVIAL(info) << "Adjusted filament count to " << expected_filaments 
+                                       << " for SEMM printer based on extruder_colour array in load_selections";
+            }
+        }
+    }
+
     BOOST_LOG_TRIVIAL(debug) << __FUNCTION__ << boost::format(": finished, preferred printer_model_id %1%")%preferred_selection.printer_model_id;
 }
 
@@ -1853,6 +1947,20 @@ void PresetBundle::export_selections(AppConfig &config)
 // BBS
 void PresetBundle::set_num_filaments(unsigned int n, std::string new_color)
 {
+    // For SEMM printers, respect the extruder_colour array size as minimum filament count
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t min_filaments = extruder_colours->values.size();
+            if (n < min_filaments) {
+                BOOST_LOG_TRIVIAL(info) << "SEMM printer: adjusting filament count from " << n 
+                                       << " to " << min_filaments << " based on extruder_colour array";
+                n = min_filaments;
+            }
+        }
+    }
+
     int old_filament_count = this->filament_presets.size();
     if (n > old_filament_count && old_filament_count != 0)
         filament_presets.resize(n, filament_presets.back());
@@ -1869,6 +1977,18 @@ void PresetBundle::set_num_filaments(unsigned int n, std::string new_color)
         if (!new_color.empty()) {
             for (int i = old_filament_count; i < n; i++) {
                 filament_color->values[i] = new_color;
+            }
+        }
+    }
+
+    // For SEMM printers, ensure all colors are set from extruder_colour
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && extruder_colours->values.size() == n) {
+            for (size_t i = 0; i < n; i++) {
+                if (filament_color->values[i].empty()) {
+                    filament_color->values[i] = extruder_colours->values[i];
+                }
             }
         }
     }
@@ -3747,6 +3867,28 @@ void PresetBundle::update_multi_material_filament_presets()
     // Append the rest of filament presets.
     this->filament_presets.resize(num_extruders, this->filament_presets.empty() ? this->filaments.first_visible().name : this->filament_presets.back());
 #else
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_edited_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            // Ensure we have the expected number of filaments
+            if (this->filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = this->filament_presets.empty() ? this->filaments.first_visible().name : this->filament_presets.back();
+                while (this->filament_presets.size() < expected_filaments) {
+                    this->filament_presets.push_back(last_preset);
+                }
+            } else if (this->filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                this->filament_presets.resize(expected_filaments);
+            }
+            BOOST_LOG_TRIVIAL(info) << "Ensured " << expected_filaments 
+                                   << " filaments for SEMM printer based on extruder_colour in update_multi_material_filament_presets";
+        }
+    }
+    
     size_t num_filaments = this->filament_presets.size();
 #endif
 
@@ -3940,6 +4082,41 @@ void PresetBundle::update_compatible(PresetSelectCompatibleType select_other_pri
 		break;
 	}
     default: break;
+    }
+
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    if (printer_preset.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = printer_preset.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            // Check if we have the expected number of filaments
+            if (this->filament_presets.size() != expected_filaments) {
+                size_t old_size = this->filament_presets.size();
+                if (old_size < expected_filaments) {
+                    // Add more filaments if needed
+                    this->filament_presets.resize(expected_filaments, this->filament_presets.empty() ? 
+                        this->filaments.first_compatible().name : this->filament_presets.back());
+                } else {
+                    // Trim if we have more
+                    this->filament_presets.resize(expected_filaments);
+                }
+                
+                // Update filament colors to match printer's extruder_colour
+                ConfigOptionStrings* filament_color = project_config.option<ConfigOptionStrings>("filament_colour");
+                filament_color->resize(expected_filaments);
+                for (size_t i = 0; i < expected_filaments; ++i) {
+                    if (i >= old_size || filament_color->values[i].empty()) {
+                        filament_color->values[i] = extruder_colours->values[i];
+                    }
+                }
+                
+                // Update multi-material filament presets
+                this->update_multi_material_filament_presets();
+                
+                BOOST_LOG_TRIVIAL(info) << "Adjusted filament count to " << expected_filaments 
+                                       << " for SEMM printer based on extruder_colour in update_compatible";
+            }
+        }
     }
 
     BOOST_LOG_TRIVIAL(info) << boost::format("update_compatibility for all presets exit");

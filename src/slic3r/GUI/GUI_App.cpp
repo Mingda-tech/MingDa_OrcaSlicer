@@ -1048,6 +1048,25 @@ void GUI_App::post_init()
            }
         }
     }
+    
+    // Final check for SEMM printers - ensure filament count matches extruder_colour array
+    const Preset& current_printer = preset_bundle->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            if (preset_bundle->filament_presets.size() != expected_filaments) {
+                preset_bundle->set_num_filaments(expected_filaments);
+                if (plater()) {
+                    plater()->on_filaments_change(expected_filaments);
+                }
+                preset_bundle->export_selections(*app_config);
+                BOOST_LOG_TRIVIAL(info) << "Final post_init correction: set " << expected_filaments 
+                                       << " filaments for SEMM printer based on extruder_colour array";
+            }
+        }
+    }
+    
     BOOST_LOG_TRIVIAL(info) << "finished post_init";
 //BBS: remove the single instance currently
 #ifdef _WIN32

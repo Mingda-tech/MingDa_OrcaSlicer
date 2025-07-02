@@ -4390,7 +4390,7 @@ void TabPrinter::on_preset_loaded()
     // update the GUI field according to the number of nozzle diameters supplied
     extruders_count_changed(extruders_count);
     
-    // Ensure proper filament count initialization
+    // For SEMM printers, use extruder_colour array size to determine filament count
     if (m_config->opt_bool("single_extruder_multi_material")) {
         // For SEMM printers, use extruder_colour array size for filament count
         auto* extruder_colours = m_config->option<ConfigOptionStrings>("extruder_colour");
@@ -5098,7 +5098,14 @@ bool Tab::select_preset(std::string preset_name, bool delete_current /*=false*/,
         // Orca: update presets for the selected printer
         if (m_type == Preset::TYPE_PRINTER && wxGetApp().app_config->get_bool("remember_printer_config")) {
           m_preset_bundle->update_selections(*wxGetApp().app_config);
-          wxGetApp().plater()->sidebar().on_filaments_change(m_preset_bundle->filament_presets.size());
+          
+          // Special handling for MINGDA AD-F4 SEMM printer - don't update filament count here
+          // Let on_preset_loaded() handle it properly
+          const std::string printer_name = m_presets->get_edited_preset().name;
+          if (printer_name.find("MINGDA AD-F4") == std::string::npos) {
+              // Only update filament count for non-AD-F4 printers
+              wxGetApp().plater()->sidebar().on_filaments_change(m_preset_bundle->filament_presets.size());
+          }
         }
         load_current_preset();
 
