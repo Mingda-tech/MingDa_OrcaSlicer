@@ -4003,6 +4003,10 @@ void TabPrinter::extruders_count_changed(size_t extruders_count)
         on_value_change("extruders_count", extruders_count);
         // BBS
         //wxGetApp().obj_list()->update_objects_list_filament_column(extruders_count);
+        
+        // Ensure filament presets are synchronized with extruder count
+        wxGetApp().preset_bundle->set_num_filaments(extruders_count);
+        wxGetApp().plater()->on_filaments_change(extruders_count);
     }
 }
 
@@ -4385,6 +4389,21 @@ void TabPrinter::on_preset_loaded()
     size_t extruders_count = nozzle_diameter->values.size();
     // update the GUI field according to the number of nozzle diameters supplied
     extruders_count_changed(extruders_count);
+    
+    // Ensure proper filament count initialization
+    if (m_config->opt_bool("single_extruder_multi_material")) {
+        // For SEMM printers, use extruder_colour array size for filament count
+        auto* extruder_colours = m_config->option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t filament_count = extruder_colours->values.size();
+            wxGetApp().preset_bundle->set_num_filaments(filament_count);
+            wxGetApp().plater()->on_filaments_change(filament_count);
+        }
+    } else {
+        // For non-SEMM printers, match filament count to extruder count
+        wxGetApp().preset_bundle->set_num_filaments(extruders_count);
+        wxGetApp().plater()->on_filaments_change(extruders_count);
+    }
 }
 
 void TabPrinter::update_pages()
