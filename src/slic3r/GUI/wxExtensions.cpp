@@ -542,7 +542,7 @@ std::vector<wxBitmap*> get_extruder_color_icons(bool thin_icon/* = false*/)
     int index = 0;
     for (const std::string &color : colors)
     {
-        auto label = std::to_string(++index);
+        auto label = std::to_string(index++);
         bmps.push_back(get_extruder_color_icon(color, label, icon_width, icon_height));
     }
 
