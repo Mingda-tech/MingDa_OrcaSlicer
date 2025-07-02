@@ -6,22 +6,27 @@
     "inherits": "fdm_process_MINGDA_common_base",
     "is_custom_defined": "0",
     "layer_height": "0.4",
-    "name": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
-    "print_settings_id": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
+    "name": "0.40mm Standard @MINGDA 1000D (0.8 nozzle)",
+    "print_settings_id": "0.40mm Standard @MINGDA 1000D (0.8 nozzle)",
     "compatible_printers": [
-      "MD-1000Pro (0.8 nozzle)"
+      "MINGDA 1000D 0.8 nozzle"
     ],
+    "enable_prime_tower": "0",
+    "initial_layer_acceleration": "500",
+    "outer_wall_acceleration": "2000",
+    "travel_speed": "250",    
     "default_acceleration": "2000",
+    "initial_layer_infill_speed": "60",
+    "initial_layer_speed": "40",
+    "inner_wall_acceleration": "2000",
     "inner_wall_speed": "90",
     "internal_solid_infill_speed": "90",
-    "outer_wall_acceleration": "2000",
     "outer_wall_speed": "90",
+    "slow_down_layers": "5",
     "sparse_infill_speed": "90",
     "top_surface_acceleration": "1000",
     "top_surface_speed": "60",
     "travel_acceleration": "3000",
-    "travel_speed": "350",    
-    "enable_prime_tower": "0",
     "version": "2.0.0.0"
   }
   

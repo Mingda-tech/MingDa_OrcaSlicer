@@ -7,7 +7,7 @@
 	"inherits": "MINGDA 1000D 0.4 nozzle",
 	"is_custom_defined": "0",
 	"printer_variant": "0.8",
-	"default_print_profile": "0.40mm Standard @MINGDA (0.8 nozzle)",
+	"default_print_profile": "0.40mm Standard @MINGDA 1000D (0.8 nozzle)",
 	"printer_model": "MINGDA 1000D",
 	"extruder_colour": [
 		"#FCE94F",

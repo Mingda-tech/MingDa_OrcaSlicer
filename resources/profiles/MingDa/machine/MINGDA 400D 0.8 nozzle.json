@@ -7,7 +7,7 @@
 	"inherits": "MINGDA 400D 0.4 nozzle",
 	"is_custom_defined": "0",
 	"printer_variant": "0.8",
-	"default_print_profile": "0.40mm Standard @MINGDA (0.8 nozzle)",
+	"default_print_profile": "0.40mm Standard @MINGDA 400D (0.8 nozzle)",
 	"printer_model": "MINGDA 400D",
     "auxiliary_fan": "1",
 	"single_extruder_multi_material": "0",

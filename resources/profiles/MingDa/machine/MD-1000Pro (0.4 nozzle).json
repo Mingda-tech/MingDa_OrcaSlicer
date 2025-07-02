@@ -4,7 +4,7 @@
 	"name": "MD-1000Pro (0.4 nozzle)",
 	"from": "system",
 	"instantiation": "true",
-	"inherits": "fdm_machine_common",
+	"inherits": "fdm_klipper_common",
 	"printer_model": "MD-1000Pro",
 	"default_print_profile": "0.20mm Standard @MD-1000Pro (0.4 nozzle)",
 	"gcode_flavor": "klipper",
@@ -59,10 +59,6 @@
 		"12",
 		"12"
 	],
-	"max_layer_height": [
-		"0.4",
-		"0.4"
-	],
 	"min_layer_height": [
 		"0.1",
 		"0.1"
@@ -98,7 +94,6 @@
     ],
 	
 	"change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
-	"machine_pause_gcode": "; pause print\n",
 	"default_filament_profile": [
 		"MINGDA PLA"
 	],
@@ -114,8 +109,6 @@
     "extruder_clearance_height_to_rod": "36",
     "extruder_clearance_radius": "68",
     "is_custom_defined": "0",
-    "machine_start_gcode": " G28 ; home all axes\n M420 S1\n M117 ; Purge extruder\n G92 E0 ; reset extruder\n G1 Z1.0 F1200 ; move z up little to prevent scratching of surface\n G1 X4 Y20 Z0.3 F3000.0 ; move to start-line position\n G1 X4 Y380.0 Z0.3 F1500.0 E30 ; draw 1st line\n G1 X4 Y380.0 Z0.4 F3000.0 ; move to side a little\n G1 X4 Y20 Z0.4 F1500.0 E60 ; draw 2nd line\n G92 E0 ; reset extruder\n G1 Z1.0 F1500 ; move z up little to prevent scratching of surface",
-    "machine_end_gcode": " G91; relative positioning\n G1 Z1.0 F3000 ; move z up little to prevent scratching of print\n G90; absolute positioning\n G1 X0 Y0 F1000 ; prepare for part removal\n M104 S0; turn off extruder\n M140 S0 ; turn off bed\n M84 ; disable motors\n M106 S0 ; turn off fan",
     "machine_max_acceleration_retracting": [
         "5000",
         "1500"
@@ -172,5 +165,13 @@
     "single_extruder_multi_material": "0",
     "z_hop_types": [
         "Normal Lift"
+    ],
+    "machine_pause_gcode": "; pause print\nPAUSE\n",
+    "machine_start_gcode": "START_PRINT EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature]  MESH_MIN={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} MESH_MAX={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} MESH_ALGO=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]}  TOOL=[initial_tool]\nM109 T{initial_tool} S{first_layer_temperature[initial_tool]}",
+    "machine_end_gcode": "END_PRINT",
+    "machine_unload_filament_time": "0",
+    "manual_filament_change": "0",
+    "max_layer_height": [
+        "0.32"
     ]
 }
