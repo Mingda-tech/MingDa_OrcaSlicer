@@ -13061,26 +13061,38 @@ std::vector<std::string> Plater::get_extruder_colors_from_plater_config(const GC
         const Slic3r::DynamicPrintConfig* config = &wxGetApp().preset_bundle->project_config;
         std::vector<std::string> extruder_colors;
         
-        // Check if extruder_colour is defined in printer configuration
+        // First, try to use filament_colour from project config (user can modify this)
+        if (config->has("filament_colour")) {
+            extruder_colors = (config->option<ConfigOptionStrings>("filament_colour"))->values;
+        }
+        
+        // Get extruder_colour from printer config as default values
         const Preset& current_printer = wxGetApp().preset_bundle->printers.get_selected_preset();
+        std::vector<std::string> default_colors;
         if (current_printer.config.has("extruder_colour")) {
             const ConfigOptionStrings* extruder_colour_option = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
             if (extruder_colour_option && !extruder_colour_option->values.empty()) {
-                // Filter out empty values
                 for (const std::string& color : extruder_colour_option->values) {
                     if (!color.empty()) {
-                        extruder_colors.push_back(color);
+                        default_colors.push_back(color);
                     }
                 }
             }
         }
         
-        // If extruder_colour is not available or empty, fall back to filament_colour
-        if (extruder_colors.empty()) {
-            if (!config->has("filament_colour")) // in case of a SLA print
-                return extruder_colors;
+        // Fill in missing colors with default values from extruder_colour
+        if (!default_colors.empty()) {
+            // Ensure we have at least as many colors as default_colors
+            while (extruder_colors.size() < default_colors.size()) {
+                extruder_colors.push_back("");
+            }
             
-            extruder_colors = (config->option<ConfigOptionStrings>("filament_colour"))->values;
+            // Replace empty colors with default values
+            for (size_t i = 0; i < extruder_colors.size() && i < default_colors.size(); ++i) {
+                if (extruder_colors[i].empty()) {
+                    extruder_colors[i] = default_colors[i];
+                }
+            }
         }
         
         return extruder_colors;
