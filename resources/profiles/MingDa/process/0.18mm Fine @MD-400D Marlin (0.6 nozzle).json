@@ -7,8 +7,8 @@
     "is_custom_defined": "0",
     "layer_height": "0.18",
     "compatible_printers": [
-        "MD-400D Marlin 0.6 nozzle (Dual)",
-        "MD-400D Marlin 0.6 nozzle (Left)",
+        "MD-400D Marlin 0.6 nozzle",
+        
         "MD-400D Marlin 0.6 nozzle (Right)"
 	],
     "name": "0.18mm Fine @MD-400D Marlin (0.6 nozzle)",

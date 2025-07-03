@@ -3,7 +3,7 @@
     "setting_id": "GP015",
     "from": "system",
     "instantiation": "true",
-    "inherits": "fdm_process_MINGDA_common_base",
+    "inherits": "0.20mm Standard @MD-A128 Marlin (0.4 nozzle)",
     "is_custom_defined": "0",
     "layer_height": "0.48",
     "name": "0.48mm Draft @MD-A128 Marlin (0.8 nozzle)",

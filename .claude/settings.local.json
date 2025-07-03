@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(python3:*)",
+      "Bash(for:*)",
+      "Bash(do if ! grep -q \"MD-1000Pro+\" \"$file\")",
+      "Bash(then echo \"$file\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(sed:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

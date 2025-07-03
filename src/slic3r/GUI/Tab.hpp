@@ -1,17 +1,3 @@
-///|/ Copyright (c) Prusa Research 2017 - 2023 Oleksandra Iushchenko @YuSanka, Tomáš Mészáros @tamasmeszaros, Vojtěch Bubník @bubnikv, Lukáš Matěna @lukasmatena, Enrico Turri @enricoturri1966, Vojtěch Král @vojtechkral
-///|/ Copyright (c) 2019 John Drake @foxox
-///|/ Copyright (c) 2018 Martin Loidl @LoidlM
-///|/
-///|/ ported from lib/Slic3r/GUI/Tab.pm:
-///|/ Copyright (c) Prusa Research 2016 - 2018 Vojtěch Bubník @bubnikv, Lukáš Matěna @lukasmatena
-///|/ Copyright (c) 2015 - 2017 Joseph Lenox @lordofhyphens
-///|/ Copyright (c) Slic3r 2012 - 2016 Alessandro Ranellucci @alranel
-///|/ Copyright (c) 2016 Chow Loong Jin @hyperair
-///|/ Copyright (c) 2012 QuantumConcepts
-///|/ Copyright (c) 2012 Henrik Brix Andersen @henrikbrixandersen
-///|/
-///|/ PrusaSlicer is released under the terms of the AGPLv3 or higher
-///|/
 #ifndef slic3r_Tab_hpp_
 #define slic3r_Tab_hpp_
 
@@ -111,8 +97,6 @@ public:
 	Field*		get_field(const t_config_option_key& opt_key, int opt_index = -1) const;
     Line *      get_line(const t_config_option_key &opt_key);
 	bool		set_value(const t_config_option_key& opt_key, const boost::any& value);
-	// TODO:ylg 添加一个页面
-	ConfigOptionsGroupShp	new_tab(const wxString& title, const wxString& icon = wxEmptyString, int noncommon_label_width = -1, bool is_extruder_og = false);
 	// BBS. Add is_extruder_og parameter.
 	ConfigOptionsGroupShp	new_optgroup(const wxString& title, const wxString& icon = wxEmptyString, int noncommon_label_width = -1, bool is_extruder_og = false);
 	const ConfigOptionsGroupShp	get_optgroup(const wxString& title) const;
@@ -524,6 +508,7 @@ public:
 	~TabPrintPlate() {}
 	void build() override;
 	void reset_model_config() override;
+	int show_spiral_mode_settings_dialog(bool is_object_config) { return m_config_manipulation.show_spiral_mode_settings_dialog(is_object_config); }
 
 protected:
 	virtual void    on_value_change(const std::string& opt_key, const boost::any& value) override;
@@ -565,8 +550,6 @@ protected:
 class TabFilament : public Tab
 {
 private:
-	//TODO:YLG 当前材料所用的挤出机
-	int             m_active_extruder {0};
 	ogStaticText*	m_volumetric_speed_description_line {nullptr};
 	ogStaticText*	m_cooling_description_line {nullptr};
 
@@ -637,7 +620,6 @@ public:
     void        update_pages(); // update m_pages according to printer technology
 	void		extruders_count_changed(size_t extruders_count);
 	PageShp		build_kinematics_page();
-	void		build_extruder_pages(size_t n_before_extruders);
 	void		build_unregular_pages(bool from_initial_build = false);
 	void		on_preset_loaded() override;
 	void		init_options_list() override;

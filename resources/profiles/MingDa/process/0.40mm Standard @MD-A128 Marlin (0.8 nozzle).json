@@ -3,15 +3,13 @@
     "setting_id": "GP014",
     "from": "system",
     "instantiation": "true",
-    "inherits": "fdm_process_MINGDA_common_base",
+    "inherits": "0.20mm Standard @MD-A128 Marlin (0.4 nozzle)",
     "is_custom_defined": "0",
     "layer_height": "0.4",
     "name": "0.40mm Standard @MD-A128 Marlin (0.8 nozzle)",
     "print_settings_id": "0.40mm Standard @MD-A128 Marlin (0.8 nozzle)",
     "compatible_printers": [
       "MD-A128 Marlin 0.8 nozzle"
-],
-  "enable_prime_tower": "0",
-    "version": "2.0.0.0"
+    ]
   }
   

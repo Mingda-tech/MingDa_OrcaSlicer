@@ -1,0 +1,24 @@
+{
+    "type": "process",
+    "setting_id": "GP013",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_process_MINGDA_common_base",
+    "is_custom_defined": "0",
+    "layer_height": "0.32",
+    "name": "0.32mm Optimal @MINGDA 600D (0.8 nozzle)",
+    "print_settings_id": "0.32mm Optimal @MINGDA 600D (0.8 nozzle)",
+    "compatible_printers": [
+      "MINGDA 600D 0.8 nozzle"
+    ],
+    "enable_prime_tower": "0",
+    "inner_wall_speed": "120",
+    "internal_solid_infill_speed": "120",
+    "outer_wall_speed": "80",
+    "top_surface_acceleration": "2000",
+    "top_surface_speed": "80",
+    "travel_acceleration": "5000",
+    "travel_speed": "250",    
+    "version": "2.0.0.0"
+  }
+  

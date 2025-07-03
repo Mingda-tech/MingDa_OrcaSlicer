@@ -180,7 +180,7 @@ void PresetBundle::setup_directories()
 		boost::filesystem::path subdir = path;
         subdir.make_preferred();
         if (! boost::filesystem::is_directory(subdir) &&
-            ! boost::filesystem::create_directories(subdir)) {
+            ! boost::filesystem::create_directory(subdir)) {
             if (boost::filesystem::is_directory(subdir)) {
                 BOOST_LOG_TRIVIAL(warning) << boost::format("creating directory %1% failed, maybe created by other instance, go on!")%subdir.string();
             }
@@ -197,7 +197,7 @@ static void copy_dir(const boost::filesystem::path& from_dir, const boost::files
         return;
     // i assume to_dir.parent surely exists
     if (!boost::filesystem::is_directory(to_dir))
-        boost::filesystem::create_directories(to_dir);
+        boost::filesystem::create_directory(to_dir);
     for (auto& dir_entry : boost::filesystem::directory_iterator(from_dir)) {
         if (!boost::filesystem::is_directory(dir_entry.path())) {
             std::string em;
@@ -349,6 +349,20 @@ bool PresetBundle::use_bbl_network()
     const auto cfg             = printers.get_edited_preset().config;
     const bool use_bbl_network = is_bbl_vendor() && !cfg.opt_bool("bbl_use_printhost");
     return use_bbl_network;
+}
+
+bool PresetBundle::use_bbl_device_tab() {
+    if (!is_bbl_vendor()) {
+        return false;
+    }
+
+    if (use_bbl_network()) {
+        return true;
+    }
+
+    const auto cfg = printers.get_edited_preset().config;
+    // Use bbl device tab if printhost webui url is not set 
+    return cfg.opt_string("print_host_webui").empty();
 }
 
 //BBS: load project embedded presets
@@ -555,11 +569,11 @@ PresetsConfigSubstitutions PresetBundle::load_user_presets(std::string user, For
     std::string errors_cummulative;
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
-    if (!fs::exists(user_folder)) fs::create_directories(user_folder);
+    if (!fs::exists(user_folder)) fs::create_directory(user_folder);
 
     std::string dir_user_presets = data_dir() + "/" + PRESET_USER_DIR + "/" + user;
     fs::path    folder(user_folder / user);
-    if (!fs::exists(folder)) fs::create_directories(folder);
+    if (!fs::exists(folder)) fs::create_directory(folder);
 
     // BBS do not load sla_print
     // BBS: change directoties by design
@@ -689,18 +703,18 @@ PresetsConfigSubstitutions PresetBundle::import_presets(std::vector<std::string>
             boost::system::error_code ec;
             // create user folder
             fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
-            if (!fs::exists(user_folder)) fs::create_directories(user_folder, ec);
+            if (!fs::exists(user_folder)) fs::create_directory(user_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
             // create default folder
             fs::path default_folder(user_folder / DEFAULT_USER_FOLDER_NAME);
-            if (!fs::exists(default_folder)) fs::create_directories(default_folder, ec);
+            if (!fs::exists(default_folder)) fs::create_directory(default_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
             //create temp folder
             //std::string user_default_temp_dir = data_dir() + "/" + PRESET_USER_DIR + "/" + DEFAULT_USER_FOLDER_NAME + "/" + "temp";
             fs::path temp_folder(default_folder / "temp");
             std::string user_default_temp_dir = temp_folder.make_preferred().string();
             if (fs::exists(temp_folder)) fs::remove_all(temp_folder);
-            fs::create_directories(temp_folder, ec);
+            fs::create_directory(temp_folder, ec);
             if (ec) BOOST_LOG_TRIVIAL(error) << __FUNCTION__ << " create directory failed: " << ec.message();
 
             file = boost::filesystem::path(file).make_preferred().string();
@@ -872,11 +886,11 @@ void PresetBundle::save_user_presets(AppConfig& config, std::vector<std::string>
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
     if (!fs::exists(user_folder))
-        fs::create_directories(user_folder);
+        fs::create_directory(user_folder);
 
     fs::path folder(dir_user_presets);
     if (!fs::exists(folder))
-        fs::create_directories(folder);
+        fs::create_directory(folder);
 
     this->prints.save_user_presets(dir_user_presets, PRESET_PRINT_NAME, need_to_delete_list);
     this->filaments.save_user_presets(dir_user_presets, PRESET_FILAMENT_NAME, need_to_delete_list);
@@ -894,11 +908,11 @@ void PresetBundle::update_user_presets_directory(const std::string preset_folder
 
     fs::path user_folder(data_dir() + "/" + PRESET_USER_DIR);
     if (!fs::exists(user_folder))
-        fs::create_directories(user_folder);
+        fs::create_directory(user_folder);
 
     fs::path folder(dir_user_presets);
     if (!fs::exists(folder))
-        fs::create_directories(folder);
+        fs::create_directory(folder);
 
     this->prints.update_user_presets_directory(dir_user_presets, PRESET_PRINT_NAME);
     this->filaments.update_user_presets_directory(dir_user_presets, PRESET_FILAMENT_NAME);
@@ -1533,6 +1547,7 @@ void PresetBundle::load_installed_filaments(AppConfig &config)
                         Preset* filament = filaments.find_preset(filament_iter.first, false, true);
                         if (filament && is_compatible_with_printer(PresetWithVendorProfile(*filament, filament->vendor), PresetWithVendorProfile(printer, printer.vendor)))
                         {
+
                             //already has compatible filament
                             add_default_materials = false;
                             break;
@@ -1606,8 +1621,7 @@ void PresetBundle::update_selections(AppConfig &config)
     // Load it even if the current printer technology is SLA.
     // The possibly excessive filament names will be later removed with this->update_multi_material_filament_presets()
     // once the FFF technology gets selected.
-    //TODO:ylg 默认只有一个材料，我们改为默认2个，这里还需要改成读取配置文件材料颜色才对。暂时先这样了
-    this->filament_presets = {filaments.get_selected_preset_name()};
+    this->filament_presets = { filaments.get_selected_preset_name() };
     for (unsigned int i = 1; i < 1000; ++ i) {
         char name[64];
         sprintf(name, "filament_%02u", i);
@@ -1618,11 +1632,56 @@ void PresetBundle::update_selections(AppConfig &config)
     }
     std::vector<std::string> filament_colors;
     auto f_colors = config.get_printer_setting(initial_printer_profile_name, "filament_colors");
-
     if (!f_colors.empty()) {
         boost::algorithm::split(filament_colors, f_colors, boost::algorithm::is_any_of(","));
     }
-    filament_colors.resize(filament_presets.size(), "#26A69A");
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            
+            // Adjust filament presets to match expected count
+            if (filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = filament_presets.empty() ? filaments.first_visible().name : filament_presets.back();
+                while (filament_presets.size() < expected_filaments) {
+                    filament_presets.push_back(last_preset);
+                }
+            } else if (filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                filament_presets.resize(expected_filaments);
+            }
+            
+            // Ensure colors match the printer's extruder_colour array
+            filament_colors.resize(expected_filaments);
+            for (size_t i = 0; i < expected_filaments; ++i) {
+                if (filament_colors[i].empty()) {
+                    filament_colors[i] = extruder_colours->values[i];
+                }
+            }
+        }
+    } else {
+        // For non-SEMM printers, use extruder_colour from printer config if available
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            filament_colors.resize(filament_presets.size());
+            for (size_t i = 0; i < filament_colors.size(); ++i) {
+                if (filament_colors[i].empty()) {
+                    if (i < extruder_colours->values.size()) {
+                        filament_colors[i] = extruder_colours->values[i];
+                    } else {
+                        // Fall back to the last defined color if not enough colors defined
+                        filament_colors[i] = extruder_colours->values.back();
+                    }
+                }
+            }
+        } else {
+            // Final fallback to hardcoded color if no extruder_colour is defined
+            filament_colors.resize(filament_presets.size(), "#26A69A");
+        }
+    }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
     if (config.has_printer_setting(initial_printer_profile_name, "flush_volumes_matrix")) {
@@ -1686,6 +1745,7 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
     // If executed due to a Config Wizard update, preferred_printer contains the first newly installed printer, otherwise nullptr.
     const Preset *preferred_printer = printers.find_system_preset_by_model_and_variant(preferred_selection.printer_model_id, preferred_selection.printer_variant);
     printers.select_preset_by_name(preferred_printer ? preferred_printer->name : initial_printer_profile_name, true);
+    CNumericLocalesSetter locales_setter;
 
     // Orca: load from orca_presets
     // const auto os_presets = config.get_machine_settings(initial_printer_profile_name);
@@ -1728,7 +1788,53 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
     if (!f_colors.empty()) {
         boost::algorithm::split(filament_colors, f_colors, boost::algorithm::is_any_of(","));
     }
-    filament_colors.resize(filament_presets.size(), "#26A69A");
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            
+            // Adjust filament presets to match expected count
+            if (filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = filament_presets.empty() ? filaments.first_visible().name : filament_presets.back();
+                while (filament_presets.size() < expected_filaments) {
+                    filament_presets.push_back(last_preset);
+                }
+            } else if (filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                filament_presets.resize(expected_filaments);
+            }
+            
+            // Ensure colors match the printer's extruder_colour array
+            filament_colors.resize(expected_filaments);
+            for (size_t i = 0; i < expected_filaments; ++i) {
+                if (filament_colors[i].empty()) {
+                    filament_colors[i] = extruder_colours->values[i];
+                }
+            }
+        }
+    } else {
+        // For non-SEMM printers, use extruder_colour from printer config if available
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            filament_colors.resize(filament_presets.size());
+            for (size_t i = 0; i < filament_colors.size(); ++i) {
+                if (filament_colors[i].empty()) {
+                    if (i < extruder_colours->values.size()) {
+                        filament_colors[i] = extruder_colours->values[i];
+                    } else {
+                        // Fall back to the last defined color if not enough colors defined
+                        filament_colors[i] = extruder_colours->values.back();
+                    }
+                }
+            }
+        } else {
+            // Final fallback to hardcoded color if no extruder_colour is defined
+            filament_colors.resize(filament_presets.size(), "#26A69A");
+        }
+    }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
     if (config.has_printer_setting(initial_printer_profile_name, "flush_volumes_matrix")) {
@@ -1789,6 +1895,42 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
     if (!initial_physical_printer_name.empty())
         physical_printers.select_printer(initial_physical_printer_name);
 
+    // For SEMM printers, ensure filament count matches extruder_colour array size
+    const Preset& loaded_printer = this->printers.get_selected_preset();
+    if (loaded_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = loaded_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            if (this->filament_presets.size() != expected_filaments) {
+                size_t old_size = this->filament_presets.size();
+                if (old_size < expected_filaments) {
+                    // Add more filaments if needed
+                    this->filament_presets.resize(expected_filaments, this->filament_presets.empty() ? 
+                        this->filaments.first_compatible().name : this->filament_presets.back());
+                } else {
+                    // Trim if we have more
+                    this->filament_presets.resize(expected_filaments);
+                }
+                
+                // Update filament colors in project config to match printer's extruder_colour
+                ConfigOptionStrings* filament_color = project_config.option<ConfigOptionStrings>("filament_colour");
+                filament_color->resize(expected_filaments);
+                for (size_t i = 0; i < expected_filaments; ++i) {
+                    if (i >= old_size || filament_color->values[i].empty()) {
+                        // Use color from printer's extruder_colour array
+                        filament_color->values[i] = extruder_colours->values[i];
+                    }
+                }
+                
+                // Update multi-material filament presets
+                this->update_multi_material_filament_presets();
+                
+                BOOST_LOG_TRIVIAL(info) << "Adjusted filament count to " << expected_filaments 
+                                       << " for SEMM printer based on extruder_colour array in load_selections";
+            }
+        }
+    }
+
     BOOST_LOG_TRIVIAL(debug) << __FUNCTION__ << boost::format(": finished, preferred printer_model_id %1%")%preferred_selection.printer_model_id;
 }
 
@@ -1839,6 +1981,20 @@ void PresetBundle::export_selections(AppConfig &config)
 // BBS
 void PresetBundle::set_num_filaments(unsigned int n, std::string new_color)
 {
+    // For SEMM printers, respect the extruder_colour array size as minimum filament count
+    const Preset& current_printer = this->printers.get_selected_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t min_filaments = extruder_colours->values.size();
+            if (n < min_filaments) {
+                BOOST_LOG_TRIVIAL(info) << "SEMM printer: adjusting filament count from " << n 
+                                       << " to " << min_filaments << " based on extruder_colour array";
+                n = min_filaments;
+            }
+        }
+    }
+
     int old_filament_count = this->filament_presets.size();
     if (n > old_filament_count && old_filament_count != 0)
         filament_presets.resize(n, filament_presets.back());
@@ -1855,6 +2011,18 @@ void PresetBundle::set_num_filaments(unsigned int n, std::string new_color)
         if (!new_color.empty()) {
             for (int i = old_filament_count; i < n; i++) {
                 filament_color->values[i] = new_color;
+            }
+        }
+    }
+
+    // For SEMM printers, ensure all colors are set from extruder_colour
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && extruder_colours->values.size() == n) {
+            for (size_t i = 0; i < n; i++) {
+                if (filament_color->values[i].empty()) {
+                    filament_color->values[i] = extruder_colours->values[i];
+                }
             }
         }
     }
@@ -1897,7 +2065,6 @@ unsigned int PresetBundle::sync_ams_list(unsigned int &unknowns)
                 if (filament_presets.size() < this->filament_presets.size()) {
                     filament_presets.push_back(this->filament_presets[filament_presets.size()]);
                     filament_colors.push_back(filament_color);
-                    ams_multi_color_filment.push_back(filament_multi_color);
                     ++unknowns;
                     continue;
                 }
@@ -1945,6 +2112,97 @@ void PresetBundle::set_calibrate_printer(std::string name)
         bool                          is_compatible                   = is_compatible_with_printer(this_preset_with_vendor_profile, active_printer, &config);
         if (is_compatible) calibrate_filaments.insert(&preset);
     }
+}
+
+std::set<std::string> PresetBundle::get_printer_names_by_printer_type_and_nozzle(const std::string &printer_type, std::string nozzle_diameter_str)
+{
+    std::set<std::string> printer_names;
+    if ("0.0" == nozzle_diameter_str || nozzle_diameter_str.empty()) {
+        nozzle_diameter_str = "0.4";
+    }
+    std::ostringstream    stream;
+
+    for (auto printer_it = this->printers.begin(); printer_it != this->printers.end(); printer_it++) {
+        if (!printer_it->is_system) continue;
+
+        ConfigOption *      printer_model_opt = printer_it->config.option("printer_model");
+        ConfigOptionString *printer_model_str = dynamic_cast<ConfigOptionString *>(printer_model_opt);
+        if (!printer_model_str) continue;
+
+        // use printer_model as printer type
+        if (printer_model_str->value != printer_type) continue;
+
+        if (printer_it->name.find(nozzle_diameter_str) != std::string::npos) printer_names.insert(printer_it->name);
+    }
+
+    //assert(printer_names.size() == 1);
+
+    for (auto& printer_name : printer_names) {
+        BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << " " << __LINE__ << " printer name: " << printer_name;
+    }
+
+    return printer_names;
+}
+
+bool PresetBundle::check_filament_temp_equation_by_printer_type_and_nozzle_for_mas_tray(
+    const std::string &printer_type, std::string& nozzle_diameter_str, std::string &setting_id, std::string &tag_uid, std::string &nozzle_temp_min, std::string &nozzle_temp_max, std::string& preset_setting_id)
+{
+    bool is_equation = true;
+
+    std::map<std::string, std::vector<Preset const *>> filament_list = filaments.get_filament_presets();
+    std::set<std::string> printer_names       = get_printer_names_by_printer_type_and_nozzle(printer_type, nozzle_diameter_str);
+
+    for (const Preset *preset : filament_list.find(setting_id)->second) {
+        if (tag_uid == "0" || (tag_uid.size() == 16 && tag_uid.substr(12, 2) == "01")) continue;
+        if (preset && !preset->is_user()) continue;
+        ConfigOption *       printer_opt  = const_cast<Preset *>(preset)->config.option("compatible_printers");
+        ConfigOptionStrings *printer_strs = dynamic_cast<ConfigOptionStrings *>(printer_opt);
+        bool                 compared = false;
+        for (const std::string &printer_str : printer_strs->values) {
+            if (printer_names.find(printer_str) != printer_names.end()) {
+                BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << " " << __LINE__ << "nozzle temp matching: preset name: " << preset->name << " printer name: " << printer_str;
+                // Compare only once
+                if (!compared) {
+                    compared                        = true;
+                    bool          min_temp_equation = false, max_temp_equation = false;
+                    int           min_nozzle_temp = std::stoi(nozzle_temp_min);
+                    int           max_nozzle_temp = std::stoi(nozzle_temp_max);
+                    ConfigOption *opt_min         = const_cast<Preset *>(preset)->config.option("nozzle_temperature_range_low");
+                    if (opt_min) {
+                        ConfigOptionInts *opt_min_ints = dynamic_cast<ConfigOptionInts *>(opt_min);
+                        min_nozzle_temp                = opt_min_ints->get_at(0);
+                        if (std::to_string(min_nozzle_temp) == nozzle_temp_min)
+                            min_temp_equation = true;
+                        else {
+                            BOOST_LOG_TRIVIAL(info) << "tray min temp: " << nozzle_temp_min << " preset min temp: " << min_nozzle_temp;
+                            nozzle_temp_min = std::to_string(min_nozzle_temp);
+                        }
+                    }
+                    ConfigOption *opt_max = const_cast<Preset *>(preset)->config.option("nozzle_temperature_range_high");
+                    if (opt_max) {
+                        ConfigOptionInts *opt_max_ints = dynamic_cast<ConfigOptionInts *>(opt_max);
+                        max_nozzle_temp                = opt_max_ints->get_at(0);
+                        if (std::to_string(max_nozzle_temp) == nozzle_temp_max)
+                            max_temp_equation = true;
+                        else {
+                            BOOST_LOG_TRIVIAL(info) << "tray max temp: " << nozzle_temp_max << " preset min temp: " << max_nozzle_temp;
+                            nozzle_temp_max = std::to_string(max_nozzle_temp);
+                        }
+                    }
+                    if (min_temp_equation && max_temp_equation) {
+                        BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << " " << __LINE__ << "Determine if the temperature has changed: no changed";
+                    } else {
+                        BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << " " << __LINE__ << "Determine if the temperature has changed: has changed";
+                        preset_setting_id = preset->setting_id;
+                        is_equation = false;
+                    }
+                } else {
+                    assert(false);
+                }
+            }
+        }
+    }
+    return is_equation;
 }
 
 //BBS: check whether this is the only edited filament
@@ -2172,7 +2430,7 @@ DynamicPrintConfig PresetBundle::full_fff_config() const
     //BBS: add logic for settings check between different system presets
     out.erase("different_settings_to_system");
 
-    static const char *keys[] = { "support_filament", "support_interface_filament" };
+    static const char* keys[] = {"support_filament", "support_interface_filament", "wipe_tower_filament"};
     for (size_t i = 0; i < sizeof(keys) / sizeof(keys[0]); ++ i) {
         std::string key = std::string(keys[i]);
         auto *opt = dynamic_cast<ConfigOptionInt*>(out.option(key, false));
@@ -2180,6 +2438,14 @@ DynamicPrintConfig PresetBundle::full_fff_config() const
         opt->value = boost::algorithm::clamp<int>(opt->value, 0, int(num_filaments));
     }
 
+    static const char* keys_1based[] = {"wall_filament", "sparse_infill_filament", "solid_infill_filament"};
+    for (size_t i = 0; i < sizeof(keys_1based) / sizeof(keys_1based[0]); ++ i) {
+        std::string key = std::string(keys_1based[i]);
+        auto *opt = dynamic_cast<ConfigOptionInt*>(out.option(key, false));
+        assert(opt != nullptr);
+        if(opt->value < 1 || opt->value > int(num_filaments))
+            opt->value = 1;
+    }
     out.option<ConfigOptionString >("print_settings_id",    true)->value  = this->prints.get_selected_preset_name();
     out.option<ConfigOptionStrings>("filament_settings_id", true)->values = this->filament_presets;
     out.option<ConfigOptionString >("printer_settings_id",  true)->value  = this->printers.get_selected_preset_name();
@@ -3376,7 +3642,7 @@ std::pair<PresetsConfigSubstitutions, size_t> PresetBundle::load_vendor_configs_
         // Load the print, filament or printer preset.
         std::string               preset_name;
         DynamicPrintConfig        config;
-        std::string 			  alias_name, inherits, instantiation, setting_id, filament_id;
+        std::string 			  alias_name, inherits, description, instantiation, setting_id, filament_id;
         std::vector<std::string>  renamed_from;
         const DynamicPrintConfig* default_config = nullptr;
         std::string               reason;
@@ -3393,7 +3659,8 @@ std::pair<PresetsConfigSubstitutions, size_t> PresetBundle::load_vendor_configs_
                 return reason;
             }
             preset_name = key_values[BBL_JSON_KEY_NAME];
-            instantiation = key_values[BBL_JSON_KEY_INSTANTIATION];
+            description     = key_values[BBL_JSON_KEY_DESCRIPTION];
+            instantiation   = key_values[BBL_JSON_KEY_INSTANTIATION];
             auto setting_it = key_values.find(BBL_JSON_KEY_SETTING_ID);
             if (setting_it != key_values.end())
                 setting_id = setting_it->second;
@@ -3516,6 +3783,7 @@ std::pair<PresetsConfigSubstitutions, size_t> PresetBundle::load_vendor_configs_
             loaded.is_system = true;
             loaded.vendor = current_vendor_profile;
             loaded.version = current_vendor_profile->config_version;
+            loaded.description = description;
             loaded.setting_id = setting_id;
             loaded.filament_id = filament_id;
             BOOST_LOG_TRIVIAL(info) << __FUNCTION__ << " " << __LINE__ << loaded.name << " load filament_id: " << filament_id;
@@ -3546,8 +3814,10 @@ std::pair<PresetsConfigSubstitutions, size_t> PresetBundle::load_vendor_configs_
         }
         if (alias_name.empty())
             loaded.alias = preset_name;
-        else
+        else {
             loaded.alias = std::move(alias_name);
+            filaments.set_printer_hold_alias(loaded.alias, loaded);
+        }
         loaded.renamed_from = std::move(renamed_from);
         if (! substitution_context.empty())
             substitutions.push_back({
@@ -3623,17 +3893,36 @@ void PresetBundle::update_multi_material_filament_presets()
     // BBS
 #if 0
     // Verify and select the filament presets.
-    //验证并选择灯丝预设。
     auto   *nozzle_diameter = static_cast<const ConfigOptionFloats*>(printers.get_edited_preset().config.option("nozzle_diameter"));
     size_t  num_extruders   = nozzle_diameter->values.size();
     // Verify validity of the current filament presets.
-    //验证当前灯丝预设的有效性。
     for (size_t i = 0; i < std::min(this->filament_presets.size(), num_extruders); ++ i)
         this->filament_presets[i] = this->filaments.find_preset(this->filament_presets[i], true)->name;
     // Append the rest of filament presets.
     this->filament_presets.resize(num_extruders, this->filament_presets.empty() ? this->filaments.first_visible().name : this->filament_presets.back());
-    size_t num_filaments = this->filament_presets.size();
 #else
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    const Preset& current_printer = this->printers.get_edited_preset();
+    if (current_printer.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            // Ensure we have the expected number of filaments
+            if (this->filament_presets.size() < expected_filaments) {
+                // Duplicate the last preset to fill up
+                std::string last_preset = this->filament_presets.empty() ? this->filaments.first_visible().name : this->filament_presets.back();
+                while (this->filament_presets.size() < expected_filaments) {
+                    this->filament_presets.push_back(last_preset);
+                }
+            } else if (this->filament_presets.size() > expected_filaments) {
+                // Trim to expected count
+                this->filament_presets.resize(expected_filaments);
+            }
+            BOOST_LOG_TRIVIAL(info) << "Ensured " << expected_filaments 
+                                   << " filaments for SEMM printer based on extruder_colour in update_multi_material_filament_presets";
+        }
+    }
+    
     size_t num_filaments = this->filament_presets.size();
 #endif
 
@@ -3827,6 +4116,41 @@ void PresetBundle::update_compatible(PresetSelectCompatibleType select_other_pri
 		break;
 	}
     default: break;
+    }
+
+    // For SEMM printers, ensure filament count matches extruder_colour array
+    if (printer_preset.config.opt_bool("single_extruder_multi_material")) {
+        const auto* extruder_colours = printer_preset.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            size_t expected_filaments = extruder_colours->values.size();
+            // Check if we have the expected number of filaments
+            if (this->filament_presets.size() != expected_filaments) {
+                size_t old_size = this->filament_presets.size();
+                if (old_size < expected_filaments) {
+                    // Add more filaments if needed
+                    this->filament_presets.resize(expected_filaments, this->filament_presets.empty() ? 
+                        this->filaments.first_compatible().name : this->filament_presets.back());
+                } else {
+                    // Trim if we have more
+                    this->filament_presets.resize(expected_filaments);
+                }
+                
+                // Update filament colors to match printer's extruder_colour
+                ConfigOptionStrings* filament_color = project_config.option<ConfigOptionStrings>("filament_colour");
+                filament_color->resize(expected_filaments);
+                for (size_t i = 0; i < expected_filaments; ++i) {
+                    if (i >= old_size || filament_color->values[i].empty()) {
+                        filament_color->values[i] = extruder_colours->values[i];
+                    }
+                }
+                
+                // Update multi-material filament presets
+                this->update_multi_material_filament_presets();
+                
+                BOOST_LOG_TRIVIAL(info) << "Adjusted filament count to " << expected_filaments 
+                                       << " for SEMM printer based on extruder_colour in update_compatible";
+            }
+        }
     }
 
     BOOST_LOG_TRIVIAL(info) << boost::format("update_compatibility for all presets exit");

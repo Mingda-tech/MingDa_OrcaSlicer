@@ -1,24 +1,23 @@
 {
-  "type": "machine",
-  "setting_id": "MD001",
-  "name": "MINGDA S2 (0.4 nozzle)",
-  "from": "system",
-  "instantiation": "true",
-  "inherits": "fdm_klipper_common",
-  "printer_model": "MINGDA S2",
-  "default_print_profile": "0.20mm Standard @MINGDA S2 (0.4 nozzle)",
-  "nozzle_diameter": [
-    "0.4"
-  ],
-  "printable_area": [
-    "0x0",
-    "320x0",
-    "320x320",
-    "0x320"
-  ],
-  "printable_height": "400",
-  "nozzle_type": "hardened_steel",
-
+    "type": "machine",
+    "setting_id": "MD001",
+    "name": "MINGDA S2 (0.4 nozzle)",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_klipper_common",
+    "printer_model": "MINGDA S2",
+    "default_print_profile": "0.20mm Standard @MINGDA S2 (0.4 nozzle)",
+    "nozzle_diameter": [
+        "0.4"
+    ],
+    "printable_area": [
+        "0x0",
+        "320x0",
+        "320x320",
+        "0x320"
+    ],
+    "printable_height": "400",
+    "nozzle_type": "hardened_steel",
     "auxiliary_fan": "1",
     "bed_custom_model": "",
     "bed_custom_texture": "",
@@ -28,7 +27,7 @@
     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
     "best_object_pos": "0.5,0.5",
     "change_extrusion_role_gcode": "",
-    "change_filament_gcode": "M600",
+    "change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
     "cooling_tube_length": "5",
     "cooling_tube_retraction": "91.5",
     "default_filament_profile": [
@@ -43,7 +42,7 @@
     "extruder_clearance_height_to_rod": "60",
     "extruder_clearance_radius": "50",
     "extruder_colour": [
-        "#FCE94F"
+        "#1E88E5"
     ],
     "extruder_offset": [
         "0x0"
@@ -124,7 +123,7 @@
         "0",
         "0"
     ],
-    "machine_pause_gcode": "M601\n",
+    "machine_pause_gcode": "; pause print\nPAUSE\n",
     "machine_start_gcode": "START_PRINT EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature]",
     "machine_end_gcode": "END_PRINT",
     "machine_unload_filament_time": "0",
@@ -187,7 +186,7 @@
     ],
     "scan_first_layer": "0",
     "silent_mode": "0",
-    "single_extruder_multi_material": "1",
+    "single_extruder_multi_material": "0",
     "support_air_filtration": "1",
     "support_chamber_temp_control": "1",
     "template_custom_gcode": "SET_FAN_SPEED FAN=Auxiliary_Cooling_Fan SPEED=1.0",

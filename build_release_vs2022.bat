@@ -29,6 +29,7 @@ if "%debug%"=="ON" (
     ) else (
         set build_type=Release
         set build_dir=build
+        #set debug=ON #TODO:ylg Release debug
     )
 )
 echo build type set to %build_type%
