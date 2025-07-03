@@ -6566,6 +6566,11 @@ void DynamicPrintConfig::set_num_extruders(unsigned int num_extruders)
             // Don't resize this field, as it is presented to the user at the "Dependencies" page of the Printer profile and we don't want to present
             // empty fields there, if not defined by the system profile.
             continue;
+        
+        // For SEMM printers, don't resize extruder_colour as it represents material slots, not physical extruders
+        if (key == "extruder_colour" && this->opt_bool("single_extruder_multi_material"))
+            continue;
+            
         auto *opt = this->option(key, false);
         assert(opt != nullptr);
         assert(opt->is_vector());
