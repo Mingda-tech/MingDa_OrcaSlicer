@@ -1,23 +1,23 @@
 {
-  "type": "machine",
-  "setting_id": "MD001",
-  "name": "MINGDA S1 (0.4 nozzle)",
-  "from": "system",
-  "instantiation": "true",
-  "inherits": "fdm_klipper_common",
-  "printer_model": "MINGDA S1",
-  "default_print_profile": "0.20mm Standard @MINGDA S1 (0.4 nozzle)",
-  "nozzle_diameter": [
-    "0.4"
-  ],
-  "printable_area": [
-    "0x0",
-    "230x0",
-    "230x230",
-    "0x230"
-  ],
-  "printable_height": "260",
-  "nozzle_type": "hardened_steel",
+    "type": "machine",
+    "setting_id": "MD001",
+    "name": "MINGDA S1 (0.4 nozzle)",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_klipper_common",
+    "printer_model": "MINGDA S1",
+    "default_print_profile": "0.20mm Standard @MINGDA S1 (0.4 nozzle)",
+    "nozzle_diameter": [
+        "0.4"
+    ],
+    "printable_area": [
+        "0x0",
+        "230x0",
+        "230x230",
+        "0x230"
+    ],
+    "printable_height": "260",
+    "nozzle_type": "hardened_steel",
     "auxiliary_fan": "1",
     "bed_custom_model": "",
     "bed_custom_texture": "",
@@ -42,7 +42,7 @@
     "extruder_clearance_height_to_rod": "60",
     "extruder_clearance_radius": "50",
     "extruder_colour": [
-        "#FCE94F"
+        "#1E88E5"
     ],
     "extruder_offset": [
         "0x0"

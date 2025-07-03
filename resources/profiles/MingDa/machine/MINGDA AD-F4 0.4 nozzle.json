@@ -1,55 +1,55 @@
 {
-	"type": "machine",
-	"setting_id": "MDA1200",
-	"name": "MINGDA AD-F4 0.4 nozzle",
-	"from": "system",
-	"instantiation": "true",
-	"inherits": "fdm_klipper_common",
-	"printer_model": "MINGDA AD-F4",
-	"default_print_profile": "0.20mm Standard @MINGDA AD-F4 (0.4 nozzle)",
-	"nozzle_type": "hardened_steel",
+    "type": "machine",
+    "setting_id": "MDA1200",
+    "name": "MINGDA AD-F4 0.4 nozzle",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_klipper_common",
+    "printer_model": "MINGDA AD-F4",
+    "default_print_profile": "0.20mm Standard @MINGDA AD-F4 (0.4 nozzle)",
+    "nozzle_type": "hardened_steel",
     "machine_max_acceleration_e": [
         "3000"
     ],
-	"machine_max_acceleration_extruding": [
-		"3000"
-	],
-	"machine_max_acceleration_travel": [
-		"15000"
-	],
-	"machine_max_acceleration_z": [
-		"1000"
-	],
-	"machine_max_speed_e": [
-		"120"
-	],
-	"machine_max_speed_x": [
-		"500"
-	],
-	"machine_max_speed_y": [
-		"500"
-	],
-	"machine_max_speed_z": [
-		"12"
-	],
-	"printer_settings_id": "MINGDA",
-	"change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
+    "machine_max_acceleration_extruding": [
+        "3000"
+    ],
+    "machine_max_acceleration_travel": [
+        "15000"
+    ],
+    "machine_max_acceleration_z": [
+        "1000"
+    ],
+    "machine_max_speed_e": [
+        "120"
+    ],
+    "machine_max_speed_x": [
+        "500"
+    ],
+    "machine_max_speed_y": [
+        "500"
+    ],
+    "machine_max_speed_z": [
+        "12"
+    ],
+    "printer_settings_id": "MINGDA",
+    "change_filament_gcode": "; Change Tool[previous_extruder] -> Tool[next_extruder] (layer [layer_num])\n{ if enable_prime_tower  } \nG1 X[wipe_tower_x] Y[wipe_tower_y] F12000\n{ endif }",
     "machine_pause_gcode": "; pause print\nPAUSE\n",
-	"default_filament_profile": [
-		"MINGDA PLA",
-		"MINGDA PLA",
-		"MINGDA PLA",
-		"MINGDA PLA"
-	],
-	"toolchange_gcode": "; layer [layer_num] tool change",
-	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-	"scan_first_layer": "0",
+    "default_filament_profile": [
+        "MINGDA PLA",
+        "MINGDA PLA",
+        "MINGDA PLA",
+        "MINGDA PLA"
+    ],
+    "toolchange_gcode": "; layer [layer_num] tool change",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+    "scan_first_layer": "0",
     "support_multi_bed_types": "0",
     "bed_type": [
         "Cool Plate"
     ],
     "version": "2.0.0.0",
-	"auxiliary_fan": "0",
+    "auxiliary_fan": "0",
     "before_layer_change_gcode": "",
     "cooling_tube_length": "0",
     "cooling_tube_retraction": "0",
@@ -94,7 +94,7 @@
     "bed_mesh_probe_distance": "30,30",
     "extruder_clearance_height_to_lid": "100",
     "printable_height": "100",
-	"adaptive_bed_mesh_margin": "5",
+    "adaptive_bed_mesh_margin": "5",
     "machine_start_gcode": "START_PRINT EXTRUDER={nozzle_temperature_initial_layer[0]} BED=[first_layer_bed_temperature]  MESH_MIN={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} MESH_MAX={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} MESH_ALGO=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]}\nM109 S[nozzle_temperature_initial_layer]",
     "bed_mesh_max": "790,1190",
     "printable_area": [
@@ -107,10 +107,10 @@
         "0"
     ],
     "extruder_colour": [
-        "#FCE94F",
-        "#FF6B6B",
-        "#4ECDC4",
-        "#45B7D1"
+        "#1E88E5",
+        "#E53935",
+        "#43A047",
+        "#FB8C00"
     ],
     "extruder_offset": [
         "0x0"
@@ -163,5 +163,5 @@
     ],
     "z_hop_types": [
         "Normal Lift"
-    ]    
+    ]
 }

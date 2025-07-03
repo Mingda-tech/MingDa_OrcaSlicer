@@ -1,23 +1,23 @@
 {
-	"type": "machine",
-	"setting_id": "MDA1283",
-	"name": "MINGDA AD-F4 0.8 nozzle",
-	"from": "system",
-	"instantiation": "true",
-	"inherits": "MINGDA AD-F4 0.4 nozzle",
-	"is_custom_defined": "0",
-	"printer_variant": "0.8",
-	"default_print_profile": "0.40mm Standard @AD-F4 (0.8 nozzle)",
-	"printer_model": "MINGDA AD-F4",  
-	"version": "2.0.0.0",
+    "type": "machine",
+    "setting_id": "MDA1283",
+    "name": "MINGDA AD-F4 0.8 nozzle",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "MINGDA AD-F4 0.4 nozzle",
+    "is_custom_defined": "0",
+    "printer_variant": "0.8",
+    "default_print_profile": "0.40mm Standard @AD-F4 (0.8 nozzle)",
+    "printer_model": "MINGDA AD-F4",
+    "version": "2.0.0.0",
     "deretraction_speed": [
         "0"
     ],
     "extruder_colour": [
-        "#FCE94F",
-        "#FF6B6B",
-        "#4ECDC4",
-        "#45B7D1"
+        "#1E88E5",
+        "#E53935",
+        "#43A047",
+        "#FB8C00"
     ],
     "extruder_offset": [
         "0x0"
@@ -58,5 +58,4 @@
     "retraction_speed": [
         "30"
     ]
-  }
-  
+}

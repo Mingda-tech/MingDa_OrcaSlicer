@@ -1,133 +1,130 @@
 {
-	"type": "machine",
-	"setting_id": "MD1000D2",
-	"name": "MINGDA 1000D 0.4 nozzle",
-	"from": "system",
-	"instantiation": "true",
-	"inherits": "fdm_klipper_common",
-        "cooling_tube_length": "0",
-        "cooling_tube_retraction": "0",
-        "enable_filament_ramming": "0",
-        "extra_loading_move": "0",
-        "parking_pos_retraction": "0",
-	"printer_model": "MINGDA 1000D",
-	"default_print_profile": "0.20mm Standard @MINGDA 1000D(0.4 nozzle)",
-	"nozzle_diameter": [
-		"0.4",
-		"0.4"
-	],
+    "type": "machine",
+    "setting_id": "MD1000D2",
+    "name": "MINGDA 1000D 0.4 nozzle",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "fdm_klipper_common",
+    "cooling_tube_length": "0",
+    "cooling_tube_retraction": "0",
+    "enable_filament_ramming": "0",
+    "extra_loading_move": "0",
+    "parking_pos_retraction": "0",
+    "printer_model": "MINGDA 1000D",
+    "default_print_profile": "0.20mm Standard @MINGDA 1000D(0.4 nozzle)",
+    "nozzle_diameter": [
+        "0.4",
+        "0.4"
+    ],
     "extruder_colour": [
-        "#FCE94F",
-		"#FF0000"
+        "#1E88E5",
+        "#E53935"
     ],
     "extruder_offset": [
         "0x0",
-		"0x0"
+        "0x0"
     ],
-	"printable_area": [
-		"0x0",
-		"1000x0",
-		"1000x1000",
-		"0x1000"
-	],
+    "printable_area": [
+        "0x0",
+        "1000x0",
+        "1000x1000",
+        "0x1000"
+    ],
     "bed_exclude_area": [
         "880x0",
         "1000x0",
         "1000x65",
         "880x65"
-    ],	
-	"printable_height": "1000",
-	"nozzle_type": "hardened_steel",
+    ],
+    "printable_height": "1000",
+    "nozzle_type": "hardened_steel",
     "machine_max_acceleration_e": [
         "3000",
-		"3000"
+        "3000"
     ],
-	"machine_max_acceleration_extruding": [
-		"10000",
-		"10000"
-	],
-	"machine_max_acceleration_retracting": [
-		"5000",
-		"5000"
-	],
-	"machine_max_acceleration_travel": [
-		"15000",
-		"5000"
-	],
-	"machine_max_acceleration_x": [
-		"10000",
-		"10000"
-	],
-	"machine_max_acceleration_y": [
-		"10000",
-		"10000"
-	],
-	"machine_max_acceleration_z": [
-		"1000",
-		"1000"
-	],
-	"machine_max_speed_e": [
-		"120",
-		"120"
-	],
-	"machine_max_speed_x": [
-		"500",
-		"200"
-	],
-	"machine_max_speed_y": [
-		"500",
-		"200"
-	],
-	"machine_max_speed_z": [
-		"12",
-		"12"
-	],
-	"max_layer_height": [
-		"0.4",
-		"0.4"
-	],
-	"min_layer_height": [
-		"0.1",
-		"0.1"
-	],
-	"retract_before_wipe": [
-		"0%",
-		"0%"
-	],
+    "machine_max_acceleration_extruding": [
+        "10000",
+        "10000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "5000",
+        "5000"
+    ],
+    "machine_max_acceleration_travel": [
+        "15000",
+        "5000"
+    ],
+    "machine_max_acceleration_x": [
+        "10000",
+        "10000"
+    ],
+    "machine_max_acceleration_y": [
+        "10000",
+        "10000"
+    ],
+    "machine_max_acceleration_z": [
+        "1000",
+        "1000"
+    ],
+    "machine_max_speed_e": [
+        "120",
+        "120"
+    ],
+    "machine_max_speed_x": [
+        "500",
+        "200"
+    ],
+    "machine_max_speed_y": [
+        "500",
+        "200"
+    ],
+    "machine_max_speed_z": [
+        "12",
+        "12"
+    ],
+    "max_layer_height": [
+        "0.4",
+        "0.4"
+    ],
+    "min_layer_height": [
+        "0.1",
+        "0.1"
+    ],
+    "retract_before_wipe": [
+        "0%",
+        "0%"
+    ],
     "retract_when_changing_layer": [
         "1",
-		"1"
+        "1"
     ],
     "retract_restart_extra": [
         "0",
-		"0"
+        "0"
     ],
     "retract_restart_extra_toolchange": [
         "0",
-		"0"
+        "0"
     ],
-	"deretraction_speed": [
-		"0",
-		"0"
-	],
-    "purge_in_prime_tower": "1",	
-	"single_extruder_multi_material": "0",
-	
+    "deretraction_speed": [
+        "0",
+        "0"
+    ],
+    "purge_in_prime_tower": "1",
+    "single_extruder_multi_material": "0",
     "machine_pause_gcode": "; pause print\nPAUSE\n",
-	"default_filament_profile": [
-		"MINGDA PLA",
-		"MINGDA PLA"
-	],
-	"toolchange_gcode": "; layer [layer_num] tool change",
-	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-	"scan_first_layer": "0",
-	 
+    "default_filament_profile": [
+        "MINGDA PLA",
+        "MINGDA PLA"
+    ],
+    "toolchange_gcode": "; layer [layer_num] tool change",
+    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+    "scan_first_layer": "0",
     "auxiliary_fan": "1",
     "before_layer_change_gcode": "",
     "extruder_clearance_height_to_lid": "1000",
     "extruder_clearance_height_to_rod": "36",
     "extruder_clearance_radius": "68",
-	
     "adaptive_bed_mesh_margin": "5",
     "bed_mesh_max": "990,990",
     "bed_mesh_min": "30,70",

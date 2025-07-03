@@ -1,21 +1,21 @@
 {
-	"type": "machine",
-	"setting_id": "MDA1283",
-	"name": "MD-A128 Marlin 0.8 nozzle",
-	"from": "system",
-	"instantiation": "true",
-	"inherits": "MD-A128 Marlin 0.4 nozzle",
-	"is_custom_defined": "0",
-	"printer_variant": "0.8",
-	"default_print_profile": "0.40mm Standard @MD-A128 Marlin (0.8 nozzle)",
-	"printer_model": "MD-A128 Marlin",
-	"gcode_flavor": "marlin2",
-	"version": "2.0.0.0",
-	"deretraction_speed": [
+    "type": "machine",
+    "setting_id": "MDA1283",
+    "name": "MD-A128 Marlin 0.8 nozzle",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "MD-A128 Marlin 0.4 nozzle",
+    "is_custom_defined": "0",
+    "printer_variant": "0.8",
+    "default_print_profile": "0.40mm Standard @MD-A128 Marlin (0.8 nozzle)",
+    "printer_model": "MD-A128 Marlin",
+    "gcode_flavor": "marlin2",
+    "version": "2.0.0.0",
+    "deretraction_speed": [
         "0"
     ],
     "extruder_colour": [
-        "#FCE94F"
+        "#1E88E5"
     ],
     "extruder_offset": [
         "0x0"
@@ -56,5 +56,4 @@
     "wipe": [
         "1"
     ]
-  }
-  
+}

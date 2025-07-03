@@ -1,20 +1,20 @@
 {
-	"type": "machine",
-	"setting_id": "MD1000P8",
-	"name": "MD-1000Pro (0.8 nozzle)",
-	"from": "system",
-	"instantiation": "true",
-	"inherits": "MD-1000Pro (0.4 nozzle)",
-	"is_custom_defined": "0",
-	"printer_variant": "0.8",
-	"default_print_profile": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
-	"printer_model": "MD-1000Pro",  
-	"version": "2.0.0.0",
+    "type": "machine",
+    "setting_id": "MD1000P8",
+    "name": "MD-1000Pro (0.8 nozzle)",
+    "from": "system",
+    "instantiation": "true",
+    "inherits": "MD-1000Pro (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "printer_variant": "0.8",
+    "default_print_profile": "0.40mm Standard @MD-1000Pro (0.8 nozzle)",
+    "printer_model": "MD-1000Pro",
+    "version": "2.0.0.0",
     "deretraction_speed": [
         "0"
     ],
     "extruder_colour": [
-        "#FCE94F"
+        "#1E88E5"
     ],
     "extruder_offset": [
         "0x0"
@@ -66,5 +66,5 @@
     ],
     "z_hop_types": [
         "Normal Lift"
-    ]    
+    ]
 }
