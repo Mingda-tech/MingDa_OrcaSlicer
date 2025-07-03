@@ -22,15 +22,12 @@
         "MINGDA 400D 0.4 nozzle",
         "MINGDA 400D 0.6 nozzle",
         "MINGDA 400D 0.8 nozzle",
-        "MINGDA 400D 1.0 nozzle",
         "MINGDA 600D 0.4 nozzle",
         "MINGDA 600D 0.6 nozzle",
         "MINGDA 600D 0.8 nozzle",
-        "MINGDA 600D 1.0 nozzle",
         "MINGDA 1000D 0.4 nozzle",
         "MINGDA 1000D 0.6 nozzle",
-        "MINGDA 1000D 0.8 nozzle",
-        "MINGDA 1000D 1.0 nozzle"
+        "MINGDA 1000D 0.8 nozzle"
     ],
     "compatible_printers_condition": "",
     "compatible_prints": [],
