@@ -50,11 +50,51 @@
 	  "0.6",
 	  "0.6"
 	],
-	"retraction_length": [
-	  "0.8",
-	  "0.8"
-	],
     
-	"version": "2.0.0.0"
+	"version": "2.0.0.0",
+    "long_retractions_when_cut": [
+        "0",
+        "0"
+    ],
+    "retract_lift_above": [
+        "0",
+        "0"
+    ],
+    "retract_lift_below": [
+        "600",
+        "600"
+    ],
+    "retract_lift_enforce": [
+        "All Surfaces",
+        "All Surfaces"
+    ],
+    "retraction_distances_when_cut": [
+        "18",
+        "18"
+    ],
+    "retraction_length": [
+        "0.4",
+        "0.4"
+    ],
+    "travel_slope": [
+        "3",
+        "3"
+    ],
+    "wipe": [
+        "0",
+        "0"
+    ],
+    "wipe_distance": [
+        "2",
+        "2"
+    ],
+    "z_hop": [
+        "0.4",
+        "0.4"
+    ],
+    "z_hop_types": [
+        "Normal Lift",
+        "Normal Lift"
+    ]	
   }
   

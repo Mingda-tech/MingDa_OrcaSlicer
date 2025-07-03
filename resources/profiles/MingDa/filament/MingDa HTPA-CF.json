@@ -9,15 +9,6 @@
     "filament_type": [
         "HtPA"
     ],
-    "hot_plate_temp": [
-        "75"
-    ],
-    "hot_plate_temp_initial_layer": [
-        "75"
-    ],
-    "filament_max_volumetric_speed": [
-        "15"
-    ],
     "fan_max_speed": [
         "30"
     ],
@@ -32,9 +23,6 @@
     ],
     "fan_cooling_layer_time": [
         "5"
-    ],
-    "full_fan_speed_layer": [
-        "0"
     ],
     "filament_vendor": [
         "MINGDA3D"
@@ -76,9 +64,6 @@
     "filament_end_gcode": [
         "; filament end gcode \nM104 S0"
     ],
-    "filament_flow_ratio": [
-        "0.9567"
-    ],
     "filament_minimal_purge_on_wipe_tower": [
         "50"
     ],
@@ -89,25 +74,49 @@
         "; filament start gcode\n"
     ],
     "is_custom_defined": "0",
-    "nozzle_temperature": [
-        "300"
-    ],
-    "nozzle_temperature_initial_layer": [
-        "300"
-    ],
     "nozzle_temperature_range_high": [
         "320"
     ],
     "nozzle_temperature_range_low": [
         "260"
     ],
-    "pressure_advance": [
-        "0.04"
-    ],
     "slow_down_layer_time": [
         "1"
     ],
     "temperature_vitrification": [
         "180"
-    ]
+    ],
+    "close_fan_the_first_x_layers": [
+        "2"
+    ],
+    "dont_slow_down_outer_wall": [
+        "1"
+    ],
+    "filament_flow_ratio": [
+        "0.85"
+    ],
+    "filament_max_volumetric_speed": [
+        "24"
+    ],
+    "full_fan_speed_layer": [
+        "3"
+    ],
+    "hot_plate_temp": [
+        "85"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "85"
+    ],
+    "idle_temperature": [
+        "25"
+    ],
+    "nozzle_temperature": [
+        "255"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "255"
+    ],
+    "pressure_advance": [
+        "0.02"
+    ]    
 }

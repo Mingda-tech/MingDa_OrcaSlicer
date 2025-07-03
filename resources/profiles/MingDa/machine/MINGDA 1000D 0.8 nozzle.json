@@ -49,11 +49,20 @@
 	  "0.8",
 	  "0.8"
 	],
-	"retraction_length": [
-	  "0.8",
-	  "0.8"
-	],
-    
-	"version": "2.0.0.0"
+    "retraction_length": [
+        "0.4",
+        "0.4"
+    ],
+    "retraction_minimum_travel": [
+        "15",
+        "15"
+    ],
+    "version": "2.0.0.0",
+    "wipe": [
+        "0"
+    ],
+    "z_hop": [
+        "0.6"
+    ]
   }
   

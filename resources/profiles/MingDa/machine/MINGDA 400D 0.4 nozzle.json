@@ -146,10 +146,6 @@
         "0.8",
         "0.8"
     ],
-    "retraction_minimum_travel": [
-        "1",
-        "1"
-    ],
     "retraction_speed": [
         "40",
         "40"
@@ -187,20 +183,24 @@
         "3"
     ],
     "version": "2.0.0.0",
-    "wipe": [
-        "1",
-        "1"
-    ],
     "wipe_distance": [
         "2",
         "2"
     ],
-    "z_hop": [
-        "0",
-        "0"
-    ],
     "z_hop_types": [
         "Normal Lift",
         "Normal Lift"
-    ]
+    ],
+    "retraction_minimum_travel": [
+        "15",
+        "15"
+    ],
+    "wipe": [
+        "0",
+        "0"
+    ],
+    "z_hop": [
+        "0.4",
+        "0.4"
+    ]    
 }
