@@ -1657,13 +1657,30 @@ void PresetBundle::update_selections(AppConfig &config)
             // Ensure colors match the printer's extruder_colour array
             filament_colors.resize(expected_filaments);
             for (size_t i = 0; i < expected_filaments; ++i) {
-                if (i >= filament_colors.size() || filament_colors[i].empty()) {
+                if (filament_colors[i].empty()) {
                     filament_colors[i] = extruder_colours->values[i];
                 }
             }
         }
     } else {
-        filament_colors.resize(filament_presets.size(), "#26A69A");
+        // For non-SEMM printers, use extruder_colour from printer config if available
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            filament_colors.resize(filament_presets.size());
+            for (size_t i = 0; i < filament_colors.size(); ++i) {
+                if (filament_colors[i].empty()) {
+                    if (i < extruder_colours->values.size()) {
+                        filament_colors[i] = extruder_colours->values[i];
+                    } else {
+                        // Fall back to the last defined color if not enough colors defined
+                        filament_colors[i] = extruder_colours->values.back();
+                    }
+                }
+            }
+        } else {
+            // Final fallback to hardcoded color if no extruder_colour is defined
+            filament_colors.resize(filament_presets.size(), "#26A69A");
+        }
     }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
@@ -1793,13 +1810,30 @@ void PresetBundle::load_selections(AppConfig &config, const PresetPreferences& p
             // Ensure colors match the printer's extruder_colour array
             filament_colors.resize(expected_filaments);
             for (size_t i = 0; i < expected_filaments; ++i) {
-                if (i >= filament_colors.size() || filament_colors[i].empty()) {
+                if (filament_colors[i].empty()) {
                     filament_colors[i] = extruder_colours->values[i];
                 }
             }
         }
     } else {
-        filament_colors.resize(filament_presets.size(), "#26A69A");
+        // For non-SEMM printers, use extruder_colour from printer config if available
+        const auto* extruder_colours = current_printer.config.option<ConfigOptionStrings>("extruder_colour");
+        if (extruder_colours && !extruder_colours->values.empty()) {
+            filament_colors.resize(filament_presets.size());
+            for (size_t i = 0; i < filament_colors.size(); ++i) {
+                if (filament_colors[i].empty()) {
+                    if (i < extruder_colours->values.size()) {
+                        filament_colors[i] = extruder_colours->values[i];
+                    } else {
+                        // Fall back to the last defined color if not enough colors defined
+                        filament_colors[i] = extruder_colours->values.back();
+                    }
+                }
+            }
+        } else {
+            // Final fallback to hardcoded color if no extruder_colour is defined
+            filament_colors.resize(filament_presets.size(), "#26A69A");
+        }
     }
     project_config.option<ConfigOptionStrings>("filament_colour")->values = filament_colors;
     std::vector<std::string> matrix;
