@@ -4004,9 +4004,13 @@ void TabPrinter::extruders_count_changed(size_t extruders_count)
         // BBS
         //wxGetApp().obj_list()->update_objects_list_filament_column(extruders_count);
         
-        // Ensure filament presets are synchronized with extruder count
-        wxGetApp().preset_bundle->set_num_filaments(extruders_count);
-        wxGetApp().plater()->on_filaments_change(extruders_count);
+        // Only sync filament count for non-SEMM printers
+        // SEMM filament count will be handled in on_preset_loaded
+        if (!m_config->opt_bool("single_extruder_multi_material")) {
+            // Ensure filament presets are synchronized with extruder count
+            wxGetApp().preset_bundle->set_num_filaments(extruders_count);
+            wxGetApp().plater()->on_filaments_change(extruders_count);
+        }
     }
 }
 

@@ -1666,8 +1666,51 @@ void UnsavedChangesDialog::update_tree(Preset::Type type, PresetCollection* pres
         if (type == Preset::TYPE_PRINTER && old_pt == ptFFF &&
             old_config.opt<ConfigOptionStrings>("extruder_colour")->values.size() != new_config.opt<ConfigOptionStrings>("extruder_colour")->values.size()) {
             wxString local_label = _L("Extruders count");
-            wxString old_val = from_u8((boost::format("%1%") % old_config.opt<ConfigOptionStrings>("extruder_colour")->values.size()).str());
-            wxString new_val = from_u8((boost::format("%1%") % new_config.opt<ConfigOptionStrings>("extruder_colour")->values.size()).str());
+            
+            // Check if SEMM is enabled
+            bool old_is_semm = old_config.opt_bool("single_extruder_multi_material");
+            bool new_is_semm = new_config.opt_bool("single_extruder_multi_material");
+            
+            // Get color/material count from extruder_colour
+            size_t old_color_count = old_config.opt<ConfigOptionStrings>("extruder_colour")->values.size();
+            size_t new_color_count = new_config.opt<ConfigOptionStrings>("extruder_colour")->values.size();
+            
+            // Get physical extruder count from nozzle_diameter
+            size_t old_physical_extruders = 1;
+            size_t new_physical_extruders = 1;
+            
+            auto* old_nozzle_diameter = dynamic_cast<const ConfigOptionFloats*>(old_config.option("nozzle_diameter"));
+            if (old_nozzle_diameter)
+                old_physical_extruders = old_nozzle_diameter->values.size();
+                
+            auto* new_nozzle_diameter = dynamic_cast<const ConfigOptionFloats*>(new_config.option("nozzle_diameter"));
+            if (new_nozzle_diameter)
+                new_physical_extruders = new_nozzle_diameter->values.size();
+            
+            // Determine what to display based on printer type
+            wxString old_val, new_val;
+            
+            if (old_is_semm && new_is_semm) {
+                // Both are SEMM: show material slots count
+                local_label = _L("Material slots count");
+                old_val = from_u8((boost::format("%1%") % old_color_count).str());
+                new_val = from_u8((boost::format("%1%") % new_color_count).str());
+            } else if (old_is_semm && !new_is_semm) {
+                // From SEMM to multi-extruder: show transition
+                local_label = _L("Configuration type");
+                old_val = from_u8((boost::format("Single extruder (%1% materials)") % old_color_count).str());
+                new_val = from_u8((boost::format("%1% extruders") % new_physical_extruders).str());
+            } else if (!old_is_semm && new_is_semm) {
+                // From multi-extruder to SEMM: show transition
+                local_label = _L("Configuration type");
+                old_val = from_u8((boost::format("%1% extruders") % old_physical_extruders).str());
+                new_val = from_u8((boost::format("Single extruder (%1% materials)") % new_color_count).str());
+            } else {
+                // Both are multi-extruder: show extruder count
+                local_label = _L("Extruders count");
+                old_val = from_u8((boost::format("%1%") % old_physical_extruders).str());
+                new_val = from_u8((boost::format("%1%") % new_physical_extruders).str());
+            }
 
             //BBS: the page "General" changed to "Basic information" instead
             //m_tree->Append("extruders_count", type, _L("General"), _L("Capabilities"), local_label, old_val, new_val, category_icon_map.at("Basic information"));
