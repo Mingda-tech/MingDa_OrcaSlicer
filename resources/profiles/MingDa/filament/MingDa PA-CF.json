@@ -79,10 +79,10 @@
     ],
     "is_custom_defined": "0",
     "nozzle_temperature": [
-        "280"
+        "260"
     ],
     "nozzle_temperature_initial_layer": [
-        "300"
+        "260"
     ],
     "nozzle_temperature_range_high": [
         "340"

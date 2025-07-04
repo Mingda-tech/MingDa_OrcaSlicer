@@ -78,20 +78,22 @@
         "3",
         "3"
     ],
-    "wipe": [
-        "0",
-        "0"
-    ],
     "wipe_distance": [
         "2",
         "2"
     ],
-    "z_hop": [
-        "0.4",
-        "0.4"
-    ],
     "z_hop_types": [
         "Normal Lift",
         "Normal Lift"
+    ],
+    "retraction_minimum_travel": [
+        "15",
+        "15"
+    ],
+    "wipe": [
+        "0"
+    ],
+    "z_hop": [
+        "0.6"
     ]
 }
