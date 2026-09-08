@@ -158,7 +158,7 @@ static bool stl_read(stl_file *stl, FILE *fp, int first_facet, bool first, Impor
         rewind(fp);
         try{
             char solid_name[256];
-            int res_solid = fscanf(fp, " solid %[^\n]", solid_name);
+            int res_solid = fscanf(fp, " solid %255[^\n]", solid_name);
             if (res_solid == 1) {
                 char* mw_position = strstr(solid_name, "MW");
                 if (mw_position != NULL) {
